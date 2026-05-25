@@ -59,7 +59,7 @@ function Transactions() {
     <div className="min-h-screen bg-white">
       <Header title="PNC SIMPLE CHECKING X8304" rightIcon="search" />
       <div className="bg-[#f2f2f2] px-4 py-2 border-b border-gray-300">
-        <h2 className="text-gray-700 font-bold text-center tracking-wide">PENDING TRANSACTIONS</h2>
+        <h2 className="text-gray-700 font-bold text-center tracking-wide">ALL TRANSACTIONS</h2>
       </div>
       <div className="flex flex-col">
         {transactions.map((t) => (
