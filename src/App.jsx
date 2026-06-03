@@ -60,11 +60,11 @@ function Transactions() {
             onClick={() => navigate(`/transactions/${t.id}`)}
           >
             <div className="flex flex-col">
-              <span className="text-lg text-white font-medium">{t.title}</span>
-              <span className="text-gray-400 text-sm mt-1">{t.dateTime.split(" | ")[0]}</span>
+              <span className="text-[15px] text-white font-medium">{t.title}</span>
+              <span className="text-gray-400 text-[13px] mt-0.5">{t.dateTime.split(" | ")[0]}</span>
             </div>
             <div className="flex flex-col items-end gap-1">
-              <span className="text-lg text-white font-medium">{t.amount}</span>
+              <span className="text-[15px] text-white font-medium">{t.amount}</span>
               <span className="bg-[#bbf7d0] text-[#166534] px-2 py-0.5 rounded text-xs flex items-center gap-1 font-medium">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-3 h-3">
                   <path fillRule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clipRule="evenodd" />
@@ -94,35 +94,35 @@ function TransactionDetails() {
         </button>
       </div>
       
-      <div className="flex flex-col items-center pt-2 pb-10">
-        <div className="text-gray-300 text-lg mb-2">{transaction.title}</div>
-        <div className="text-white text-[42px] font-bold mb-5 tracking-tight">{transaction.amount}</div>
-        <div className="bg-[#bbf7d0] text-[#166534] px-4 py-1.5 rounded-full flex items-center gap-2 text-sm font-semibold">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4">
+      <div className="flex flex-col items-center pt-1 pb-8">
+        <div className="text-gray-300 text-[15px] mb-1.5 font-medium">{transaction.title}</div>
+        <div className="text-white text-3xl font-bold mb-4 tracking-tight">{transaction.amount}</div>
+        <div className="bg-[#bbf7d0] text-[#166534] px-3 py-1 rounded-full flex items-center gap-1.5 text-[13px] font-semibold">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-3.5 h-3.5">
             <path fillRule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clipRule="evenodd" />
           </svg>
           {transaction.status}
         </div>
       </div>
 
-      <div className="px-6 py-4">
-        <h3 className="text-gray-400 text-sm font-bold tracking-widest mb-8">TRANSACTION INFO</h3>
-        <div className="flex flex-col gap-6">
+      <div className="px-5 py-2">
+        <h3 className="text-gray-400 text-[12px] font-bold tracking-widest mb-6">TRANSACTION INFO</h3>
+        <div className="flex flex-col gap-5">
           <div className="flex justify-between items-center">
-            <span className="text-gray-400 text-[15px]">Transaction ID</span>
-            <span className="text-white text-[15px]">{transaction.transactionId}</span>
+            <span className="text-gray-400 text-[14px]">Transaction ID</span>
+            <span className="text-white text-[14px]">{transaction.transactionId}</span>
           </div>
           <div className="flex justify-between items-center">
-            <span className="text-gray-400 text-[15px]">Date /Time</span>
-            <span className="text-white text-[15px]">{transaction.dateTime}</span>
+            <span className="text-gray-400 text-[14px]">Date /Time</span>
+            <span className="text-white text-[14px]">{transaction.dateTime}</span>
           </div>
           <div className="flex justify-between items-center">
-            <span className="text-gray-400 text-[15px]">Type</span>
-            <span className="text-white text-[15px]">{transaction.type}</span>
+            <span className="text-gray-400 text-[14px]">Type</span>
+            <span className="text-white text-[14px]">{transaction.type}</span>
           </div>
           <div className="flex justify-between items-center">
-            <span className="text-gray-400 text-[15px]">Amount</span>
-            <span className="text-white text-[15px]">{transaction.amount}</span>
+            <span className="text-gray-400 text-[14px]">Amount</span>
+            <span className="text-white text-[14px]">{transaction.amount}</span>
           </div>
         </div>
       </div>
