@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Routes, Route, Link, useNavigate, useParams } from "react-router-dom";
 import { transactions } from "./data";
 
@@ -49,11 +50,38 @@ function Home() {
 
 function Transactions() {
   const navigate = useNavigate();
+  const [filter, setFilter] = useState("All");
+
+  const filteredTransactions = transactions.filter(t => {
+    if (filter === "All") return true;
+    if (filter === "Deposit") return t.type === "Deposit";
+    if (filter === "Withdrawal") return t.type === "Withdrawal";
+    if (filter === "Pending") return t.status === "Pending";
+    return true;
+  });
+
   return (
     <div className="min-h-screen bg-black flex flex-col">
       <Header title="Transactions" showBack rightIcon="search" />
+      
+      <div className="flex gap-2 overflow-x-auto px-4 py-3 border-b border-gray-900 scrollbar-hide">
+        {["All", "Deposit", "Withdrawal", "Pending"].map(f => (
+          <button
+            key={f}
+            onClick={() => setFilter(f)}
+            className={`px-4 py-1.5 rounded-full text-[13px] font-medium whitespace-nowrap transition-colors ${
+              filter === f 
+                ? "bg-white text-black" 
+                : "bg-gray-900 text-gray-300 hover:bg-gray-800"
+            }`}
+          >
+            {f}
+          </button>
+        ))}
+      </div>
+
       <div className="flex flex-col">
-        {transactions.map((t) => (
+        {filteredTransactions.map((t) => (
           <div 
             key={t.id} 
             className="flex justify-between items-center py-4 px-4 border-b border-gray-900 cursor-pointer hover:bg-gray-900 active:bg-gray-800"
@@ -65,10 +93,19 @@ function Transactions() {
             </div>
             <div className="flex flex-col items-end gap-1">
               <span className="text-[15px] text-white font-medium">{t.amount}</span>
-              <span className="bg-[#bbf7d0] text-[#166534] px-2 py-0.5 rounded text-xs flex items-center gap-1 font-medium">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-3 h-3">
-                  <path fillRule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clipRule="evenodd" />
-                </svg>
+              <span className={`px-2 py-0.5 rounded text-xs flex items-center gap-1 font-medium ${
+                t.status === "Pending" ? "bg-yellow-900/40 text-yellow-500" : "bg-[#bbf7d0] text-[#166534]"
+              }`}>
+                {t.status === "Completed" && (
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-3 h-3">
+                    <path fillRule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clipRule="evenodd" />
+                  </svg>
+                )}
+                {t.status === "Pending" && (
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-3 h-3">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm.75-13a.75.75 0 00-1.5 0v5c0 .414.336.75.75.75h4a.75.75 0 000-1.5h-3.25V5z" clipRule="evenodd" />
+                  </svg>
+                )}
                 {t.status}
               </span>
             </div>
@@ -97,10 +134,19 @@ function TransactionDetails() {
       <div className="flex flex-col items-center pt-1 pb-8">
         <div className="text-gray-300 text-[15px] mb-1.5 font-medium">{transaction.title}</div>
         <div className="text-white text-3xl font-bold mb-4 tracking-tight">{transaction.amount}</div>
-        <div className="bg-[#bbf7d0] text-[#166534] px-3 py-1 rounded-full flex items-center gap-1.5 text-[13px] font-semibold">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-3.5 h-3.5">
-            <path fillRule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clipRule="evenodd" />
-          </svg>
+        <div className={`px-3 py-1 rounded-full flex items-center gap-1.5 text-[13px] font-semibold ${
+          transaction.status === "Pending" ? "bg-yellow-900/40 text-yellow-500" : "bg-[#bbf7d0] text-[#166534]"
+        }`}>
+          {transaction.status === "Completed" && (
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-3.5 h-3.5">
+              <path fillRule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clipRule="evenodd" />
+            </svg>
+          )}
+          {transaction.status === "Pending" && (
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-3.5 h-3.5">
+              <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm.75-13a.75.75 0 00-1.5 0v5c0 .414.336.75.75.75h4a.75.75 0 000-1.5h-3.25V5z" clipRule="evenodd" />
+            </svg>
+          )}
           {transaction.status}
         </div>
       </div>

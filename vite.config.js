@@ -17,7 +17,8 @@ export default defineConfig({
         name: 'paul_vid PWA',
         short_name: 'paul_vid',
         description: 'A simple PWA for paul_vid',
-        theme_color: '#ffffff',
+        theme_color: '#000000',
+        background_color: '#000000',
         icons: [
           {
             src: 'pwa-192x192.png',
