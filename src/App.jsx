@@ -5,7 +5,7 @@ import { transactions } from "./data";
 const Header = ({ title, rightIcon, onRightClick, showBack }) => {
   const navigate = useNavigate();
   return (
-    <div className="bg-black text-white flex items-center justify-between px-4 py-4 sticky top-0 z-10 border-b border-gray-900">
+    <div className="bg-black text-white flex items-center justify-between px-4 py-4 sticky top-0 z-10">
       {showBack ? (
         <button onClick={() => navigate(-1)} className="text-white">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">
@@ -64,7 +64,7 @@ function Transactions() {
     <div className="min-h-screen bg-black flex flex-col">
       <Header title="Transactions" showBack rightIcon="search" />
       
-      <div className="flex gap-2 overflow-x-auto px-4 py-3 border-b border-gray-900 scrollbar-hide">
+      <div className="flex gap-2 overflow-x-auto px-4 py-3 scrollbar-hide">
         {["All", "Deposit", "Withdrawal", "Pending"].map(f => (
           <button
             key={f}
@@ -84,7 +84,7 @@ function Transactions() {
         {filteredTransactions.map((t) => (
           <div 
             key={t.id} 
-            className="flex justify-between items-center py-4 px-4 border-b border-gray-900 cursor-pointer hover:bg-gray-900 active:bg-gray-800"
+            className="flex justify-between items-center py-4 px-4 cursor-pointer hover:bg-gray-900 active:bg-gray-800"
             onClick={() => navigate(`/transactions/${t.id}`)}
           >
             <div className="flex flex-col">
