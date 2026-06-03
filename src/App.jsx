@@ -64,7 +64,7 @@ function Transactions() {
     <div className="min-h-screen bg-black flex flex-col">
       <Header title="Transactions" showBack rightIcon="search" />
       
-      <div className="flex gap-2 overflow-x-auto px-4 py-3 scrollbar-hide">
+      <div className="flex gap-2 overflow-x-auto px-4 py-3 border-b border-gray-900 scrollbar-hide">
         {["All", "Deposit", "Withdrawal", "Pending"].map(f => (
           <button
             key={f}
@@ -84,7 +84,7 @@ function Transactions() {
         {filteredTransactions.map((t) => (
           <div 
             key={t.id} 
-            className="flex justify-between items-center py-4 px-4 cursor-pointer hover:bg-gray-900 active:bg-gray-800"
+            className="flex justify-between items-center py-4 px-4 border-b border-gray-900 cursor-pointer hover:bg-gray-900 active:bg-gray-800"
             onClick={() => navigate(`/transactions/${t.id}`)}
           >
             <div className="flex flex-col">
