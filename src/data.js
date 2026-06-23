@@ -67,7 +67,7 @@ export const notificationsData = [
     type: "in",
     title: "Fondos retenidos: Acción requerida",
     date: "22 jun - 02:04 p. m.",
-    message: "Su depósito de 4,500.00 USD se encuentra temporalmente en revisión.\nPara cumplir con las normativas internacionales de seguridad y liberar sus fondos a la brevedad, requerimos que nos provea la siguiente información:\n- Su relación comercial o personal con el remitente.\n- Una explicación detallada del concepto 'Gastos de operación' declarado en la transferencia.\n- Cualquier documentación respaldatoria, facturas o comprobantes de compra relacionados con esta transacción.\nPor favor envíe esta información a nuestro equipo de soporte. Agradecemos su cooperación.",
+    message: "Su depósito de 4,500.00 USD se encuentra temporalmente en revisión.\nPara cumplir con las normativas internacionales de seguridad y liberar sus fondos a la brevedad, requerimos que nos provea la siguiente información:\n- Su relación comercial o personal con el remitente.\n- Una explicación detallada del concepto 'Gastos de operación' declarado en la transferencia.\n- Cualquier documentación respaldatoria, facturas o comprobantes de compra relacionados con esta transacción.\nDispone de un plazo de 7 días hábiles para presentar la información solicitada. En caso de no recibir una respuesta satisfactoria dentro de este período, su cuenta será deshabilitada de forma permanente de acuerdo con nuestras políticas de cumplimiento.\nPor favor envíe esta información a nuestro equipo de soporte. Agradecemos su cooperación.",
     unread: false,
     section: "HOY"
   },
