@@ -56,6 +56,18 @@ export default function NotificationDetails() {
           </div>
         </div>
       </div>
+      
+      {/* Provide Information Button (Only for specific processing notification) */}
+      {notification.id === "3" && (
+        <div className="fixed bottom-6 left-0 right-0 px-4">
+          <button 
+            onClick={() => navigate("/provide-information")}
+            className="w-full bg-[#fcd116] text-black hover:bg-yellow-400 transition rounded-full py-4 flex items-center justify-center font-medium shadow-[0_0_20px_rgba(252,209,22,0.15)]"
+          >
+            Proporcionar Información
+          </button>
+        </div>
+      )}
     </div>
   );
 }
