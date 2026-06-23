@@ -6,6 +6,8 @@ import Receive from "./components/Receive";
 import ReceiveUSD from "./components/ReceiveUSD";
 import Transactions from "./components/Transactions";
 import TransactionDetails from "./components/TransactionDetails";
+import Notifications from "./components/Notifications";
+import NotificationDetails from "./components/NotificationDetails";
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
       <Route path="/receive/usd" element={<ReceiveUSD />} />
       <Route path="/transactions" element={<Transactions />} />
       <Route path="/transaction/:id" element={<TransactionDetails />} />
+      <Route path="/notifications" element={<Notifications />} />
+      <Route path="/notification/:id" element={<NotificationDetails />} />
     </Routes>
   );
 }

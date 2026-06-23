@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { dashboardData } from "../data";
+import { dashboardData, transactions } from "../data";
 
 export default function Dashboard() {
   return (
@@ -15,11 +15,11 @@ export default function Dashboard() {
           </svg>
           RECOMPENSAS
         </button>
-        <button className="w-8 h-8 flex items-center justify-center rounded-full border border-gray-800">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
+        <Link to="/notifications" className="w-8 h-8 flex items-center justify-center rounded-full border border-gray-800 hover:bg-gray-900 transition">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5 text-white">
             <path strokeLinecap="round" strokeLinejoin="round" d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0" />
           </svg>
-        </button>
+        </Link>
       </div>
 
       {/* Balance Content */}
@@ -82,7 +82,7 @@ export default function Dashboard() {
                 <div className="flex items-center gap-2">
                   <div className="w-6 h-6 rounded-full overflow-hidden bg-white border border-gray-200">
                     {/* EN flag approx */}
-                    <svg viewBox="0 0 60 40" className="w-full h-full object-cover"><path fill="#FFF" d="M0 0h60v40H0z"/><path fill="#C8102E" d="M26 0h8v40h-8zM0 16h60v8H0z"/></svg>
+                    <svg viewBox="0 0 60 40" className="w-full h-full object-cover"><path fill="#FFF" d="M0 0h60v40H0z" /><path fill="#C8102E" d="M26 0h8v40h-8zM0 16h60v8H0z" /></svg>
                   </div>
                   <span className="text-[13px] font-medium">ENG</span>
                 </div>
@@ -90,17 +90,17 @@ export default function Dashboard() {
                 <div className="flex items-center gap-2">
                   <div className="w-6 h-6 rounded-full overflow-hidden bg-white border border-gray-200">
                     {/* GH flag approx */}
-                    <svg viewBox="0 0 60 40" className="w-full h-full object-cover"><path fill="#CE1126" d="M0 0h60v13.3H0z"/><path fill="#FCD116" d="M0 13.3h60v13.4H0z"/><path fill="#006B3F" d="M0 26.7h60V40H0z"/><path fill="#000" d="m30 14.5 2.5 7.6h8l-6.4 4.7 2.4 7.5-6.5-4.7-6.5 4.7 2.4-7.5-6.4-4.7h8z"/></svg>
+                    <svg viewBox="0 0 60 40" className="w-full h-full object-cover"><path fill="#CE1126" d="M0 0h60v13.3H0z" /><path fill="#FCD116" d="M0 13.3h60v13.4H0z" /><path fill="#006B3F" d="M0 26.7h60V40H0z" /><path fill="#000" d="m30 14.5 2.5 7.6h8l-6.4 4.7 2.4 7.5-6.5-4.7-6.5 4.7 2.4-7.5-6.4-4.7h8z" /></svg>
                   </div>
                   <span className="text-[13px] font-medium">GHA</span>
                 </div>
               </div>
               <div className="text-[10px] text-gray-400 leading-relaxed">
-                Patada inicial 23 jun en 9:00p. m. <br/>
+                Patada inicial 23 jun en 9:00p. m. <br />
                 Las selecciones se cierran en <span className="text-[#eadd97]">12h 25m</span>
               </div>
             </div>
-            
+
             {/* Right side */}
             <div className="flex flex-col items-end gap-5">
               <div className="flex flex-col items-end gap-1.5 mt-1">
@@ -117,12 +117,56 @@ export default function Dashboard() {
         </div>
 
         {/* KAST Card Promo */}
-        <div className="kast-gradient-card rounded-3xl p-5 border border-gray-800">
+        <div className="kast-gradient-card rounded-[24px] p-5 border border-gray-800">
           <div className="border border-[#1d856a] text-[#1d856a] text-xs font-medium px-3 py-1.5 rounded-md inline-block mb-4">
             Obtener tarjeta
           </div>
-          <h3 className="font-bold text-lg mb-1">KAST Card</h3>
-          <p className="text-gray-400 text-sm">Gasta para ganar.</p>
+          <h3 className="font-bold text-[17px] mb-1">Card</h3>
+          <p className="text-gray-400 text-[13px]">Gasta para ganar.</p>
+        </div>
+
+        {/* Leaderboard Banner */}
+        <div className="mb-6 mt-6 w-full flex justify-center rounded-[24px] overflow-hidden">
+          <img src="/awards.png" alt="Award" className="w-full h-auto object-cover" />
+        </div>
+
+        {/* Latest Transactions */}
+        <div className="bg-[#111111] rounded-[24px] p-5 mb-8">
+          <div className="flex flex-col gap-6 mb-6">
+            {transactions.slice(0, 3).map((t) => (
+              <Link to={`/transaction/${t.id}`} key={t.id} className="flex justify-between items-center group">
+                <div className="flex items-center gap-3.5">
+                  <div className="w-11 h-11 rounded-full bg-[#1c1c1c] flex items-center justify-center flex-shrink-0 group-hover:bg-[#222] transition">
+                    {t.type === "out" ? (
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-5 h-5 text-gray-300">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
+                      </svg>
+                    ) : (
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-5 h-5 text-gray-300">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 4.5-15 15m0 0h11.25m-11.25 0V8.25" />
+                      </svg>
+                    )}
+                  </div>
+                  <div className="flex flex-col gap-0.5">
+                    <span className="text-[15px] font-medium leading-tight">{t.title}</span>
+                    <span className="text-[13px] text-gray-400 leading-tight">{t.toFrom}</span>
+                  </div>
+                </div>
+                <div className="flex flex-col items-end gap-0.5">
+                  <span className={`text-[15px] font-medium leading-tight ${t.type === "in" ? "text-[#00e57a]" : "text-white"}`}>
+                    {t.amount}
+                  </span>
+                  <span className="text-[13px] text-gray-400 leading-tight">{t.dateTime}</span>
+                </div>
+              </Link>
+            ))}
+          </div>
+          <Link to="/transactions" className="flex items-center justify-center gap-2 text-[15px] font-medium hover:text-gray-300 transition w-full py-2">
+            Ver todo
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-4 h-4">
+              <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+            </svg>
+          </Link>
         </div>
       </div>
 

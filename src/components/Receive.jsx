@@ -18,14 +18,14 @@ export default function Receive() {
       <div className="flex flex-col px-4 pt-4 pb-10">
         
         {/* KAST */}
-        <h3 className="text-gray-300 text-sm mb-3 ml-1 tracking-wide">KAST</h3>
+        <h3 className="text-gray-300 text-sm mb-3 ml-1 tracking-wide">K</h3>
         <div className="bg-[#111111] rounded-2xl flex flex-col mb-8 overflow-hidden">
           <button className="flex items-center justify-between p-4 active:bg-gray-900 transition">
             <div className="flex items-center gap-4">
               <div className="w-8 h-8 rounded-full bg-[#111111] flex items-center justify-center">
                 <img src="/k.png" alt="K" className="w-5 h-5 object-contain" />
               </div>
-              <span className="text-[16px]">Usuario de KAST</span>
+              <span className="text-[16px]">Usuario de K</span>
             </div>
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4 text-white">
               <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
