@@ -44,11 +44,11 @@ export default function TransactionDetails() {
       </div>
 
       <div className="flex flex-col items-center mt-6 mb-10 px-4">
-        <h2 className="text-[34px] font-normal mb-2 tracking-tight">
+        <h2 className={`text-[34px] font-normal mb-2 tracking-tight ${transaction.status === "processing" ? "text-[#fcd116]" : "text-white"}`}>
           {transaction.amount}
         </h2>
-        <span className="text-gray-400 text-sm">
-          {isIncoming ? "Recibido" : "Enviado"}
+        <span className={`text-sm ${transaction.status === "processing" ? "text-[#fcd116]" : "text-gray-400"}`}>
+          {transaction.status === "processing" ? "En proceso" : isIncoming ? "Recibido" : "Enviado"}
         </span>
       </div>
 

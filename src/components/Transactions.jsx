@@ -57,7 +57,7 @@ export default function Transactions() {
                 </div>
               </div>
               <div className="flex flex-col items-end gap-0.5">
-                <span className={`text-[15px] font-medium leading-tight ${t.type === "in" ? "text-[#00e57a]" : "text-white"}`}>
+                <span className={`text-[15px] font-medium leading-tight ${t.status === "processing" ? "text-[#fcd116]" : t.type === "in" ? "text-[#00e57a]" : "text-white"}`}>
                   {t.amount}
                 </span>
                 <span className="text-[13px] text-gray-400 leading-tight">{t.dateTime}</span>

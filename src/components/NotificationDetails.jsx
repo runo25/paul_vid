@@ -42,10 +42,18 @@ export default function NotificationDetails() {
       </div>
 
       <div className="px-4">
-        <div className="bg-[#111111] rounded-2xl p-6 flex flex-col gap-4">
-          <p className="text-[16px] text-gray-200 leading-relaxed">
-            {notification.message}
-          </p>
+        <div className="bg-[#111111] rounded-[24px] p-6 flex flex-col gap-4">
+          <div className="text-[15px] text-gray-200 leading-relaxed flex flex-col gap-4">
+            {notification.message.split('\n').map((line, idx) => {
+              if (line.startsWith('- ')) {
+                return <li key={idx} className="ml-5 list-disc">{line.substring(2)}</li>;
+              }
+              if (line.trim() === '') {
+                return null;
+              }
+              return <p key={idx}>{line}</p>;
+            })}
+          </div>
         </div>
       </div>
     </div>

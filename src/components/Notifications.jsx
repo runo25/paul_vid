@@ -53,8 +53,8 @@ export default function Notifications() {
                       <span className="text-[16px] font-medium text-white">{n.title}</span>
                       <span className="text-[12px] text-gray-400 whitespace-nowrap mt-1">{n.date}</span>
                     </div>
-                    <p className="text-[14px] text-gray-400 leading-snug pr-2">
-                      {n.message}
+                    <p className="text-[14px] text-gray-400 leading-snug pr-2 line-clamp-2">
+                      {n.message.replace(/\n|- /g, ' ')}
                     </p>
                   </div>
                 </Link>

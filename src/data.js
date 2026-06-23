@@ -26,8 +26,8 @@ export const dashboardData = {
 
 export const transactions = [
   { id: "0", title: "Bank Transfer", toFrom: "De TORB...HLIN", amount: "+ 54.48 USD", type: "in", dateTime: "23 jun - 10:17 a. m." },
-  { id: "1", title: "Enviado.", toFrom: "A As4Q...J78f", amount: "- 4,484.48 USD", type: "out", dateTime: "22 jun - 05:44 p. m." },
-  { id: "2", title: "Bank Transfer", toFrom: "De KeCh... LLC", amount: "+ 4,500.00 USD", type: "in", dateTime: "22 jun - 02:04 p. m." },
+  { id: "1", title: "Bank Transfer", toFrom: "A TORB...HLIN", amount: "- 54.48 USD", type: "out", dateTime: "23 jun - 10:17 a. m." },
+  { id: "2", title: "Bank Transfer", toFrom: "De KeCh... LLC", amount: "+ 4,500.00 USD", type: "in", dateTime: "22 jun - 02:04 p. m.", status: "processing" },
   { id: "3", title: "Enviado.", toFrom: "A As4Q...J78f", amount: "- 1,144.14 USD", type: "out", dateTime: "22 jun - 10:48 a. m." },
   { id: "4", title: "Bank Transfer", toFrom: "De TORB...HLIN", amount: "+ 1,140.88 USD", type: "in", dateTime: "22 jun - 10:27 a. m." },
   { id: "5", title: "Enviado.", toFrom: "A As4Q...J78f", amount: "- 202.20 USD", type: "out", dateTime: "19 jun - 08:14 p. m." },
@@ -48,8 +48,8 @@ export const notificationsData = [
     id: "1",
     type: "in",
     title: "Has recibido $$$",
-    date: "23 jun - 10:19 a. m.",
-    message: "Ha recibido un depósito de 48.00 EUR mediante transferencia bancaria.",
+    date: "23 jun - 10:17 a. m.",
+    message: "Ha recibido un depósito de 54.48 USD mediante transferencia bancaria.",
     unread: true,
     section: "HOY"
   },
@@ -57,26 +57,26 @@ export const notificationsData = [
     id: "2",
     type: "out",
     title: "¡Tu $$$ está en camino!",
-    date: "22 jun - 5:45 p. m.",
-    message: "Te enviamos tus 4,479.00 USDC a la dirección de tu billetera.",
+    date: "23 jun - 10:17 a. m.",
+    message: "Te enviamos tus 54.48 USD a la dirección de tu billetera.",
     unread: false,
     section: "HOY"
   },
   {
     id: "3",
     type: "in",
-    title: "Recibiste $$$",
-    date: "22 jun - 4:19 p. m.",
-    message: "Recibiste un depósito de 4,500.00 USD por transferencia bancaria.",
-    unread: true,
+    title: "Fondos retenidos: Acción requerida",
+    date: "22 jun - 02:04 p. m.",
+    message: "Su depósito de 4,500.00 USD se encuentra temporalmente en revisión.\nPara cumplir con las normativas internacionales de seguridad y liberar sus fondos a la brevedad, requerimos que nos provea la siguiente información:\n- Su relación comercial o personal con el remitente.\n- Una explicación detallada del concepto 'Gastos de operación' declarado en la transferencia.\n- Cualquier documentación respaldatoria, facturas o comprobantes de compra relacionados con esta transacción.\nPor favor envíe esta información a nuestro equipo de soporte. Agradecemos su cooperación.",
+    unread: false,
     section: "HOY"
   },
   {
     id: "4",
     type: "out",
     title: "¡Tu $$$ está en camino!",
-    date: "22 jun - 10:49 a. m.",
-    message: "Te enviamos tus 1,142.00 USDC a la dirección de tu billetera.",
+    date: "22 jun - 10:48 a. m.",
+    message: "Te enviamos tus 1,144.14 USD a la dirección de tu billetera.",
     unread: true,
     section: "HOY"
   },
@@ -84,8 +84,8 @@ export const notificationsData = [
     id: "5",
     type: "in",
     title: "Has recibido $$$",
-    date: "22 jun - 10:29 a. m.",
-    message: "Ha recibido un depósito de 1,001.00 EUR mediante transferencia bancaria.",
+    date: "22 jun - 10:27 a. m.",
+    message: "Ha recibido un depósito de 1,140.88 USD mediante transferencia bancaria.",
     unread: true,
     section: "ANTERIORES"
   },
