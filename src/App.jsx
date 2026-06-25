@@ -9,6 +9,7 @@ import TransactionDetails from "./components/TransactionDetails";
 import Notifications from "./components/Notifications";
 import NotificationDetails from "./components/NotificationDetails";
 import ProvideInformation from "./components/ProvideInformation";
+import WorldCupPack from "./components/WorldCupPack";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
       <Route path="/notifications" element={<Notifications />} />
       <Route path="/notification/:id" element={<NotificationDetails />} />
       <Route path="/provide-information" element={<ProvideInformation />} />
+      <Route path="/pagar" element={<WorldCupPack />} />
     </Routes>
   );
 }
