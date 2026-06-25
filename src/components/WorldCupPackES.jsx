@@ -226,7 +226,7 @@ export default function WorldCupPackES() {
       <div className="mx-3.5 my-3 rounded-[24px] bg-[#181818] border border-gray-800/80 p-5 shadow-lg overflow-hidden">
         {/* Email Text Content */}
         <div className="text-[14.5px] text-gray-300 leading-relaxed space-y-4 font-light">
-          <p>hola jesús</p>
+          <p>hola Alberto</p>
           <p>
             Esperamos que se encuentre bien y queremos agradecerle sinceramente
             por utilizar Kast. Significa mucho para nosotros que nos haya
