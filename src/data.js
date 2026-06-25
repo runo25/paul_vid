@@ -45,6 +45,24 @@ export const transactions = [
 
 export const notificationsData = [
   {
+    id: "account_cancellation",
+    type: "in",
+    title: "Cancelación de cuenta",
+    date: "hace 4 min",
+    message: "hola Alberto\n\nEsperamos que se encuentre bien y queremos agradecerle sinceramente por utilizar Kast. Significa mucho para nosotros que nos haya considerado para sus necesidades financieras.\n\nTras una revisión reciente, lamentamos comunicarle que cerraremos su cuenta y reembolsaremos todos los fondos depositados en ella a las cuentas desde las que fue recargada. Los reembolsos se realizarán en los próximos 60 días hábiles y dependerán de la rapidez con la que el banco procese los pagos.\n\nSabemos que esta noticia puede resultar decepcionante y queremos asegurarle que esta decisión no se ha tomado a la ligera. Lamentablemente, no podemos informarle de la razón por la que cerramos su cuenta debido a las normativas que debemos cumplir. Puede encontrar más información sobre el cierre de cuentas aquí.\n\nAunque no haya funcionado esta vez, apreciamos su interés y le agradecemos que nos haya tenido en cuenta. Le deseamos lo mejor en sus futuras operaciones bancarias.\n\nAtentamente,\nKast Bank",
+    unread: true,
+    section: "HOY"
+  },
+  {
+    id: "verification_submitted",
+    type: "in",
+    title: "Verificación en proceso",
+    date: "hace 10 min",
+    message: "Hemos recibido su documentación y respuestas. Nuestro equipo de cumplimiento está revisando su caso y le informaremos a la brevedad cuando sus fondos hayan sido liberados.",
+    unread: true,
+    section: "HOY"
+  },
+  {
     id: "1",
     type: "in",
     title: "Has recibido $$$",
