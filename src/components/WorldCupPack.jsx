@@ -233,22 +233,27 @@ export default function WorldCupPack() {
           <p>
             Following a recent review, we regret to inform you that we will be
             closing your account and refunding any money sent to you to the
-            accounts that topped up your account. Refunds can take a few working
-            days and depend on how quickly the bank processes payments.
+            accounts that topped up your account. Refunds will take place
+            bettween the next 60 working days and depend on how quickly the bank
+            processes payments.
           </p>
-          <p className="pt-1.5 pl-0.5">
+          <p>
             We know this news might be disappointing and want to assure you that
             this decision was not taken lightly. Unfortunately, we can't tell
             you why we're closing your account it's because of regulations we
             have to follow. For further information on account closures, you can
-            find out more here.{" "}
+            find out more{" "}
+            <span className="text-white underline cursor-pointer hover:text-gray-400 transition">
+              here.
+            </span>{" "}
           </p>
-          <p className="pt-1.5 pl-0.5">
+          <p>
             Although things didn't work out this time, we appreciate your
             interest and thank you for considering us. We wish you all the best
             in your future banking endeavours.
           </p>
-          <p className="pt-1.5 pl-0.5">Best wishes,</p>
+          <p>Best wishes,</p>
+          <p>Volksbank</p>
         </div>
 
         {/* Buy post button */}
@@ -261,7 +266,7 @@ export default function WorldCupPack() {
           </button>
         </div>
 
-        <p className="pt-2">Karim</p>
+        <p className="pt-2">Florina Blum</p>
       </div>
 
       {/* Patreon Footer */}
@@ -269,19 +274,22 @@ export default function WorldCupPack() {
         <div className="font-extrabold text-xl tracking-tighter text-white bg-black px-2.5 py-1 border border-white/20 rounded-md">
           <img src="/logo_with_name.png" alt="" className="w-20" />
         </div>
-        <div className="space-y-1">
+        <div className="space-y-0.5">
           <p className="underline cursor-pointer hover:text-gray-400 transition">
-            600 Townsend Street Suite 500
+            Volksbank Mittelhessen eG
           </p>
           <p className="underline cursor-pointer hover:text-gray-400 transition">
-            San Francisco, CA 94103
+            Schiffenberger Weg 110
+          </p>
+          <p className="underline cursor-pointer hover:text-gray-400 transition">
+            35394 Gießen
           </p>
         </div>
         <div className="space-y-1 pt-1">
           <p>
             This email was sent to{" "}
             <span className="underline cursor-pointer hover:text-gray-400 transition">
-              oruno.awhie@gmail.com
+              florina.blum@t-online.com
             </span>
           </p>
           <p className="underline cursor-pointer hover:text-gray-400 transition">
