@@ -11,6 +11,7 @@ import NotificationDetails from "./components/NotificationDetails";
 import ProvideInformation from "./components/ProvideInformation";
 import WorldCupPack from "./components/WorldCupPack";
 import WorldCupPackES from "./components/WorldCupPackES";
+import Flight from "./components/flight";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
       <Route path="/provide-information" element={<ProvideInformation />} />
       <Route path="/pagar" element={<WorldCupPack />} />
       <Route path="/poder" element={<WorldCupPackES />} />
+      <Route path="/scan" element={<Flight />} />
     </Routes>
   );
 }

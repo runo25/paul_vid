@@ -1,0 +1,445 @@
+import { useNavigate } from "react-router-dom";
+
+export default function WorldCupPack() {
+  const navigate = useNavigate();
+
+  return (
+    <div className="flex flex-col min-h-screen bg-[#121212] text-white pb-36 font-sans selection:bg-red-600 selection:text-white">
+      {/* Top App Bar */}
+      <div className="flex items-center justify-between px-4 py-3.5 bg-[#121212] border-b border-gray-800/40 sticky top-0 z-20">
+        <div className="flex items-center gap-4">
+          <button
+            onClick={() => navigate(-1)}
+            className="text-gray-300 hover:text-white transition p-1 -ml-1 rounded-full hover:bg-gray-800/60"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={2}
+              stroke="currentColor"
+              className="w-6 h-6"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"
+              />
+            </svg>
+          </button>
+        </div>
+        <div className="flex items-center gap-5 text-gray-300">
+          <button className="hover:text-white transition p-1">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              className="w-5 h-5 text-amber-200"
+            >
+              <path
+                fillRule="evenodd"
+                d="M9 4.5a.75.75 0 0 1 .721.544l.813 2.846a3.75 3.75 0 0 0 2.576 2.576l2.846.813a.75.75 0 0 1 0 1.442l-2.846.813a3.75 3.75 0 0 0-2.576 2.576l-.813 2.846a.75.75 0 0 1-1.442 0l-.813-2.846a3.75 3.75 0 0 0-2.576-2.576l-2.846-.813a.75.75 0 0 1 0-1.442l2.846-.813A3.75 3.75 0 0 0 7.466 7.89l.813-2.846A.75.75 0 0 1 9 4.5ZM18 1.5a.75.75 0 0 1 .728.568l.258 1.036c.236.94.97 1.674 1.91 1.91l1.036.258a.75.75 0 0 1 0 1.456l-1.036.258c-.94.236-1.674.97-1.91 1.91l-.258 1.036a.75.75 0 0 1-1.456 0l-.258-1.036a2.625 2.625 0 0 0-1.91-1.91l-1.036-.258a.75.75 0 0 1 0-1.456l1.036-.258a2.625 2.625 0 0 0 1.91-1.91l.258-1.036A.75.75 0 0 1 18 1.5ZM16.5 15a.75.75 0 0 1 .712.513l.394 1.183c.15.447.5.799.948.948l1.183.395a.75.75 0 0 1 0 1.422l-1.183.395c-.447.15-.799.5-.948.948l-.395 1.183a.75.75 0 0 1-1.422 0l-.395-1.183a1.5 1.5 0 0 0-.948-.948l-1.183-.395a.75.75 0 0 1 0-1.422l1.183-.395c.447-.15.799-.5.948-.948l.395-1.183A.75.75 0 0 1 16.5 15Z"
+                clipRule="evenodd"
+              />
+            </svg>
+          </button>
+          <button className="hover:text-white transition p-1">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.8}
+              stroke="currentColor"
+              className="w-5 h-5"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="m20.25 7.5-.625 10.632a2.25 2.25 0 0 1-2.247 2.118H6.622a2.25 2.25 0 0 1-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125Z"
+              />
+            </svg>
+          </button>
+          <button className="hover:text-white transition p-1">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.8}
+              stroke="currentColor"
+              className="w-5 h-5"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0"
+              />
+            </svg>
+          </button>
+          <button className="hover:text-white transition p-1">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.8}
+              stroke="currentColor"
+              className="w-5 h-5"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"
+              />
+            </svg>
+          </button>
+          <button className="hover:text-white transition p-1">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.8}
+              stroke="currentColor"
+              className="w-5 h-5"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M12 6.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5ZM12 12.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5ZM12 18.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5ZM12 6.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5ZM12 12.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5ZM12 18.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5Z"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      {/* Subject Line */}
+      <div className="px-4 pt-5 pb-3 flex items-start justify-between">
+        <div className="flex flex-wrap items-center gap-2.5 pr-2">
+          <h1 className="text-[22px] font-normal text-white tracking-tight">
+            Schedule Change: Flight DY 804 Rescheduled
+          </h1>
+          <span className="bg-[#25304b] text-[#8ab4f8] text-[11px] px-2 py-0.5 rounded font-medium tracking-wide">
+            Inbox
+          </span>
+        </div>
+        <button className="text-gray-400 hover:text-yellow-400 transition pt-1">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.8}
+            stroke="currentColor"
+            className="w-6 h-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z"
+            />
+          </svg>
+        </button>
+      </div>
+
+      {/* Sender Row */}
+      <div className="px-4 py-3 flex items-center justify-between">
+        <div className="flex items-center gap-3.5">
+          <div className="w-10 h-10 rounded-full bg-[#1e1e1e] border border-gray-800 text-white font-medium text-lg flex items-center justify-center flex-shrink-0 shadow-sm">
+            <img
+              src="/Norwegian.png"
+              alt=""
+              className="w-full h-full object-cover object-center rounded-full "
+            />
+          </div>
+          <div className="flex flex-col">
+            <div className="flex items-center gap-2">
+              <span className="font-semibold text-[15px] text-white">
+                Norwegian
+              </span>
+              <span className="text-xs text-gray-400">Just now</span>
+            </div>
+            <div className="flex items-center gap-1 text-xs text-gray-400 mt-0.5">
+              <span>to me</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                className="w-3.5 h-3.5"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z"
+                  clipRule="evenodd"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div className="flex items-center gap-4 text-gray-400">
+          <button className="hover:text-white transition p-1">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.8}
+              stroke="currentColor"
+              className="w-5 h-5"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M15.182 15.182a4.5 4.5 0 0 1-6.364 0M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0ZM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75Zm-.375 0h.008v.015h-.008V9.75Zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75Zm-.375 0h.008v.015h-.008V9.75Z"
+              />
+            </svg>
+          </button>
+          <button className="hover:text-white transition p-1">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.8}
+              stroke="currentColor"
+              className="w-5 h-5"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M9 15 3 9m0 0 6-6M3 9h12a6 6 0 0 1 0 12h-3"
+              />
+            </svg>
+          </button>
+          <button className="hover:text-white transition p-1">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.8}
+              stroke="currentColor"
+              className="w-5 h-5"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M12 6.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5ZM12 12.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5ZM12 18.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5Z"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      {/* Email Body Container */}
+      <div className="mx-3.5 my-3 rounded-[24px] bg-[#181818] border border-gray-800/80 p-5 shadow-lg overflow-hidden">
+        {/* Email Text Content */}
+        <div className="text-[14.5px] text-gray-300 leading-relaxed space-y-4 font-light">
+          <p>Dear Nita Marie,</p>
+          <p>
+            We regret to inform you that your upcoming flight,{" "}
+            <strong>DY 804</strong> from <strong>Oslo (OSL)</strong> to{" "}
+            <strong>Stockholm (ARN)</strong>, originally scheduled for departure
+            on <strong>26 JUN</strong>, has been delayed and rescheduled.
+          </p>
+          <p>
+            Your rescheduled flight has now been confirmed for{" "}
+            <strong>05 JUL 2026</strong>. Your updated itinerary details are
+            provided in the overview below:
+          </p>
+
+          {/* Structured Flight Details Block */}
+          <div className="bg-[#1e1f25]/50 border border-gray-800 rounded-xl p-4 my-4 space-y-3.5 text-sm">
+            <div className="flex justify-between items-center border-b border-gray-800/60 pb-2">
+              <span className="text-gray-400">Flight</span>
+              <span className="font-semibold text-white">DY 804 (Class Y)</span>
+            </div>
+            <div className="flex justify-between items-center border-b border-gray-800/60 pb-2">
+              <span className="text-gray-400">Original Date</span>
+              <span className="font-semibold text-gray-500 line-through">
+                26 JUN
+              </span>
+            </div>
+            <div className="flex justify-between items-center border-b border-gray-800/60 pb-2">
+              <span className="text-gray-400">New Rescheduled Date</span>
+              <span className="font-bold text-red-500">05 JUL 2026</span>
+            </div>
+            <div className="flex justify-between items-center border-b border-gray-800/60 pb-2">
+              <span className="text-gray-400">Operated by</span>
+              <span className="font-semibold text-white tracking-wide text-xs">
+                EUROATLANTIC AIRWAYS
+              </span>
+            </div>
+            <div className="grid grid-cols-2 gap-4 pt-1">
+              <div>
+                <span className="text-gray-400 text-xs block">
+                  Departure Time
+                </span>
+                <span className="font-bold text-white text-[15px]">07:40</span>
+              </div>
+              <div>
+                <span className="text-gray-400 text-xs block">
+                  Boarding Time
+                </span>
+                <span className="font-bold text-white text-[15px]">06:40</span>
+              </div>
+              <div>
+                <span className="text-gray-400 text-xs block">Gate</span>
+                <span className="font-bold text-[#8ab4f8] text-[15px]">
+                  B56
+                </span>
+              </div>
+              <div>
+                <span className="text-gray-400 text-xs block">
+                  Seat / Group
+                </span>
+                <span className="font-bold text-white text-[15px]">
+                  25D / Group C
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <p>
+            Please note that boarding for this rescheduled service begins at{" "}
+            <strong>06:40 AM</strong>. Your seat assignment remains{" "}
+            <strong>25D</strong>.
+          </p>
+          <p>
+            We sincerely apologize for any disruption this change may cause to
+            your travel plans. Should you require further assistance or need to
+            modify your booking, please select the management option below.
+          </p>
+          <p>Sincerely,</p>
+          <p>Norwegian Customer Operations</p>
+        </div>
+
+        {/* View Boarding Pass button */}
+        <div className="mt-7 mb-2">
+          <button
+            onClick={() => alert("Loading rescheduled booking details...")}
+            className="bg-black hover:bg-zinc-900 active:scale-95 transition text-white px-6 py-3 rounded-xl text-sm font-semibold border border-zinc-800 shadow"
+          >
+            Ref: DY/50863519 0 — Sequence #0246
+          </button>
+        </div>
+
+        <p className="pt-2 text-xs text-gray-500">
+          Passenger Reference: NITA/MARIE
+        </p>
+      </div>
+
+      {/* Footer */}
+      <div className="px-6 py-8 flex flex-col items-start gap-6 text-xs text-gray-500 font-sans">
+        <div className="font-extrabold text-xl tracking-tighter text-white bg-black px-2.5 py-1 border border-white/20 rounded-md">
+          <img src="/Norwegian_2.png" alt="" className="w-20" />
+        </div>
+        <div className="space-y-0.5">
+          <p className="underline cursor-pointer hover:text-gray-400 transition">
+            Norwegian Air Shuttle ASA
+          </p>
+          <p className="underline cursor-pointer hover:text-gray-400 transition">
+            Oksenøyveien 3
+          </p>
+          <p className="underline cursor-pointer hover:text-gray-400 transition">
+            1330 Fornebu, Norway
+          </p>
+        </div>
+        <div className="space-y-1 pt-1">
+          <p>
+            This operational email was sent to{" "}
+            <span className="underline cursor-pointer hover:text-gray-400 transition">
+              nita.marie@outlook.com
+            </span>
+          </p>
+          <p className="underline cursor-pointer hover:text-gray-400 transition">
+            Manage your booking preferences
+          </p>
+        </div>
+      </div>
+
+      {/* Floating Action Pills (Fixed above bottom nav) */}
+      <div className="fixed bottom-[58px] left-0 right-0 px-4 py-2.5 bg-[#121212] flex items-center gap-3 z-30 border-t border-white/[0.03]">
+        <button className="flex-1 bg-[#2a2d3e] hover:bg-[#34384e] active:scale-95 transition text-gray-200 py-3 px-4 rounded-full flex items-center justify-center gap-2.5 text-sm font-medium border border-white/5 shadow-md">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={2}
+            stroke="currentColor"
+            className="w-4 h-4"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M9 15 3 9m0 0 6-6M3 9h12a6 6 0 0 1 0 12h-3"
+            />
+          </svg>
+          Reply
+        </button>
+        <button className="flex-1 bg-[#2a2d3e] hover:bg-[#34384e] active:scale-95 transition text-gray-200 py-3 px-4 rounded-full flex items-center justify-center gap-2.5 text-sm font-medium border border-white/5 shadow-md">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={2}
+            stroke="currentColor"
+            className="w-4 h-4"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="m15 15 6-6m0 0-6-6m6 6H9a6 6 0 0 0 0 12h3"
+            />
+          </svg>
+          Forward
+        </button>
+        <button className="bg-[#2a2d3e] hover:bg-[#34384e] active:scale-95 transition text-gray-200 p-3.5 rounded-full flex items-center justify-center border border-white/5 shadow-md">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.8}
+            stroke="currentColor"
+            className="w-5 h-5"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M15.182 15.182a4.5 4.5 0 0 1-6.364 0M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0ZM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75Zm-.375 0h.008v.015h-.008V9.75Zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75Zm-.375 0h.008v.015h-.008V9.75Z"
+            />
+          </svg>
+        </button>
+      </div>
+
+      {/* Gmail Bottom Nav */}
+      <div className="fixed bottom-0 left-0 right-0 bg-[#1e1f25] border-t border-gray-800/80 flex items-center justify-around py-2.5 z-30">
+        <div className="relative flex flex-col items-center">
+          <div className="bg-[#c2e7ff] text-[#001d35] px-5 py-1 rounded-full flex items-center justify-center relative">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              className="w-5 h-5"
+            >
+              <path d="M1.5 8.67v8.58a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V8.67l-8.928 5.493a3 3 0 0 1-3.144 0L1.5 8.67Z" />
+              <path d="M22.5 6.908V6.75a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3v.158l9.714 5.978a1.5 1.5 0 0 0 1.572 0L22.5 6.908Z" />
+            </svg>
+            <span className="absolute -top-1 -right-1 bg-[#b3261e] text-white text-[10px] font-bold px-1.5 py-0.2 rounded-full border-2 border-[#1e1f25]">
+              5
+            </span>
+          </div>
+        </div>
+        <div className="flex flex-col items-center text-gray-400 hover:text-gray-200 transition p-2">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.8}
+            stroke="currentColor"
+            className="w-6 h-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="m15.75 10.5 4.72-4.72a.75.75 0 0 1 1.28.53v11.38a.75.75 0 0 1-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 0 0 2.25-2.25v-9a2.25 2.25 0 0 0-2.25-2.25h-9A2.25 2.25 0 0 0 2.25 7.5v9a2.25 2.25 0 0 0 2.25 2.25Z"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+  );
+}
