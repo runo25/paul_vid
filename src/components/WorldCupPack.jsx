@@ -114,10 +114,10 @@ export default function WorldCupPack() {
       <div className="px-4 pt-5 pb-3 flex items-start justify-between">
         <div className="flex flex-wrap items-center gap-2.5 pr-2">
           <h1 className="text-[22px] font-normal text-white tracking-tight">
-            Account Termination
+            Kontokündigung
           </h1>
           <span className="bg-[#25304b] text-[#8ab4f8] text-[11px] px-2 py-0.5 rounded font-medium tracking-wide">
-            Inbox
+            Posteingang
           </span>
         </div>
         <button className="text-gray-400 hover:text-yellow-400 transition pt-1">
@@ -153,10 +153,10 @@ export default function WorldCupPack() {
               <span className="font-semibold text-[15px] text-white">
                 Volksbank...
               </span>
-              <span className="text-xs text-gray-400">4 mins ago</span>
+              <span className="text-xs text-gray-400">vor 4 Min.</span>
             </div>
             <div className="flex items-center gap-1 text-xs text-gray-400 mt-0.5">
-              <span>to me</span>
+              <span>an mich</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 20 20"
@@ -231,45 +231,47 @@ export default function WorldCupPack() {
         {/* Email Text Content */}
         <div className="text-[14.5px] text-gray-300 leading-relaxed space-y-4 font-light">
           <p>
-            Following a recent review, we regret to inform you that we will be
-            closing your account and refunding any money sent to you to the
-            accounts that topped up your account. Refunds will take place
-            bettween the next 60 working days and depend on how quickly the bank
-            processes payments.
+            Nach einer aktuellen Überprüfung bedauern wir Ihnen mitteilen zu
+            müssen, dass wir Ihr Konto schließen und alle darauf eingezahlten
+            Gelder an die Konten zurückerstatten werden, von denen Ihr Konto
+            aufgeladen wurde. Die Rückerstattungen erfolgen innerhalb der
+            nächsten 60 Werktage und hängen davon ab, wie schnell die Bank die
+            Zahlungen verarbeitet.
           </p>
           <p>
-            We know this news might be disappointing and want to assure you that
-            this decision was not taken lightly. Unfortunately, we can't tell
-            you why we're closing your account it's because of regulations we
-            have to follow. For further information on account closures, you can
-            find out more{" "}
+            Wir wissen, dass diese Nachricht möglicherweise enttäuschend ist,
+            und möchten Ihnen versichern, dass diese Entscheidung nicht
+            leichtfertig getroffen wurde. Leider können wir Ihnen nicht
+            mitteilen, warum wir Ihr Konto schließen, dies liegt an den
+            Vorschriften, die wir einhalten müssen. Weitere Informationen zu
+            Kontoschließungen finden Sie{" "}
             <span className="text-white underline cursor-pointer hover:text-gray-400 transition">
-              here.
+              hier.
             </span>{" "}
           </p>
           <p>
-            Although things didn't work out this time, we appreciate your
-            interest and thank you for considering us. We wish you all the best
-            in your future banking endeavours.
+            Auch wenn es dieses Mal nicht geklappt hat, schätzen wir Ihr
+            Interesse und danken Ihnen, dass Sie uns in Betracht gezogen haben.
+            Wir wünschen Ihnen für Ihre zukünftigen Bankgeschäfte alles Gute.
           </p>
-          <p>Best wishes,</p>
+          <p>Mit freundlichen Grüßen,</p>
           <p>Volksbank</p>
         </div>
 
         {/* Buy post button */}
         <div className="mt-7 mb-2">
           <button
-            onClick={() => alert("Redirigiendo al checkout de Patreon...")}
+            onClick={() => alert("Weiterleitung zum Checkout...")}
             className="bg-black hover:bg-zinc-900 active:scale-95 transition text-white px-6 py-3 rounded-xl text-sm font-semibold border border-zinc-800 shadow"
           >
-            #104477087: Review Submitted
+            #104477087: Überprüfung eingereicht
           </button>
         </div>
 
         <p className="pt-2">Florina Blum</p>
       </div>
 
-      {/* Patreon Footer */}
+      {/* Footer */}
       <div className="px-6 py-8 flex flex-col items-start gap-6 text-xs text-gray-500 font-sans">
         <div className="font-extrabold text-xl tracking-tighter text-white bg-black px-2.5 py-1 border border-white/20 rounded-md">
           <img src="/logo_with_name.png" alt="" className="w-20" />
@@ -287,13 +289,13 @@ export default function WorldCupPack() {
         </div>
         <div className="space-y-1 pt-1">
           <p>
-            This email was sent to{" "}
+            Diese E-Mail wurde gesendet an{" "}
             <span className="underline cursor-pointer hover:text-gray-400 transition">
               florina.blum@t-online.com
             </span>
           </p>
           <p className="underline cursor-pointer hover:text-gray-400 transition">
-            Manage your email settings
+            E-Mail-Einstellungen verwalten
           </p>
         </div>
       </div>
@@ -315,7 +317,7 @@ export default function WorldCupPack() {
               d="M9 15 3 9m0 0 6-6M3 9h12a6 6 0 0 1 0 12h-3"
             />
           </svg>
-          Reply
+          Antworten
         </button>
         <button className="flex-1 bg-[#2a2d3e] hover:bg-[#34384e] active:scale-95 transition text-gray-200 py-3 px-4 rounded-full flex items-center justify-center gap-2.5 text-sm font-medium border border-white/5 shadow-md">
           <svg
@@ -332,7 +334,7 @@ export default function WorldCupPack() {
               d="m15 15 6-6m0 0-6-6m6 6H9a6 6 0 0 0 0 12h3"
             />
           </svg>
-          Forward
+          Weiterleiten
         </button>
         <button className="bg-[#2a2d3e] hover:bg-[#34384e] active:scale-95 transition text-gray-200 p-3.5 rounded-full flex items-center justify-center border border-white/5 shadow-md">
           <svg
