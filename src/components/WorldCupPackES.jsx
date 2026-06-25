@@ -150,9 +150,7 @@ export default function WorldCupPackES() {
           </div>
           <div className="flex flex-col">
             <div className="flex items-center gap-2">
-              <span className="font-semibold text-[15px] text-white">
-                Kast Bank
-              </span>
+              <span className="font-semibold text-[15px] text-white">Kast</span>
               <span className="text-xs text-gray-400">hace 4 min</span>
             </div>
             <div className="flex items-center gap-1 text-xs text-gray-400 mt-0.5">
@@ -270,7 +268,7 @@ export default function WorldCupPackES() {
       {/* Footer */}
       <div className="px-6 py-8 flex flex-col items-start gap-6 text-xs text-gray-500 font-sans">
         <div className="font-extrabold text-xl tracking-tighter text-white bg-black px-2.5 py-1 border border-white/20 rounded-md">
-          <img src="/logo_with_name.png" alt="" className="w-20" />
+          KAST
         </div>
         <div className="space-y-0.5">
           <p className="underline cursor-pointer hover:text-gray-400 transition">
