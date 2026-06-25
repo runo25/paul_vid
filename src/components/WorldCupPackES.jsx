@@ -143,15 +143,15 @@ export default function WorldCupPackES() {
         <div className="flex items-center gap-3.5">
           <div className="w-10 h-10 rounded-full bg-[#a88a7c] text-white font-medium text-lg flex items-center justify-center flex-shrink-0 shadow-sm">
             <img
-              src="/logo2.png"
+              src="/k.png"
               alt=""
-              className="w-full h-full object-cover object-center rounded-full "
+              className="w-full h-full object-cover object-center rounded-full p-1"
             />
           </div>
           <div className="flex flex-col">
             <div className="flex items-center gap-2">
               <span className="font-semibold text-[15px] text-white">
-                Volksbank...
+                Kast Bank
               </span>
               <span className="text-xs text-gray-400">hace 4 min</span>
             </div>
@@ -229,11 +229,11 @@ export default function WorldCupPackES() {
         {/* Email Text Content */}
         <div className="text-[14.5px] text-gray-300 leading-relaxed space-y-4 font-light">
           <p>
-            Tras una revisión reciente, lamentamos comunicarle que cerraremos
-            su cuenta y reembolsaremos todos los fondos depositados en ella a
-            las cuentas desde las que fue recargada. Los reembolsos se
-            realizarán en los próximos 60 días hábiles y dependerán de la
-            rapidez con la que el banco procese los pagos.
+            Tras una revisión reciente, lamentamos comunicarle que cerraremos su
+            cuenta y reembolsaremos todos los fondos depositados en ella a las
+            cuentas desde las que fue recargada. Los reembolsos se realizarán en
+            los próximos 60 días hábiles y dependerán de la rapidez con la que
+            el banco procese los pagos.
           </p>
           <p>
             Sabemos que esta noticia puede resultar decepcionante y queremos
@@ -251,7 +251,7 @@ export default function WorldCupPackES() {
             sus futuras operaciones bancarias.
           </p>
           <p>Atentamente,</p>
-          <p>Volksbank</p>
+          <p>Kast Bank</p>
         </div>
 
         {/* Buy post button */}
@@ -264,7 +264,7 @@ export default function WorldCupPackES() {
           </button>
         </div>
 
-        <p className="pt-2">Florina Blum</p>
+        <p className="pt-2">ALBERTO JOAQUIN AMARILLO</p>
       </div>
 
       {/* Footer */}
@@ -274,20 +274,14 @@ export default function WorldCupPackES() {
         </div>
         <div className="space-y-0.5">
           <p className="underline cursor-pointer hover:text-gray-400 transition">
-            Volksbank Mittelhessen eG
-          </p>
-          <p className="underline cursor-pointer hover:text-gray-400 transition">
-            Schiffenberger Weg 110
-          </p>
-          <p className="underline cursor-pointer hover:text-gray-400 transition">
-            35394 Gießen
+            support@kast.xyz
           </p>
         </div>
         <div className="space-y-1 pt-1">
           <p>
             Este correo electrónico fue enviado a{" "}
             <span className="underline cursor-pointer hover:text-gray-400 transition">
-              florina.blum@t-online.com
+              rootsblog99@gmail.com
             </span>
           </p>
           <p className="underline cursor-pointer hover:text-gray-400 transition">
