@@ -4,6 +4,7 @@ import Profile from "./components/Profile";
 import PersonalData from "./components/PersonalData";
 import Receive from "./components/Receive";
 import ReceiveUSD from "./components/ReceiveUSD";
+import ReceiveEUR from "./components/ReceiveEUR";
 import Transactions from "./components/Transactions";
 import TransactionDetails from "./components/TransactionDetails";
 import Notifications from "./components/Notifications";
@@ -18,6 +19,7 @@ function App() {
       <Route path="/profile/personal-data" element={<PersonalData />} />
       <Route path="/receive" element={<Receive />} />
       <Route path="/receive/usd" element={<ReceiveUSD />} />
+      <Route path="/receive/eur" element={<ReceiveEUR />} />
       <Route path="/transactions" element={<Transactions />} />
       <Route path="/transaction/:id" element={<TransactionDetails />} />
       <Route path="/notifications" element={<Notifications />} />

@@ -80,24 +80,38 @@ export default function Dashboard() {
             <div className="flex flex-col">
               <div className="flex items-center gap-3 mb-4">
                 <div className="flex items-center gap-2">
-                  <div className="w-6 h-6 rounded-full overflow-hidden bg-white border border-gray-200">
-                    {/* EN flag approx */}
-                    <svg viewBox="0 0 60 40" className="w-full h-full object-cover"><path fill="#FFF" d="M0 0h60v40H0z" /><path fill="#C8102E" d="M26 0h8v40h-8zM0 16h60v8H0z" /></svg>
+                  <div className="w-6 h-6 rounded-full overflow-hidden bg-white border border-gray-800 flex-shrink-0">
+                    {/* URU flag */}
+                    <svg viewBox="0 0 30 20" className="w-full h-full object-cover" preserveAspectRatio="xMidYMid slice">
+                      <rect width="30" height="20" fill="#ffffff" />
+                      <rect width="30" height="2.2" y="2.2" fill="#0035ad" />
+                      <rect width="30" height="2.2" y="6.6" fill="#0035ad" />
+                      <rect width="30" height="2.2" y="11" fill="#0035ad" />
+                      <rect width="30" height="2.2" y="15.4" fill="#0035ad" />
+                      <rect width="12" height="11" fill="#ffffff" />
+                      <circle cx="6" cy="5.5" r="3.5" fill="#fcd116" />
+                      <circle cx="6" cy="5.5" r="1.5" fill="#e5b400" />
+                    </svg>
                   </div>
-                  <span className="text-[13px] font-medium">ENG</span>
+                  <span className="text-[13px] font-medium">URU</span>
                 </div>
                 <span className="text-gray-500 font-medium text-[11px]">VS</span>
                 <div className="flex items-center gap-2">
-                  <div className="w-6 h-6 rounded-full overflow-hidden bg-white border border-gray-200">
-                    {/* GH flag approx */}
-                    <svg viewBox="0 0 60 40" className="w-full h-full object-cover"><path fill="#CE1126" d="M0 0h60v13.3H0z" /><path fill="#FCD116" d="M0 13.3h60v13.4H0z" /><path fill="#006B3F" d="M0 26.7h60V40H0z" /><path fill="#000" d="m30 14.5 2.5 7.6h8l-6.4 4.7 2.4 7.5-6.5-4.7-6.5 4.7 2.4-7.5-6.4-4.7h8z" /></svg>
+                  <div className="w-6 h-6 rounded-full overflow-hidden bg-white border border-gray-800 flex-shrink-0">
+                    {/* ESP flag */}
+                    <svg viewBox="0 0 60 40" className="w-full h-full object-cover" preserveAspectRatio="xMidYMid slice">
+                      <rect fill="#c60b1e" width="60" height="10" />
+                      <rect fill="#ffc400" y="10" width="60" height="20" />
+                      <rect fill="#c60b1e" y="30" width="60" height="10" />
+                      <circle fill="#c60b1e" cx="18" cy="20" r="3" />
+                    </svg>
                   </div>
-                  <span className="text-[13px] font-medium">GHA</span>
+                  <span className="text-[13px] font-medium">ESP</span>
                 </div>
               </div>
               <div className="text-[10px] text-gray-400 leading-relaxed">
-                Patada inicial 23 jun en 9:00p. m. <br />
-                Las selecciones se cierran en <span className="text-[#eadd97]">12h 25m</span>
+                Patada inicial 26 jun en 6:00p. m. <br />
+                Las selecciones se cierran en <span className="text-[#eadd97]">15h 45m</span>
               </div>
             </div>
 
@@ -180,7 +194,7 @@ export default function Dashboard() {
           </svg>
           <span className="text-[11px] font-medium">Inicio</span>
         </Link>
-        <Link to="/receive/usd" className="flex flex-col items-center gap-1 text-gray-500 hover:text-gray-300 transition">
+        <Link to="/receive/eur" className="flex flex-col items-center gap-1 text-gray-500 hover:text-gray-300 transition">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
             <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6A2.25 2.25 0 0 1 6 3.75h2.25A2.25 2.25 0 0 1 10.5 6v2.25a2.25 2.25 0 0 1-2.25 2.25H6a2.25 2.25 0 0 1-2.25-2.25V6ZM3.75 15.75A2.25 2.25 0 0 1 6 13.5h2.25a2.25 2.25 0 0 1 2.25 2.25V18a2.25 2.25 0 0 1-2.25 2.25H6A2.25 2.25 0 0 1 3.75 18v-2.25ZM13.5 6a2.25 2.25 0 0 1 2.25-2.25H18A2.25 2.25 0 0 1 20.25 6v2.25A2.25 2.25 0 0 1 18 10.5h-2.25a2.25 2.25 0 0 1-2.25-2.25V6ZM13.5 15.75a2.25 2.25 0 0 1 2.25-2.25H18a2.25 2.25 0 0 1 2.25 2.25V18A2.25 2.25 0 0 1 18 20.25h-2.25A2.25 2.25 0 0 1 13.5 18v-2.25Z" />
           </svg>

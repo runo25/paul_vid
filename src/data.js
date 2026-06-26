@@ -20,6 +20,14 @@ export const bankData = {
   country: "USA"
 };
 
+export const eurBankData = {
+  bankName: "OPENPAYD FINANCIAL SERVICES MALTA LTD",
+  accountNumber: "MT27CFTE2800400000000006291478",
+  swift: "CFTEMTM1XXX",
+  beneficiaryName: "ALBERTO JOAQUIN AMARILLO",
+  bankAddress: "Floor 3, 137 Spinola Road, St. Julian's, Eastern Region STJ 3011"
+};
+
 export const dashboardData = {
   balance: "$0.94"
 };

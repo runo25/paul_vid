@@ -33,7 +33,7 @@ export default function ReceiveUSD() {
         </button>
         <div className="flex items-center gap-3 ml-2">
           <div className="w-8 h-8 rounded-full overflow-hidden flex-shrink-0">
-            <svg viewBox="0 0 60 40" className="w-full h-full object-cover">
+            <svg viewBox="0 0 60 40" className="w-full h-full object-cover" preserveAspectRatio="xMidYMid slice">
               <path fill="#bd3d44" d="M0 0h60v40H0z"/><path fill="#fff" d="M0 3.1h60v3.1H0zM0 9.2h60v3.1H0zM0 15.4h60v3.1H0zM0 21.5h60v3.1H0zM0 27.7h60v3.1H0zM0 33.8h60v3.1H0z"/><path fill="#192f5d" d="M0 0h25v21.5H0z"/><path fill="#fff" d="M1.5 2.1l1 3 3.1-.1-2.5 1.8 1 3-2.6-1.9-2.5 1.9 1-3-2.6-1.8 3.1.1z" transform="scale(0.8) translate(1,0)"/><path fill="#fff" d="M1.5 2.1l1 3 3.1-.1-2.5 1.8 1 3-2.6-1.9-2.5 1.9 1-3-2.6-1.8 3.1.1z" transform="scale(0.8) translate(7,0)"/><path fill="#fff" d="M1.5 2.1l1 3 3.1-.1-2.5 1.8 1 3-2.6-1.9-2.5 1.9 1-3-2.6-1.8 3.1.1z" transform="scale(0.8) translate(13,0)"/><path fill="#fff" d="M1.5 2.1l1 3 3.1-.1-2.5 1.8 1 3-2.6-1.9-2.5 1.9 1-3-2.6-1.8 3.1.1z" transform="scale(0.8) translate(19,0)"/><path fill="#fff" d="M1.5 2.1l1 3 3.1-.1-2.5 1.8 1 3-2.6-1.9-2.5 1.9 1-3-2.6-1.8 3.1.1z" transform="scale(0.8) translate(25,0)"/>
             </svg>
           </div>
