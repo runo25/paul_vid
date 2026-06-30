@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
-export default function WorldCupPackES() {
+export default function WorldCupPackReply() {
   const navigate = useNavigate();
 
   return (
@@ -114,10 +114,10 @@ export default function WorldCupPackES() {
       <div className="px-4 pt-5 pb-3 flex items-start justify-between">
         <div className="flex flex-wrap items-center gap-2.5 pr-2">
           <h1 className="text-[22px] font-normal text-white tracking-tight">
-            Cancelación de cuenta
+            Re: Cancelación de cuenta
           </h1>
           <span className="bg-[#25304b] text-[#8ab4f8] text-[11px] px-2 py-0.5 rounded font-medium tracking-wide">
-            Bandeja de entrada
+            Enviados
           </span>
         </div>
         <button className="text-gray-400 hover:text-yellow-400 transition pt-1">
@@ -141,20 +141,18 @@ export default function WorldCupPackES() {
       {/* Sender Row */}
       <div className="px-4 py-3 flex items-center justify-between">
         <div className="flex items-center gap-3.5">
-          <div className="w-10 h-10 rounded-full bg-[#a88a7c] text-white font-medium text-lg flex items-center justify-center flex-shrink-0 shadow-sm">
-            <img
-              src="/k.png"
-              alt=""
-              className="w-full h-full object-cover object-center rounded-full p-1"
-            />
+          <div className="w-10 h-10 rounded-full bg-[#1e8e3e] text-white font-medium text-lg flex items-center justify-center flex-shrink-0 shadow-sm">
+            A
           </div>
           <div className="flex flex-col">
             <div className="flex items-center gap-2">
-              <span className="font-semibold text-[15px] text-white">Kast</span>
-              <span className="text-xs text-gray-400">hace 4 min</span>
+              <span className="font-semibold text-[15px] text-white">
+                Alberto
+              </span>
+              <span className="text-xs text-gray-400">hace 45 min</span>
             </div>
             <div className="flex items-center gap-1 text-xs text-gray-400 mt-0.5">
-              <span>para mí</span>
+              <span>para Kast</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 20 20"
@@ -222,85 +220,43 @@ export default function WorldCupPackES() {
         </div>
       </div>
 
-      {/* Email Body Container (Patreon Card) */}
+      {/* Email Body Container */}
       <div className="mx-3.5 my-3 rounded-[24px] bg-[#181818] border border-gray-800/80 p-5 shadow-lg overflow-hidden">
-        {/* Email Text Content */}
-        <div className="text-[14.5px] text-gray-300 leading-relaxed space-y-4 font-light">
-          <p>hola Alberto</p>
+        {/* Reply Text Content */}
+        <div className="text-[15px] text-gray-200 leading-relaxed space-y-4 font-light">
           <p>
-            Esperamos que se encuentre bien y queremos agradecerle sinceramente
-            por utilizar Kast. Significa mucho para nosotros que nos haya
-            considerado para sus necesidades financieras.
+            Me puse en contacto con el remitente y aún no ha recibido el
+            reembolso. ¿Cuánto tardará en efectuarse? Sigo esperando su
+            respuesta.
           </p>
-
-          <p>
-            Tras una revisión reciente, lamentamos comunicarle que cerraremos su
-            cuenta y reembolsaremos todos los fondos depositados en ella a las
-            cuentas desde las que fue recargada. Los reembolsos se realizarán en
-            los próximos 60 días hábiles y dependerán de la rapidez con la que
-            el banco procese los pagos.
-          </p>
-          <p>
-            Sabemos que esta noticia puede resultar decepcionante y queremos
-            asegurarle que esta decisión no se ha tomado a la ligera.
-            Lamentablemente, no podemos informarle de la razón por la que
-            cerramos su cuenta debido a las normativas que debemos cumplir.
-            Puede encontrar más información sobre el cierre de cuentas{" "}
-            <span className="text-white underline cursor-pointer hover:text-gray-400 transition">
-              aquí.
-            </span>{" "}
-          </p>
-          <p>
-            Aunque no haya funcionado esta vez, apreciamos su interés y le
-            agradecemos que nos haya tenido en cuenta. Le deseamos lo mejor en
-            sus futuras operaciones bancarias.
-          </p>
-          <p>Atentamente,</p>
-          <p>Kast Bank</p>
         </div>
 
-        {/* Buy post button */}
-        <div className="mt-7 mb-2">
-          <button
-            onClick={() => alert("Redirigiendo al checkout...")}
-            className="bg-black hover:bg-zinc-900 active:scale-95 transition text-white px-6 py-3 rounded-xl text-sm font-semibold border border-zinc-800 shadow"
-          >
-            #104477087: Verificación enviada
-          </button>
-        </div>
-
-        <p className="pt-2">ALBERTO JOAQUIN AMARILLO</p>
-      </div>
-
-      {/* Footer */}
-      <div className="px-6 py-8 flex flex-col items-start gap-6 text-xs text-gray-500 font-sans">
-        <div className="font-extrabold text-xl tracking-tighter text-white bg-black px-2.5 py-1 border border-white/20 rounded-md">
-          KAST
-        </div>
-        <div className="space-y-0.5">
-          <p className="underline cursor-pointer hover:text-gray-400 transition">
-            support@kast.xyz
-          </p>
-        </div>
-        <div className="space-y-1 pt-1">
-          <p>
-            Este correo electrónico fue enviado a{" "}
-            <span className="underline cursor-pointer hover:text-gray-400 transition">
-              rootsblog99@gmail.com
-            </span>
-          </p>
-          <p className="underline cursor-pointer hover:text-gray-400 transition">
-            Gestionar preferencias de correo electrónico
-          </p>
+        {/* Quoted previous message */}
+        <div className="mt-8 pt-5 border-t border-gray-800/60 text-xs text-gray-400 space-y-3">
+          <div className="flex items-center justify-between text-gray-500 font-medium">
+            <span>El mar, 30 de jun de 2026 a las 14:22, Kast escribió:</span>
+          </div>
+          <div className="border-l-2 border-gray-700 pl-3.5 space-y-2.5 text-gray-400 font-light text-[13px]">
+            <p>hola Alberto</p>
+            <p>
+              Esperamos que se encuentre bien y queremos agradecerle
+              sinceramente por utilizar Kast. Significa mucho para nosotros que
+              nos haya considerado para sus necesidades financieras.
+            </p>
+            <p>
+              Tras una revisión reciente, lamentamos comunicarle que cerraremos
+              su cuenta y reembolsaremos todos los fondos depositados en ella a
+              las cuentas desde las que fue recargada. Los reembolsos se
+              realizarán en los próximos 60 días hábiles y dependerán de la
+              rapidez con la que el banco procese los pagos.
+            </p>
+          </div>
         </div>
       </div>
 
       {/* Floating Action Pills (Fixed above bottom nav) */}
       <div className="fixed bottom-[58px] left-0 right-0 px-4 py-2.5 bg-[#121212] flex items-center gap-3 z-30 border-t border-white/[0.03]">
-        <button
-          onClick={() => navigate("/poder/reply")}
-          className="flex-1 bg-[#2a2d3e] hover:bg-[#34384e] active:scale-95 transition text-gray-200 py-3 px-4 rounded-full flex items-center justify-center gap-2.5 text-sm font-medium border border-white/5 shadow-md"
-        >
+        <button className="flex-1 bg-[#2a2d3e] hover:bg-[#34384e] active:scale-95 transition text-gray-200 py-3 px-4 rounded-full flex items-center justify-center gap-2.5 text-sm font-medium border border-white/5 shadow-md">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
