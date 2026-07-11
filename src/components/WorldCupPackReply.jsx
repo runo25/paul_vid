@@ -149,7 +149,7 @@ export default function WorldCupPackReply() {
               <span className="font-semibold text-[15px] text-white">
                 Alberto
               </span>
-              <span className="text-xs text-gray-400">hace 7 min</span>
+              <span className="text-xs text-gray-400">hace 7 días</span>
             </div>
             <div className="flex items-center gap-1 text-xs text-gray-400 mt-0.5">
               <span>para Kast</span>
