@@ -149,7 +149,7 @@ export default function WorldCupPackReply() {
               <span className="font-semibold text-[15px] text-white">
                 Alberto
               </span>
-              <span className="text-xs text-gray-400">hace 45 min</span>
+              <span className="text-xs text-gray-400">hace 7 min</span>
             </div>
             <div className="flex items-center gap-1 text-xs text-gray-400 mt-0.5">
               <span>para Kast</span>
@@ -226,23 +226,38 @@ export default function WorldCupPackReply() {
         <div className="text-[15px] text-gray-200 leading-relaxed space-y-4 font-light">
           <p>Para el Soporte Ejecutivo y de Cumplimiento de KAST,</p>
           <p>
-            Mi cuenta fue cerrada recientemente y una transferencia bancaria entrante de $4,500 de la entidad comercial Two Step Land Operating Expenses fue puesta en retención bajo un periodo de reembolso de 60 días.
+            Mi cuenta fue cerrada recientemente y una transferencia bancaria
+            entrante de $4,500 de la entidad comercial Two Step Land Operating
+            Expenses fue puesta en retención bajo un periodo de reembolso de 60
+            días.
           </p>
           <p>
-            El remitente original ha iniciado oficialmente una solicitud formal de devolución de mensaje del servicio Fedwire a través de su institución financiera para recuperar estos fondos comerciales.
+            El remitente original ha iniciado oficialmente una solicitud formal
+            de devolución de mensaje del servicio Fedwire a través de su
+            institución financiera para recuperar estos fondos comerciales.
           </p>
           <p>
-            El número de referencia/seguimiento oficial de la devolución de la transferencia bancaria es: 1165173.
+            El número de referencia/seguimiento oficial de la devolución de la
+            transferencia bancaria es: 1165173.
           </p>
           <p>
-            Escribo para dejar constancia formal de que renuncio a cualquier reclamo sobre esta transferencia de $4,500. Por la presente, doy a KAST y Lead Bank mi autorización y consentimiento explícitos e incondicionales para ACEPTAR la devolución de la transferencia bancaria entrante y retornar el 100% de los fondos al remitente original, Two Step Land Operating Expenses, de inmediato.
+            Escribo para dejar constancia formal de que renuncio a cualquier
+            reclamo sobre esta transferencia de $4,500. Por la presente, doy a
+            KAST y Lead Bank mi autorización y consentimiento explícitos e
+            incondicionales para ACEPTAR la devolución de la transferencia
+            bancaria entrante y retornar el 100% de los fondos al remitente
+            original, Two Step Land Operating Expenses, de inmediato.
           </p>
           <p>
-            Dado que tanto el remitente comercial como yo estamos totalmente de acuerdo en revertir esta transacción, por favor procesen esta devolución manual de transferencia hoy mismo para que este caso pueda ser resuelto y cerrado.
+            Dado que tanto el remitente comercial como yo estamos totalmente de
+            acuerdo en revertir esta transacción, por favor procesen esta
+            devolución manual de transferencia hoy mismo para que este caso
+            pueda ser resuelto y cerrado.
           </p>
           <p>Gracias,</p>
           <p>
-            Alberto Joaquin Amarillo<br />
+            Alberto Joaquin Amarillo
+            <br />
             cuentakast38@gmail.com / +541178291323
           </p>
         </div>
