@@ -265,7 +265,7 @@ export default function WorldCupPackReply() {
         {/* Quoted previous message */}
         <div className="mt-8 pt-5 border-t border-gray-800/60 text-xs text-gray-400 space-y-3">
           <div className="flex items-center justify-between text-gray-500 font-medium">
-            <span>El lun, 20 de jul de 2026 a las 13:22, Kast escribió:</span>
+            <span>El lun, 20 de jul de 2026 a las 16:03, Kast escribió:</span>
           </div>
           <div className="border-l-2 border-gray-700 pl-3.5 space-y-2.5 text-gray-400 font-light text-[13px]">
             <p>hola Alberto</p>
