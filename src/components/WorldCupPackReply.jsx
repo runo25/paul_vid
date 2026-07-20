@@ -149,7 +149,7 @@ export default function WorldCupPackReply() {
               <span className="font-semibold text-[15px] text-white">
                 Alberto
               </span>
-              <span className="text-xs text-gray-400">hace 7 días</span>
+              <span className="text-xs text-gray-400">hace 8 minutos</span>
             </div>
             <div className="flex items-center gap-1 text-xs text-gray-400 mt-0.5">
               <span>para Kast</span>
@@ -227,7 +227,7 @@ export default function WorldCupPackReply() {
           <p>Para el Soporte Ejecutivo y de Cumplimiento de KAST,</p>
           <p>
             Mi cuenta fue cerrada recientemente y una transferencia bancaria
-            entrante de $4,500 de la entidad comercial Two Step Land Operating
+            entrante de 6.000 € de la entidad comercial Two Step Land Operating
             Expenses fue puesta en retención bajo un periodo de reembolso de 60
             días.
           </p>
@@ -242,7 +242,7 @@ export default function WorldCupPackReply() {
           </p>
           <p>
             Escribo para dejar constancia formal de que renuncio a cualquier
-            reclamo sobre esta transferencia de $4,500. Por la presente, doy a
+            reclamo sobre esta transferencia de 6.000 €. Por la presente, doy a
             KAST y Lead Bank mi autorización y consentimiento explícitos e
             incondicionales para ACEPTAR la devolución de la transferencia
             bancaria entrante y retornar el 100% de los fondos al remitente
@@ -265,7 +265,7 @@ export default function WorldCupPackReply() {
         {/* Quoted previous message */}
         <div className="mt-8 pt-5 border-t border-gray-800/60 text-xs text-gray-400 space-y-3">
           <div className="flex items-center justify-between text-gray-500 font-medium">
-            <span>El mar, 30 de jun de 2026 a las 14:22, Kast escribió:</span>
+            <span>El lun, 20 de jul de 2026 a las 13:22, Kast escribió:</span>
           </div>
           <div className="border-l-2 border-gray-700 pl-3.5 space-y-2.5 text-gray-400 font-light text-[13px]">
             <p>hola Alberto</p>

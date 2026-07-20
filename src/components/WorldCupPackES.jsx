@@ -151,7 +151,7 @@ export default function WorldCupPackES() {
           <div className="flex flex-col">
             <div className="flex items-center gap-2">
               <span className="font-semibold text-[15px] text-white">Kast</span>
-              <span className="text-xs text-gray-400">hace 3 días</span>
+              <span className="text-xs text-gray-400">hace 1 hora</span>
             </div>
             <div className="flex items-center gap-1 text-xs text-gray-400 mt-0.5">
               <span>para mí</span>
