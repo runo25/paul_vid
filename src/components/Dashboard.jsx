@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { dashboardData, transactions, notificationsData } from "../data";
-import { KastLogo, AwardsBannerSvg, CardChip, VisaLogo, ContactlessWave } from "./Vectors";
+import { KastLogo, LeaderboardBanner, CardChip, VisaLogo, ContactlessWave } from "./Vectors";
 import BottomNav from "./BottomNav";
 
 export default function Dashboard() {
@@ -184,9 +184,9 @@ export default function Dashboard() {
           </div>
         </Link>
 
-        {/* Precision Awards & Season Leaderboard (replaces blurry awards.png) */}
+        {/* Ultra-Luxury 3D Leaderboard Banner (replaces blurry awards.png) */}
         <Link to="/power" className="block mb-6 btn-press">
-          <AwardsBannerSvg />
+          <LeaderboardBanner />
         </Link>
 
         {/* Recent Activity / Transactions Section */}

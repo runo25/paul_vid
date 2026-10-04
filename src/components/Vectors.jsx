@@ -10,9 +10,7 @@ export function KastLogo({ className = "w-6 h-6", color = "currentColor" }) {
   return (
     <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
       <rect width="48" height="48" rx="14" fill="#0f0f13" />
-      {/* Outer subtle glow ring */}
       <rect x="0.5" y="0.5" width="47" height="47" rx="13.5" stroke="rgba(255,255,255,0.08)" />
-      {/* Geometric K glyph with aerodynamic facets */}
       <path
         d="M14 11C14 10.4477 14.4477 10 15 10H19C19.5523 10 20 10.4477 20 11V37C20 37.5523 19.5523 38 19 38H15C14.4477 38 14 37.5523 14 37V11Z"
         fill={color}
@@ -49,82 +47,43 @@ export function KastGlyph({ className = "w-5 h-5", color = "#ffffff" }) {
   );
 }
 
-// Precision Awards & Leaderboard Banner (replaces blurry awards.png)
-export function AwardsBannerSvg({ className = "w-full" }) {
+// Ultra-Luxury 3D Leaderboard Banner (Photorealistic Gold Championship Trophy)
+export function LeaderboardBanner({ className = "w-full" }) {
   return (
-    <div className={`relative overflow-hidden rounded-[24px] border border-white/10 bg-gradient-to-br from-[#1c182a] via-[#100d1c] to-[#0a0812] p-5 shadow-2xl ${className}`}>
-      {/* Ambient background glow */}
-      <div className="absolute -top-12 -right-12 w-48 h-48 bg-[#9353d3]/20 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute -bottom-8 -left-8 w-40 h-40 bg-[#f5a524]/15 rounded-full blur-2xl pointer-events-none" />
+    <div className={`relative overflow-hidden rounded-[26px] border border-amber-500/20 bg-gradient-to-br from-[#121114] via-[#0d0c10] to-[#08080a] shadow-[0_12px_36px_rgba(0,0,0,0.6)] group transition-all duration-300 hover:border-amber-500/40 hover:shadow-[0_16px_40px_rgba(245,158,11,0.12)] ${className}`}>
+      {/* Ambient golden & emerald specular glow */}
+      <div className="absolute top-0 right-10 w-48 h-48 bg-amber-500/[0.08] rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-32 h-32 bg-emerald-500/[0.05] rounded-full blur-2xl pointer-events-none" />
 
-      <div className="relative z-10 flex items-center justify-between gap-4">
-        <div className="flex flex-col flex-1 pr-2">
-          <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-gradient-to-r from-amber-500/20 to-purple-500/20 border border-amber-500/30 text-amber-300 text-[11px] font-semibold tracking-wider uppercase mb-2 w-max">
-            <svg className="w-3 h-3 text-amber-400" viewBox="0 0 20 20" fill="currentColor">
-              <path fillRule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z" clipRule="evenodd" />
-            </svg>
-            SEASON LEADERBOARD
+      <div className="relative z-10 flex items-center justify-between p-5 pb-6">
+        {/* Left Copy */}
+        <div className="flex flex-col justify-center flex-1 pr-2 z-10">
+          <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-amber-400/10 border border-amber-400/30 text-[10px] font-bold tracking-wider text-amber-300 uppercase mb-2 w-max">
+            <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
+            Season 1 • $50K Pool
           </div>
-          <h4 className="text-white text-[17px] font-bold tracking-tight leading-snug">
-            KAST Elite Rewards
-          </h4>
-          <p className="text-gray-400 text-[12px] leading-relaxed mt-1">
-            Top transactors earn 5% APY yield boost & VIP concierge access.
+          <h3 className="text-white text-[19px] font-bold tracking-tight leading-snug group-hover:text-amber-300 transition-colors">
+            Global Leaderboard
+          </h3>
+          <p className="text-gray-400 text-[12px] font-normal leading-relaxed mt-0.5">
+            Rank #3 • Top Referrers & Volume
           </p>
-          <div className="flex items-center gap-3 mt-3">
-            <span className="text-emerald-400 text-xs font-semibold flex items-center gap-1">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-              Tier 1 Status Active
-            </span>
-          </div>
         </div>
 
-        {/* 3D Vector Trophy & Medal artwork */}
-        <div className="relative w-24 h-24 flex-shrink-0 flex items-center justify-center">
-          <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full drop-shadow-[0_10px_20px_rgba(245,197,24,0.3)]">
-            <defs>
-              <linearGradient id="goldCup" x1="20" y1="20" x2="80" y2="80" gradientUnits="userSpaceOnUse">
-                <stop stopColor="#FFE066" />
-                <stop offset="0.45" stopColor="#F5C518" />
-                <stop offset="1" stopColor="#C48805" />
-              </linearGradient>
-              <linearGradient id="goldBase" x1="30" y1="65" x2="70" y2="90" gradientUnits="userSpaceOnUse">
-                <stop stopColor="#F5C518" />
-                <stop offset="1" stopColor="#8A5A00" />
-              </linearGradient>
-              <linearGradient id="purpleRing" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse">
-                <stop stopColor="#B37FEB" />
-                <stop offset="1" stopColor="#531DAB" />
-              </linearGradient>
-            </defs>
-
-            {/* Glowing backdrop halo */}
-            <circle cx="50" cy="50" r="42" fill="url(#purpleRing)" fillOpacity="0.25" stroke="rgba(255,255,255,0.15)" strokeWidth="1.5" />
-            
-            {/* Sparkles */}
-            <path d="M78 22L80 16L82 22L88 24L82 26L80 32L78 26L72 24L78 22Z" fill="#FFF7CC" opacity="0.9" />
-            <path d="M18 42L19.5 38L21 42L25 43.5L21 45L19.5 49L18 45L14 43.5L18 42Z" fill="#FFF7CC" opacity="0.8" />
-
-            {/* Trophy Handles */}
-            <path d="M26 30C20 30 18 39 23 46C27 51 34 52 36 53" stroke="url(#goldCup)" strokeWidth="4.5" strokeLinecap="round" />
-            <path d="M74 30C80 30 82 39 77 46C73 51 66 52 64 53" stroke="url(#goldCup)" strokeWidth="4.5" strokeLinecap="round" />
-
-            {/* Trophy Cup */}
-            <path
-              d="M30 24C30 22.9 30.9 22 32 22H68C69.1 22 70 22.9 70 24V40C70 51 61 58 50 58C39 58 30 51 30 40V24Z"
-              fill="url(#goldCup)"
-            />
-            {/* Trophy Stem */}
-            <path d="M46 58H54V70H46V58Z" fill="url(#goldBase)" />
-            {/* Trophy Base */}
-            <path
-              d="M34 70C34 68.9 34.9 68 36 68H64C65.1 68 66 68.9 66 70L68 78C68 79.1 67.1 80 66 80H34C32.9 80 32 79.1 32 78L34 70Z"
-              fill="url(#goldBase)"
-            />
-            {/* Star on Cup */}
-            <polygon points="50,30 52.5,36 59,36.5 54,41 55.5,47 50,43.5 44.5,47 46,41 41,36.5 47.5,36" fill="#FFFFFF" opacity="0.9" />
-          </svg>
+        {/* Right 3D Gold Artwork */}
+        <div className="relative w-32 h-24 flex-shrink-0 flex items-center justify-end overflow-hidden rounded-2xl">
+          <img
+            src="/luxury_trophy_banner.jpg"
+            alt="3D Gold Championship Trophy"
+            className="w-full h-full object-cover filter contrast-110 drop-shadow-[0_10px_20px_rgba(0,0,0,0.9)] transform group-hover:scale-105 transition-transform duration-500"
+          />
         </div>
+      </div>
+
+      {/* Carousel Pagination Indicator Pills */}
+      <div className="absolute bottom-2.5 left-1/2 -translate-x-1/2 flex items-center gap-1.5 z-10">
+        <div className="w-6 h-1 rounded-full bg-amber-400 shadow-[0_0_8px_rgba(245,158,11,0.6)]" />
+        <div className="w-4 h-1 rounded-full bg-white/20" />
       </div>
     </div>
   );
@@ -137,7 +96,6 @@ export function FlagUS({ className = "w-6 h-6" }) {
       <rect width="60" height="40" fill="#BD3D44" />
       <path d="M0 3.08h60v3.08H0zm0 6.15h60v3.08H0zm0 6.15h60v3.08H0zm0 6.15h60v3.08H0zm0 6.15h60v3.08H0zm0 6.15h60v3.08H0z" fill="#FFF" />
       <rect width="26" height="21.5" fill="#192F5D" />
-      {/* 5-Star constellation */}
       <circle cx="5" cy="4" r="1.1" fill="#FFF" />
       <circle cx="13" cy="4" r="1.1" fill="#FFF" />
       <circle cx="21" cy="4" r="1.1" fill="#FFF" />
@@ -284,7 +242,6 @@ export function CardChip({ className = "w-10 h-8" }) {
       </defs>
       <rect width="44" height="34" rx="6" fill="url(#chipGold)" />
       <rect x="1" y="1" width="42" height="32" rx="5" stroke="#FBBF24" strokeWidth="0.8" opacity="0.6" />
-      {/* Circuit lines */}
       <path d="M0 11H14C16.2 11 18 12.8 18 15V19C18 21.2 16.2 23 14 23H0" stroke="#78350F" strokeWidth="1.2" />
       <path d="M44 11H30C27.8 11 26 12.8 26 15V19C26 21.2 27.8 23 30 23H44" stroke="#78350F" strokeWidth="1.2" />
       <path d="M22 0V13M22 21V34" stroke="#78350F" strokeWidth="1.2" />
@@ -305,20 +262,21 @@ export function ContactlessWave({ className = "w-5 h-5", color = "currentColor" 
 
 export function VisaLogo({ className = "w-12 h-4" }) {
   return (
-    <svg viewBox="0 0 120 38" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
-      <path
-        d="M48.2 2.5L34.1 36.2H25.4L15.5 8.9C14.9 6.6 14.4 5.8 12.6 4.7C9.8 3.2 4.7 1.8 0 0.8L0.4 0H14.8C16.7 0 18.4 1.3 18.8 3.5L22.4 22.8L31.2 0H40L48.2 2.5Z"
+    <svg viewBox="0 0 80 24" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+      <text
+        x="50%"
+        y="58%"
+        dominantBaseline="middle"
+        textAnchor="middle"
         fill="#FFFFFF"
-      />
-      <path d="M59.6 0.8L51.8 36.2H43.5L51.3 0.8H59.6Z" fill="#FFFFFF" />
-      <path
-        d="M87.2 13.4C87.3 8.3 82.7 6.1 76.6 6C71 5.9 66.3 7.8 63.8 9.3L65.4 16.5C67.8 15.3 71.5 14.2 75.3 14.3C78.4 14.4 80.4 15.5 80.4 17.3C80.4 18.9 78.4 19.8 74.5 20.9C68.9 22.4 62.7 24.5 62.8 30.5C62.9 35.8 67.5 39 74.3 39C78.7 39 82.5 37.9 84.7 36.8L83.2 29.8C81.2 30.8 78 31.8 74.4 31.8C71.7 31.8 69.8 30.8 69.8 29.1C69.8 27.5 71.9 26.5 75.8 25.3C81.5 23.6 87.1 21.2 87.2 13.4Z"
-        fill="#FFFFFF"
-      />
-      <path
-        d="M109.8 11.8L114.7 2.5L106.8 2.5C104.9 2.5 103.3 3.6 102.6 5.3L87.7 36.2H96.4L98.1 31.5H108.7L109.8 36.2H117.5L109.8 11.8ZM100.4 25.1L104.2 14.5L106.4 25.1H100.4Z"
-        fill="#FFFFFF"
-      />
+        fontFamily="system-ui, -apple-system, sans-serif"
+        fontWeight="900"
+        fontStyle="italic"
+        fontSize="20"
+        letterSpacing="1.5"
+      >
+        VISA
+      </text>
     </svg>
   );
 }
@@ -328,22 +286,14 @@ export function PrecisionQrSvg({ className = "w-48 h-48", value = "kast:@user_cs
   return (
     <div className={`p-3 bg-white rounded-2xl flex items-center justify-center shadow-lg relative ${className}`}>
       <svg viewBox="0 0 120 120" className="w-full h-full" fill="none">
-        {/* Background */}
         <rect width="120" height="120" rx="8" fill="#FFFFFF" />
-        
-        {/* Top-Left Finder */}
         <rect x="10" y="10" width="30" height="30" rx="6" stroke="#000000" strokeWidth="4" />
         <rect x="19" y="19" width="12" height="12" rx="2" fill="#000000" />
-        
-        {/* Top-Right Finder */}
         <rect x="80" y="10" width="30" height="30" rx="6" stroke="#000000" strokeWidth="4" />
         <rect x="89" y="19" width="12" height="12" rx="2" fill="#000000" />
-        
-        {/* Bottom-Left Finder */}
         <rect x="10" y="80" width="30" height="30" rx="6" stroke="#000000" strokeWidth="4" />
         <rect x="19" y="89" width="12" height="12" rx="2" fill="#000000" />
 
-        {/* Dense Matrix Data Elements */}
         <g fill="#000000">
           <rect x="46" y="12" width="4" height="4" rx="1" />
           <rect x="54" y="12" width="4" height="4" rx="1" />
@@ -413,7 +363,6 @@ export function PrecisionQrSvg({ className = "w-48 h-48", value = "kast:@user_cs
           <rect x="94" y="104" width="4" height="4" rx="1" />
         </g>
 
-        {/* Center KAST Badge */}
         <circle cx="60" cy="60" r="14" fill="#000000" stroke="#FFFFFF" strokeWidth="2.5" />
         <g transform="translate(52, 52) scale(0.5)">
           <path d="M4 3C4 2.4 4.4 2 5 2H8C8.6 2 9 2.4 9 3V21C9 21.6 8.6 22 8 22H5C4.4 22 4 21.6 4 21V3Z" fill="#00E57A" />

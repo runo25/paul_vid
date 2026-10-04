@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { cardData } from "../data";
 import { KastLogo, CardChip, ContactlessWave, VisaLogo } from "./Vectors";
 import BottomNav from "./BottomNav";
@@ -258,6 +259,28 @@ export default function Cards() {
               </button>
             </div>
           </div>
+
+          {/* Upgrade to KAST Elite Black Showcase */}
+          <Link
+            to="/power"
+            className="block p-4 rounded-2xl bg-gradient-to-r from-[#1f1910] via-[#120f0a] to-[#0a0805] border border-amber-500/30 shadow-lg mt-5 mb-2 btn-press"
+          >
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-xl bg-amber-400/20 border border-amber-400/40 flex items-center justify-center text-lg flex-shrink-0">
+                  👑
+                </div>
+                <div>
+                  <div className="flex items-center gap-1.5">
+                    <span className="text-xs font-bold text-amber-200">KAST Elite Damascus Card</span>
+                    <span className="text-[9px] font-black px-1.5 py-0.5 rounded bg-amber-400/20 text-amber-300 font-mono">5% BACK</span>
+                  </div>
+                  <div className="text-[11px] text-gray-400">24K Gold Inlaid • VIP Concierge & LoungeKey</div>
+                </div>
+              </div>
+              <span className="text-amber-400 text-xs font-bold flex-shrink-0">Explore →</span>
+            </div>
+          </Link>
         </div>
       </div>
 

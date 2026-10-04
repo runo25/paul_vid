@@ -53,8 +53,8 @@ export default function BottomNav() {
       label: "Power",
       active: path === "/power",
       icon: (active) => (
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={active ? "2.2" : "1.8"} stroke="currentColor" className="w-5 h-5">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0 0 12 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75Z" />
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill={active ? "#f59e0b" : "none"} stroke={active ? "#f59e0b" : "currentColor"} strokeWidth={active ? "0" : "1.8"} className="w-5 h-5">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
         </svg>
       )
     }
@@ -65,18 +65,23 @@ export default function BottomNav() {
       <nav className="w-full max-w-[440px] pointer-events-auto bg-[#0a0a0d]/90 backdrop-blur-xl border-t border-white/[0.08] flex items-center justify-between px-5 py-2.5 pb-6">
         {navItems.map((item) => {
           const isActive = item.active;
+          const isPower = item.label === "Power";
           return (
             <Link
               key={item.label}
               to={item.to}
               className={`flex flex-col items-center gap-1 transition-all duration-200 btn-press px-3 py-1 rounded-xl ${
-                isActive ? "text-white" : "text-gray-400 hover:text-gray-200"
+                isActive ? (isPower ? "text-amber-400 font-bold" : "text-white font-bold") : "text-gray-400 hover:text-gray-200"
               }`}
             >
               <div className="relative">
                 {item.icon(isActive)}
                 {isActive && (
-                  <span className="absolute -bottom-1.5 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-[#00e57a]" />
+                  <span
+                    className={`absolute -bottom-1.5 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full ${
+                      isPower ? "bg-amber-400 shadow-[0_0_6px_#f59e0b]" : "bg-[#00e57a]"
+                    }`}
+                  />
                 )}
               </div>
               <span className={`text-[11px] font-medium tracking-tight ${isActive ? "text-white font-semibold" : "text-gray-400"}`}>
