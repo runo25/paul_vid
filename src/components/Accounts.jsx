@@ -64,43 +64,23 @@ export default function Accounts() {
         </h3>
 
         <div className="flex flex-col gap-3 mb-6">
-          {/* USD Checking Account */}
-          <div className="bg-[#111115] border border-white/[0.06] rounded-[20px] p-4 flex items-center justify-between hover:border-white/15 transition shadow-sm">
+          {/* EUR SEPA Account - PRIMARY */}
+          <div className="bg-[#111115] border border-emerald-500/30 rounded-[20px] p-4 flex items-center justify-between hover:border-emerald-500/50 transition shadow-sm">
             <div className="flex items-center gap-3.5">
-              <FlagUS className="w-9 h-9" />
+              <FlagEU className="w-9 h-9" />
               <div className="flex flex-col">
                 <div className="flex items-center gap-2">
-                  <span className="text-[15px] font-semibold text-white">USD Checking</span>
+                  <span className="text-[15px] font-semibold text-white">EUR SEPA Account</span>
                   <span className="px-1.5 py-0.5 rounded text-[10px] font-bold bg-emerald-500/20 text-emerald-400">PRIMARY</span>
                 </div>
-                <span className="text-xs text-gray-400">{bankData.bankName} ···7073</span>
+                <span className="text-xs text-gray-400">Kast Europe ···0189</span>
               </div>
             </div>
             <div className="flex flex-col items-end gap-1">
               <span className="text-[15px] font-semibold text-white font-display">{dashboardData.balance}</span>
-              <Link
-                to="/receive/usd"
-                className="text-[11px] font-semibold text-emerald-400 hover:text-emerald-300 transition"
-              >
-                View Details →
-              </Link>
-            </div>
-          </div>
-
-          {/* EUR SEPA Account */}
-          <div className="bg-[#111115] border border-white/[0.06] rounded-[20px] p-4 flex items-center justify-between hover:border-white/15 transition shadow-sm">
-            <div className="flex items-center gap-3.5">
-              <FlagEU className="w-9 h-9" />
-              <div className="flex flex-col">
-                <span className="text-[15px] font-semibold text-white">EUR Euro Account</span>
-                <span className="text-xs text-gray-400">SEPA IBAN ···0189</span>
-              </div>
-            </div>
-            <div className="flex flex-col items-end gap-1">
-              <span className="text-[15px] font-semibold text-white font-display">€0.00</span>
               <button
                 onClick={() => setSelectedAccount({
-                  title: "EUR SEPA Account",
+                  title: "EUR SEPA Account (Primary)",
                   holder: bankData.eurAccountName,
                   iban: bankData.eurIban,
                   bic: bankData.eurBic,
@@ -111,6 +91,26 @@ export default function Accounts() {
               >
                 View Details →
               </button>
+            </div>
+          </div>
+
+          {/* USD Checking Account */}
+          <div className="bg-[#111115] border border-white/[0.06] rounded-[20px] p-4 flex items-center justify-between hover:border-white/15 transition shadow-sm">
+            <div className="flex items-center gap-3.5">
+              <FlagUS className="w-9 h-9" />
+              <div className="flex flex-col">
+                <span className="text-[15px] font-semibold text-white">USD Checking</span>
+                <span className="text-xs text-gray-400">{bankData.bankName} ···7073</span>
+              </div>
+            </div>
+            <div className="flex flex-col items-end gap-1">
+              <span className="text-[15px] font-semibold text-white font-display">$0.00</span>
+              <Link
+                to="/receive/usd"
+                className="text-[11px] font-semibold text-emerald-400 hover:text-emerald-300 transition"
+              >
+                View Details →
+              </Link>
             </div>
           </div>
 
@@ -159,7 +159,7 @@ export default function Accounts() {
             </div>
             <div className="text-right">
               <div className="text-sm font-semibold text-white font-display">0.00 USDC</div>
-              <div className="text-xs text-gray-500">$0.00 USD</div>
+              <div className="text-xs text-gray-500">€0.00 EUR</div>
             </div>
           </div>
 
@@ -173,7 +173,7 @@ export default function Accounts() {
             </div>
             <div className="text-right">
               <div className="text-sm font-semibold text-white font-display">0.00 USDT</div>
-              <div className="text-xs text-gray-500">$0.00 USD</div>
+              <div className="text-xs text-gray-500">€0.00 EUR</div>
             </div>
           </div>
 
@@ -187,7 +187,7 @@ export default function Accounts() {
             </div>
             <div className="text-right">
               <div className="text-sm font-semibold text-white font-display">0.00 SOL</div>
-              <div className="text-xs text-gray-500">$0.00 USD</div>
+              <div className="text-xs text-gray-500">€0.00 EUR</div>
             </div>
           </div>
 
@@ -201,7 +201,7 @@ export default function Accounts() {
             </div>
             <div className="text-right">
               <div className="text-sm font-semibold text-white font-display">0.00 ETH</div>
-              <div className="text-xs text-gray-500">$0.00 USD</div>
+              <div className="text-xs text-gray-500">€0.00 EUR</div>
             </div>
           </div>
 
@@ -215,7 +215,7 @@ export default function Accounts() {
             </div>
             <div className="text-right">
               <div className="text-sm font-semibold text-white font-display">0.00 BTC</div>
-              <div className="text-xs text-gray-500">$0.00 USD</div>
+              <div className="text-xs text-gray-500">€0.00 EUR</div>
             </div>
           </div>
         </div>

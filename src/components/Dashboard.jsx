@@ -193,7 +193,7 @@ export default function Dashboard() {
         <div className="bg-[#111115] border border-white/[0.06] rounded-[24px] p-5 shadow-xl">
           <div className="flex items-center justify-between mb-4">
             <h3 className="font-bold text-[15px] text-white tracking-tight">Recent Activity</h3>
-            <span className="text-[11px] font-semibold text-gray-400 tracking-wider uppercase">JUNE 2026</span>
+            <span className="text-[11px] font-semibold text-gray-400 tracking-wider uppercase">OCTOBER 2026</span>
           </div>
 
           <div className="flex flex-col divide-y divide-white/[0.04]">

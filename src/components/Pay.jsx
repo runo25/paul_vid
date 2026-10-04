@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { dashboardData, transactions } from "../data";
-import { KastLogo, UsdcIcon, FlagUS } from "./Vectors";
+import { KastLogo, UsdcIcon, FlagEU } from "./Vectors";
 import BottomNav from "./BottomNav";
 
 export default function Pay() {
@@ -43,17 +43,17 @@ export default function Pay() {
       // Create new transaction in data
       const newTx = {
         id: "tx_" + Date.now(),
-        title: paymentMethod === "kast" ? "Sent to KAST User" : paymentMethod === "bank" ? "Bank Wire Transfer" : "Crypto Withdrawal",
+        title: paymentMethod === "kast" ? "Sent to KAST User" : paymentMethod === "bank" ? "SEPA Instant Transfer" : "Crypto Withdrawal",
         toFrom: recipient ? `To ${recipient}` : "To External Recipient",
-        amount: `- ${parseFloat(amount).toFixed(2)} USD`,
+        amount: `- ${parseFloat(amount).toFixed(2)} EUR`,
         type: "out",
         status: "completed",
         dateTime: "Just now",
-        month: "JUNE 2026",
+        month: "OCTOBER 2026",
         category: "Transfer",
         reference: `KAST-${Date.now().toString().slice(-6)}`,
-        fee: "$0.00",
-        account: "Virtual USD Account"
+        fee: "€0.00",
+        account: "SEPA EUR Account"
       };
       transactions.unshift(newTx);
     }, 1500);
@@ -72,10 +72,10 @@ export default function Pay() {
 
         <h2 className="text-2xl font-bold mb-1">Transfer Completed!</h2>
         <p className="text-gray-400 text-sm mb-2">
-          You sent <span className="text-white font-semibold font-display">${parseFloat(amount).toFixed(2)} USD</span>
+          You sent <span className="text-white font-semibold font-display">€{parseFloat(amount).toFixed(2)} EUR</span>
         </p>
         <p className="text-xs text-gray-500 mb-8">
-          Recipient: {recipient || "@user_external"} · Fee: $0.00
+          Recipient: {recipient || "@user_external"} · Fee: €0.00
         </p>
 
         <div className="w-full flex flex-col gap-3">
@@ -128,7 +128,7 @@ export default function Pay() {
               paymentMethod === "bank" ? "bg-white text-black shadow" : "text-gray-400 hover:text-white"
             }`}
           >
-            Bank Wire
+            SEPA Bank
           </button>
           <button
             onClick={() => setPaymentMethod("crypto")}
@@ -144,7 +144,7 @@ export default function Pay() {
         <div className="bg-[#111115] border border-white/[0.06] rounded-2xl p-3.5 mb-5 flex items-center gap-3">
           <div className="w-9 h-9 rounded-xl bg-white/[0.06] flex items-center justify-center text-gray-400 flex-shrink-0">
             {paymentMethod === "kast" && <KastLogo className="w-5 h-5" />}
-            {paymentMethod === "bank" && <FlagUS className="w-5 h-5" />}
+            {paymentMethod === "bank" && <FlagEU className="w-5 h-5" />}
             {paymentMethod === "crypto" && <UsdcIcon className="w-5 h-5" />}
           </div>
           <input
@@ -153,7 +153,7 @@ export default function Pay() {
               paymentMethod === "kast"
                 ? "Enter @username or $tag..."
                 : paymentMethod === "bank"
-                ? "Recipient Routing & Account Number..."
+                ? "Recipient SEPA IBAN or Account..."
                 : "Enter Solana / EVM / TRON address..."
             }
             value={recipient}
@@ -168,9 +168,9 @@ export default function Pay() {
             Amount to send
           </div>
           <div className="text-5xl font-extralight tracking-tight text-white font-display flex items-baseline">
-            <span className="text-3xl text-gray-500 mr-1">$</span>
+            <span className="text-3xl text-gray-500 mr-1">€</span>
             {amount}
-            <span className="text-sm text-emerald-400 font-sans ml-2 font-medium">USD</span>
+            <span className="text-sm text-emerald-400 font-sans ml-2 font-medium">EUR</span>
           </div>
           <div className="text-xs text-gray-500 mt-2">
             Available Balance: <span className="text-gray-300 font-medium">{dashboardData.balance}</span>
@@ -184,7 +184,7 @@ export default function Pay() {
                 onClick={() => handlePreset(p)}
                 className="px-3.5 py-1 rounded-full bg-white/[0.06] hover:bg-white/[0.12] text-xs font-semibold text-gray-300 hover:text-white border border-white/10 btn-press transition"
               >
-                {p === "MAX" ? "MAX" : `$${p}`}
+                {p === "MAX" ? "MAX" : `€${p}`}
               </button>
             ))}
           </div>
@@ -240,7 +240,7 @@ export default function Pay() {
             <div className="flex flex-col items-center my-3 text-center">
               <span className="text-xs text-gray-400 uppercase font-semibold">Total Debit</span>
               <div className="text-4xl font-extralight text-white font-display mt-1">
-                ${parseFloat(amount).toFixed(2)} <span className="text-lg font-sans text-gray-400">USD</span>
+                €{parseFloat(amount).toFixed(2)} <span className="text-lg font-sans text-gray-400">EUR</span>
               </div>
             </div>
 
@@ -255,7 +255,7 @@ export default function Pay() {
               </div>
               <div className="flex justify-between items-center">
                 <span className="text-gray-400">Network / Platform Fee</span>
-                <span className="font-semibold text-emerald-400">$0.00 (Zero Fee)</span>
+                <span className="font-semibold text-emerald-400">€0.00 (Zero Fee)</span>
               </div>
               <div className="flex justify-between items-center">
                 <span className="text-gray-400">Estimated Settlement</span>

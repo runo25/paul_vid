@@ -114,7 +114,7 @@ export default function TransactionDetails() {
               Action Required
             </div>
             <p className="text-xs text-gray-300 mb-3 leading-relaxed">
-              This wire transfer of 4,500.00 USD is on temporary hold pending standard AML compliance verification.
+              This wire transfer of 4,500.00 EUR is on temporary hold pending standard AML compliance verification.
             </p>
             <Link
               to="/provide-information"
@@ -134,12 +134,12 @@ export default function TransactionDetails() {
 
           <div className="flex justify-between items-center pb-3 border-b border-white/[0.04]">
             <span className="text-gray-400 uppercase tracking-wider font-semibold">Account / Wallet</span>
-            <span className="font-semibold text-white">{transaction.account || "Virtual USD Account"}</span>
+            <span className="font-semibold text-white">{transaction.account || "SEPA EUR Account"}</span>
           </div>
 
           <div className="flex justify-between items-center pb-3 border-b border-white/[0.04]">
             <span className="text-gray-400 uppercase tracking-wider font-semibold">Category</span>
-            <span className="font-semibold text-white">{transaction.category || "Wire Transfer"}</span>
+            <span className="font-semibold text-white">{transaction.category || "SEPA Transfer"}</span>
           </div>
 
           <div className="flex justify-between items-center pb-3 border-b border-white/[0.04]">
@@ -154,7 +154,7 @@ export default function TransactionDetails() {
 
           <div className="flex justify-between items-center">
             <span className="text-gray-400 uppercase tracking-wider font-semibold">Platform Fee</span>
-            <span className="font-semibold text-emerald-400">$0.00 USD</span>
+            <span className="font-semibold text-emerald-400">€0.00 EUR</span>
           </div>
         </div>
 

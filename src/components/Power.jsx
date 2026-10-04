@@ -121,7 +121,7 @@ export default function Power() {
                 <div className="text-[13px] font-bold text-white leading-tight">Pro Metal</div>
                 <div className="text-[11px] text-purple-400 font-semibold mt-1">3% Back</div>
               </div>
-              <div className="mt-3 text-[10px] text-gray-400 font-mono">$10k / mo</div>
+              <div className="mt-3 text-[10px] text-gray-400 font-mono">€10k / mo</div>
             </button>
 
             {/* Elite Black & Gold */}
@@ -243,10 +243,10 @@ export default function Power() {
 
               <div className="mt-4">
                 <button
-                  onClick={() => showToast("Upgrade request registered. Complete $10,000 monthly volume to activate.")}
+                  onClick={() => showToast("Upgrade request registered. Complete €10,000 monthly volume to activate.")}
                   className="w-full py-3 rounded-xl bg-purple-600 text-white font-bold text-xs shadow-lg hover:bg-purple-500 btn-press"
                 >
-                  Unlock Pro Metal ($10k / mo)
+                  Unlock Pro Metal (€10k / mo)
                 </button>
               </div>
             </div>
@@ -350,7 +350,7 @@ export default function Power() {
                   {
                     icon: "💎",
                     title: "5% Uncapped Instant Cashback",
-                    desc: "Earn 5% on every card swipe globally, settled immediately in USD or USDC into your Lead Bank account.",
+                    desc: "Earn 5% on every card swipe globally, settled immediately in EUR or USDC into your SEPA account.",
                     tag: "HIGHEST IN FINTECH"
                   },
                   {
@@ -370,13 +370,13 @@ export default function Power() {
                   {
                     icon: "🏛️",
                     title: "5.20% Institutional Yield Vault",
-                    desc: "Earn high-yield US Treasury interest on your USD fiat balances with FDIC pass-through protection.",
+                    desc: "Earn high-yield European & US Treasury interest on your EUR fiat balances with regulatory protection.",
                     tag: "DAILY PAYOUTS"
                   },
                   {
                     icon: "⚡",
                     title: "Zero Spread OTC & Unlimited Wire",
-                    desc: "Trade up to $5,000,000 USD per block with 0% slippage and priority Fedwire same-hour execution."
+                    desc: "Trade up to €5,000,000 EUR per block with 0% slippage and priority SEPA / Fedwire same-hour execution."
                   }
                 ]
               : selectedTier === "pro"
@@ -384,7 +384,7 @@ export default function Power() {
                   {
                     icon: "💎",
                     title: "3% Global Card Cashback",
-                    desc: "3% instant cashback on all merchant categories worldwide up to $2,500/month."
+                    desc: "3% instant cashback on all merchant categories worldwide up to €2,500/month."
                   },
                   {
                     icon: "✈️",
@@ -393,7 +393,7 @@ export default function Power() {
                   },
                   {
                     icon: "⚡",
-                    title: "$50,000 Daily Spending Limit",
+                    title: "€50,000 Daily Spending Limit",
                     desc: "5x standard transaction limits with priority customer support clearing."
                   }
                 ]
@@ -410,7 +410,7 @@ export default function Power() {
                   },
                   {
                     icon: "🛡️",
-                    title: "$10,000 Daily Card Limit",
+                    title: "€10,000 Daily Card Limit",
                     desc: "Customizable daily card limits with instant freeze toggles."
                   }
                 ]
@@ -456,9 +456,9 @@ export default function Power() {
             </svg>
             VIP REFERRAL INVITATION
           </div>
-          <h3 className="text-[19px] font-bold text-white mb-1 tracking-tight">Earn $25 USD per Friend</h3>
+          <h3 className="text-[19px] font-bold text-white mb-1 tracking-tight">Earn €25 EUR per Friend</h3>
           <p className="text-xs text-gray-400 mb-4 leading-relaxed">
-            Invite colleagues and partners to KAST. When they fund their account with $100, both of you earn $25 + 500 Power PTS instantly.
+            Invite colleagues and partners to KAST. When they fund their account with €100, both of you earn €25 + 500 Power PTS instantly.
           </p>
 
           <div className="bg-black/80 rounded-2xl p-2.5 pl-3.5 border border-white/10 flex items-center justify-between gap-2 mb-3">
@@ -473,7 +473,7 @@ export default function Power() {
 
           <div className="flex items-center justify-between text-xs text-gray-400 pt-1">
             <span>3 Active Referrals</span>
-            <span className="text-emerald-400 font-bold">$75.00 Earned (Paid in USD)</span>
+            <span className="text-emerald-400 font-bold">€75.00 Earned (Paid in EUR)</span>
           </div>
         </div>
 
@@ -486,7 +486,7 @@ export default function Power() {
                   TOURNAMENT
                 </span>
                 <span className="px-2 py-0.5 rounded-full bg-amber-400/20 text-amber-300 text-[10px] font-mono font-bold">
-                  $50K POOL
+                  €50K POOL
                 </span>
               </div>
               <h3 className="text-sm font-bold text-white mt-0.5">Season 1 Standings</h3>
@@ -498,28 +498,28 @@ export default function Power() {
           <div className="grid grid-cols-3 gap-2 mb-4">
             <div className="p-3 rounded-2xl bg-gradient-to-b from-[#1f1910] to-[#120f09] border border-amber-500/30 text-center">
               <span className="text-xs font-black text-amber-300 block mb-0.5">🥇 1st Place</span>
-              <span className="text-[11px] font-bold text-white block">$25,000</span>
+              <span className="text-[11px] font-bold text-white block">€25,000</span>
               <span className="text-[9px] text-amber-400/80 font-mono">+ Rolex Sub</span>
             </div>
             <div className="p-3 rounded-2xl bg-gradient-to-b from-[#181820] to-[#101015] border border-gray-400/30 text-center">
               <span className="text-xs font-black text-gray-300 block mb-0.5">🥈 2nd Place</span>
-              <span className="text-[11px] font-bold text-white block">$15,000</span>
+              <span className="text-[11px] font-bold text-white block">€15,000</span>
               <span className="text-[9px] text-gray-400 font-mono">+ 24K Gold Card</span>
             </div>
             <div className="p-3 rounded-2xl bg-gradient-to-b from-[#1a1410] to-[#100c08] border border-amber-700/30 text-center">
               <span className="text-xs font-black text-amber-600 block mb-0.5">🥉 3rd Place</span>
-              <span className="text-[11px] font-bold text-emerald-400 block">$10,000</span>
+              <span className="text-[11px] font-bold text-emerald-400 block">€10,000</span>
               <span className="text-[9px] text-amber-400 font-mono">You Are Here</span>
             </div>
           </div>
 
           <div className="flex flex-col divide-y divide-white/[0.04]">
             {[
-              { rank: "1", user: "@whale_vault", points: "48,290 PTS", medal: "🥇", prize: "$25,000" },
-              { rank: "2", user: "@alberto_sol", points: "32,100 PTS", medal: "🥈", prize: "$15,000" },
-              { rank: "3", user: `${profileData.handle} (You)`, points: "14,200 PTS", medal: "🥉", prize: "$10,000", highlight: true },
-              { rank: "4", user: "@elena_fintech", points: "11,400 PTS", prize: "$2,500" },
-              { rank: "5", user: "@marcus_fx", points: "9,850 PTS", prize: "$1,500" }
+              { rank: "1", user: "@whale_vault", points: "48,290 PTS", medal: "🥇", prize: "€25,000" },
+              { rank: "2", user: "@alberto_sol", points: "32,100 PTS", medal: "🥈", prize: "€15,000" },
+              { rank: "3", user: `${profileData.handle} (You)`, points: "14,200 PTS", medal: "🥉", prize: "€10,000", highlight: true },
+              { rank: "4", user: "@elena_fintech", points: "11,400 PTS", prize: "€2,500" },
+              { rank: "5", user: "@marcus_fx", points: "9,850 PTS", prize: "€1,500" }
             ].map((item) => (
               <div
                 key={item.user}

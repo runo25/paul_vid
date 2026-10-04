@@ -10,9 +10,9 @@ export default function Transactions() {
   const filteredTransactions = transactions.filter((t) => {
     const matchesFilter =
       filter === "all" ||
-      (filter === "usd" && t.account.includes("USD")) ||
+      (filter === "eur" && t.account.includes("EUR")) ||
       (filter === "card" && t.account.includes("Card")) ||
-      (filter === "crypto" && t.account.includes("Solana"));
+      (filter === "crypto" && (t.account.includes("Solana") || t.category.includes("Crypto")));
 
     const matchesSearch =
       t.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -24,7 +24,7 @@ export default function Transactions() {
 
   // Group by month
   const groupedByMonth = filteredTransactions.reduce((acc, curr) => {
-    const monthKey = curr.month || "JUNE 2026";
+    const monthKey = curr.month || "OCTOBER 2026";
     if (!acc[monthKey]) acc[monthKey] = [];
     acc[monthKey].push(curr);
     return acc;
@@ -44,7 +44,7 @@ export default function Transactions() {
         </button>
         <h1 className="text-[17px] font-bold tracking-tight">Activity & Transactions</h1>
         <button
-          onClick={() => setFilter(filter === "all" ? "usd" : "all")}
+          onClick={() => setFilter(filter === "all" ? "eur" : "all")}
           className="text-gray-300 hover:text-white rounded-full p-2 -mr-2 transition btn-press"
           title="Filter Transactions"
         >
@@ -73,7 +73,7 @@ export default function Transactions() {
         <div className="flex gap-2 overflow-x-auto scrollbar-hide pb-3 mb-2">
           {[
             { id: "all", label: "All Activity" },
-            { id: "usd", label: "Virtual USD Account" },
+            { id: "eur", label: "SEPA EUR Account" },
             { id: "card", label: "KAST Card" },
             { id: "crypto", label: "Crypto Transfers" }
           ].map((item) => (

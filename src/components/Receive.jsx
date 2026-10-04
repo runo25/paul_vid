@@ -65,27 +65,7 @@ export default function Receive() {
           Bank Wire & Clearing Transfers
         </h3>
         <div className="bg-[#111115] border border-white/[0.06] rounded-[20px] divide-y divide-white/[0.04] mb-6 overflow-hidden shadow-sm">
-          {/* USD Bank Transfer */}
-          <Link
-            to="/receive/usd"
-            className="flex items-center justify-between p-4 hover:bg-white/[0.04] transition btn-press"
-          >
-            <div className="flex items-center gap-3.5">
-              <FlagUS className="w-8 h-8" />
-              <div className="flex flex-col">
-                <div className="flex items-center gap-2">
-                  <span className="text-[15px] font-semibold text-white">USD Bank Transfer</span>
-                  <span className="px-1.5 py-0.5 rounded text-[10px] font-bold bg-emerald-500/20 text-emerald-400">ACH & WIRE</span>
-                </div>
-                <span className="text-xs text-gray-400">Lead Bank in the USA</span>
-              </div>
-            </div>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4 text-gray-400">
-              <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
-            </svg>
-          </Link>
-
-          {/* EU Bank Transfer */}
+          {/* EUR Bank Transfer (Primary) */}
           <button
             onClick={() => setSelectedCrypto({
               name: "EUR SEPA Transfer",
@@ -99,7 +79,10 @@ export default function Receive() {
             <div className="flex items-center gap-3.5">
               <FlagEU className="w-8 h-8" />
               <div className="flex flex-col">
-                <span className="text-[15px] font-semibold text-white">EUR SEPA Transfer</span>
+                <div className="flex items-center gap-2">
+                  <span className="text-[15px] font-semibold text-white">EUR SEPA Transfer</span>
+                  <span className="px-1.5 py-0.5 rounded text-[10px] font-bold bg-emerald-500/20 text-emerald-400">SEPA INSTANT</span>
+                </div>
                 <span className="text-xs text-gray-400">Instant Euro transfer via IBAN</span>
               </div>
             </div>
@@ -107,6 +90,26 @@ export default function Receive() {
               <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
             </svg>
           </button>
+
+          {/* USD Bank Transfer */}
+          <Link
+            to="/receive/usd"
+            className="flex items-center justify-between p-4 hover:bg-white/[0.04] transition btn-press"
+          >
+            <div className="flex items-center gap-3.5">
+              <FlagUS className="w-8 h-8" />
+              <div className="flex flex-col">
+                <div className="flex items-center gap-2">
+                  <span className="text-[15px] font-semibold text-white">USD Bank Transfer</span>
+                  <span className="px-1.5 py-0.5 rounded text-[10px] font-bold bg-white/10 text-gray-300">ACH & WIRE</span>
+                </div>
+                <span className="text-xs text-gray-400">Lead Bank in the USA</span>
+              </div>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4 text-gray-400">
+              <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+            </svg>
+          </Link>
 
           {/* UK ClearBank Transfer */}
           <button

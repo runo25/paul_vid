@@ -60,7 +60,7 @@ export function LeaderboardBanner({ className = "w-full" }) {
         <div className="flex flex-col justify-center flex-1 pr-2 z-10">
           <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-amber-400/10 border border-amber-400/30 text-[10px] font-bold tracking-wider text-amber-300 uppercase mb-2 w-max">
             <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
-            Season 1 • $50K Pool
+            Season 1 • €50K Pool
           </div>
           <h3 className="text-white text-[19px] font-bold tracking-tight leading-snug group-hover:text-amber-300 transition-colors">
             Global Leaderboard

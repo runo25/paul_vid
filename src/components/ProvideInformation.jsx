@@ -27,7 +27,7 @@ export default function ProvideInformation() {
         type: "in",
         title: "Compliance Verification Submitted",
         date: "Just now",
-        message: "We have successfully received your compliance documentation and explanations for the 4,500.00 USD wire transfer. Our underwriting team is reviewing your file and your funds will be cleared shortly.",
+        message: "We have successfully received your compliance documentation and explanations for the 4,500.00 EUR wire transfer. Our underwriting team is reviewing your file and your funds will be cleared shortly.",
         unread: true,
         section: "TODAY"
       };
@@ -60,7 +60,7 @@ export default function ProvideInformation() {
         </div>
         <h2 className="text-2xl font-bold mb-2">Documents Submitted</h2>
         <p className="text-gray-400 text-sm max-w-[280px] leading-relaxed">
-          Thank you for providing the required documentation. Your funds of 4,500.00 USD will be cleared upon review.
+          Thank you for providing the required documentation. Your funds of 4,500.00 EUR will be cleared upon review.
         </p>
       </div>
     );
@@ -86,7 +86,7 @@ export default function ProvideInformation() {
         <div className="mb-6">
           <h2 className="text-xl font-bold mb-1.5 text-white">Documentation Required</h2>
           <p className="text-gray-400 text-xs leading-relaxed">
-            Please complete the questionnaire below to release your pending wire deposit of <span className="text-white font-semibold">$4,500.00 USD</span>.
+            Please complete the questionnaire below to release your pending wire deposit of <span className="text-white font-semibold">4,500.00 EUR</span>.
           </p>
         </div>
 

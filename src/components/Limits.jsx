@@ -5,7 +5,7 @@ import { limitsData } from "../data";
 export default function Limits() {
   const navigate = useNavigate();
   const [showIncreaseModal, setShowIncreaseModal] = useState(false);
-  const [requestedTier, setRequestedTier] = useState("Tier 3 ($100,000/day)");
+  const [requestedTier, setRequestedTier] = useState("Tier 3 (€25,000/day)");
   const [reason, setReason] = useState("");
   const [toastMessage, setToastMessage] = useState("");
 
@@ -71,7 +71,7 @@ export default function Limits() {
             <div className="flex justify-between items-center text-xs mb-2">
               <span className="font-semibold text-white">Daily Spending Limit</span>
               <span className="font-mono text-gray-300">
-                ${limitsData.dailySpent.toLocaleString()} / ${limitsData.dailyLimit.toLocaleString()} USD
+                €{limitsData.dailySpent.toLocaleString()} / €{limitsData.dailyLimit.toLocaleString()} EUR
               </span>
             </div>
             <div className="w-full h-2 bg-white/10 rounded-full overflow-hidden mb-1.5">
@@ -81,7 +81,7 @@ export default function Limits() {
               />
             </div>
             <div className="flex justify-between text-[10px] text-gray-500">
-              <span>Remaining: ${(limitsData.dailyLimit - limitsData.dailySpent).toLocaleString()} USD</span>
+              <span>Remaining: €{(limitsData.dailyLimit - limitsData.dailySpent).toLocaleString()} EUR</span>
               <span>45% utilized</span>
             </div>
           </div>
@@ -91,7 +91,7 @@ export default function Limits() {
             <div className="flex justify-between items-center text-xs mb-2">
               <span className="font-semibold text-white">Monthly ATM Withdrawal</span>
               <span className="font-mono text-gray-300">
-                ${limitsData.monthlyAtmUsed.toLocaleString()} / ${limitsData.monthlyAtm.toLocaleString()} USD
+                €{limitsData.monthlyAtmUsed.toLocaleString()} / €{limitsData.monthlyAtm.toLocaleString()} EUR
               </span>
             </div>
             <div className="w-full h-2 bg-white/10 rounded-full overflow-hidden mb-1.5">
@@ -101,7 +101,7 @@ export default function Limits() {
               />
             </div>
             <div className="flex justify-between text-[10px] text-gray-500">
-              <span>Remaining: ${limitsData.monthlyAtm.toLocaleString()} USD</span>
+              <span>Remaining: €{limitsData.monthlyAtm.toLocaleString()} EUR</span>
               <span>0% utilized</span>
             </div>
           </div>
@@ -111,7 +111,7 @@ export default function Limits() {
             <div className="flex justify-between items-center text-xs mb-2">
               <span className="font-semibold text-white">24h Crypto Withdrawal</span>
               <span className="font-mono text-gray-300">
-                ${limitsData.cryptoTransfer24hUsed.toLocaleString()} / ${limitsData.cryptoTransfer24h.toLocaleString()} USD
+                €{limitsData.cryptoTransfer24hUsed.toLocaleString()} / €{limitsData.cryptoTransfer24h.toLocaleString()} EUR
               </span>
             </div>
             <div className="w-full h-2 bg-white/10 rounded-full overflow-hidden mb-1.5">
@@ -121,7 +121,7 @@ export default function Limits() {
               />
             </div>
             <div className="flex justify-between text-[10px] text-gray-500">
-              <span>Remaining: ${(limitsData.cryptoTransfer24h - limitsData.cryptoTransfer24hUsed).toFixed(2)} USD</span>
+              <span>Remaining: €{(limitsData.cryptoTransfer24h - limitsData.cryptoTransfer24hUsed).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })} EUR</span>
               <span>11% utilized</span>
             </div>
           </div>
@@ -153,8 +153,8 @@ export default function Limits() {
                   onChange={(e) => setRequestedTier(e.target.value)}
                   className="w-full bg-white/[0.06] rounded-xl p-3 text-xs text-white border border-white/10 outline-none"
                 >
-                  <option value="Tier 3 ($25,000/day)" className="bg-black">Tier 3 ($25,000 / day)</option>
-                  <option value="Tier 4 ($100,000/day)" className="bg-black">Tier 4 ($100,000 / day)</option>
+                  <option value="Tier 3 (€25,000/day)" className="bg-black">Tier 3 (€25,000 / day)</option>
+                  <option value="Tier 4 (€100,000/day)" className="bg-black">Tier 4 (€100,000 / day)</option>
                   <option value="Unlimited VIP" className="bg-black">Unlimited VIP Private Banker</option>
                 </select>
               </div>

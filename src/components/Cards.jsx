@@ -186,7 +186,7 @@ export default function Cards() {
           <div className="mb-5">
             <div className="flex justify-between items-center text-xs mb-2">
               <span className="text-gray-400">Daily Spending Limit</span>
-              <span className="font-semibold text-white font-display">${dailyLimit.toLocaleString()} USD</span>
+              <span className="font-semibold text-white font-display">€{dailyLimit.toLocaleString()} EUR</span>
             </div>
             <input
               type="range"
@@ -198,9 +198,9 @@ export default function Cards() {
               className="w-full accent-[#00e57a] bg-zinc-800 h-1.5 rounded-lg appearance-none cursor-pointer"
             />
             <div className="flex justify-between text-[10px] text-gray-500 mt-1">
-              <span>$500</span>
-              <span>Spent today: $454.48</span>
-              <span>$10,000</span>
+              <span>€500</span>
+              <span>Spent today: €454.48</span>
+              <span>€10,000</span>
             </div>
           </div>
 
