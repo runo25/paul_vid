@@ -1,12 +1,12 @@
 import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { notificationsData } from "../data";
+import { notificationsData, availableNotificationsCatalog } from "../data";
 
 export default function NotificationDetails() {
   const { id } = useParams();
   const navigate = useNavigate();
 
-  const notification = notificationsData.find((n) => n.id === id) || notificationsData[0];
+  const notification = notificationsData.find((n) => n.id === id) || availableNotificationsCatalog[id] || notificationsData[0];
 
   return (
     <div className="app-screen text-white bg-black min-h-screen flex flex-col pb-10">

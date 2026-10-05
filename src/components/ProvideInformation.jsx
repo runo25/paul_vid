@@ -21,29 +21,23 @@ export default function ProvideInformation() {
       setLoading(false);
       setSuccess(true);
 
-      // Add new English notification to the top
-      const newNotification = {
-        id: "verification_" + Date.now(),
-        type: "in",
-        title: "Compliance Verification Submitted",
-        date: "Just now",
-        message: "We have successfully received your compliance documentation and explanations for the 4,500.00 EUR wire transfer. Our underwriting team is reviewing your file and your funds will be cleared shortly.",
-        unread: true,
-        section: "TODAY"
-      };
+      // Save submission state so Admin Panel can see documents were uploaded
+      try {
+        sessionStorage.setItem("kast_docs_submitted", "true");
+        sessionStorage.setItem("kast_docs_submission_time", new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }));
+      } catch (e) {
+        // safe fallback
+      }
 
-      notificationsData.unshift(newNotification);
-
-      // Also update the transaction status
-      const tx = transactions.find((t) => t.id === "2");
-      if (tx) {
-        tx.status = "completed";
-        tx.note = "Compliance verified & approved";
+      // Update the transaction note to show docs received without completing yet
+      const tx = transactions.find((t) => t.id === "tx_oct_01");
+      if (tx && tx.status === "processing") {
+        tx.note = "Documents submitted — awaiting compliance review";
       }
 
       // Navigate back after animation
       setTimeout(() => {
-        navigate("/notifications");
+        navigate("/transaction/tx_oct_01");
       }, 2400);
     }, 1800);
   };
@@ -60,7 +54,7 @@ export default function ProvideInformation() {
         </div>
         <h2 className="text-2xl font-bold mb-2">Documents Submitted</h2>
         <p className="text-gray-400 text-sm max-w-[280px] leading-relaxed">
-          Thank you for providing the required documentation. Your funds of 4,500.00 EUR will be cleared upon review.
+          Thank you for providing the required documentation. Your funds of 1,000.00 EUR will be cleared upon review.
         </p>
       </div>
     );
@@ -86,7 +80,7 @@ export default function ProvideInformation() {
         <div className="mb-6">
           <h2 className="text-xl font-bold mb-1.5 text-white">Documentation Required</h2>
           <p className="text-gray-400 text-xs leading-relaxed">
-            Please complete the questionnaire below to release your pending wire deposit of <span className="text-white font-semibold">4,500.00 EUR</span>.
+            Please complete the questionnaire below to release your pending bank transfer deposit of <span className="text-white font-semibold">1,000.00 EUR</span>.
           </p>
         </div>
 
@@ -94,7 +88,7 @@ export default function ProvideInformation() {
           {/* Relationship with Sender */}
           <div className="flex flex-col gap-1.5">
             <label className="text-xs font-bold text-gray-300 tracking-wider uppercase px-1">
-              Relationship with Sender (KeCh... LLC)
+              Relationship with Sender (SIVAN OSHRI)
             </label>
             <textarea
               required

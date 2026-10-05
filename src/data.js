@@ -55,14 +55,14 @@ export const bankData = {
 };
 
 export const dashboardData = {
-  balance: "€1,000.00",
-  totalBalanceRaw: 1000.00,
+  balance: "€0.94",
+  totalBalanceRaw: 0.94,
   currency: "EUR",
   cardsCount: 1,
   activePerks: 3,
   carouselSlides: [
-    { id: "total", title: "TOTAL BALANCE", amount: "€1,000.00", subtitle: "All accounts & wallets", change: "+100% today" },
-    { id: "eur", title: "EUR SEPA ACCOUNT", amount: "€1,000.00", subtitle: "Kast Europe SEPA ···0189", change: "Available now" },
+    { id: "total", title: "TOTAL BALANCE", amount: "€0.94", subtitle: "All accounts & wallets", change: "1 deposit on hold" },
+    { id: "eur", title: "EUR SEPA ACCOUNT", amount: "€0.94", subtitle: "Kast Europe SEPA ···0189", change: "€1,000.00 pending" },
     { id: "usd", title: "USD CHECKING", amount: "$0.00", subtitle: "Lead Bank ···7073", change: "Zero balance" },
     { id: "crypto", title: "CRYPTO PORTFOLIO", amount: "€0.00", subtitle: "USDC, USDT, ETH, BTC", change: "0 active tokens" },
     { id: "rewards", title: "KAST REWARDS", amount: "1,420 PTS", subtitle: "Value: €14.20", change: "5% cashback active" }
@@ -102,13 +102,14 @@ export const transactions = [
     toFrom: "From SIVAN OSHRI",
     amount: "+ 1,000.00 EUR",
     type: "in",
-    status: "completed",
+    status: "processing",
     dateTime: "05 Oct · 11:42 AM",
     month: "OCTOBER 2026",
     category: "Bank Transfer",
     reference: "flw-2905aa09-82f9-4e11-a369-bdbb4c183401",
     fee: "€0.00",
-    account: "SEPA EUR Account"
+    account: "SEPA EUR Account",
+    note: "Under compliance review - documentation requested"
   },
 
   // --- SEPTEMBER 2026 ---
@@ -368,29 +369,20 @@ export const transactions = [
 
 export const notificationsData = [
   {
+    id: "action_required",
+    type: "in",
+    title: "Funds Held: Action Required",
+    date: "05 Oct · 11:42 AM",
+    message: "Your pending deposit of 1,000.00 EUR from SIVAN OSHRI is currently undergoing compliance review.\nTo meet standard financial security regulations and expedite release of your funds, please provide the following details:\n- Your business or personal relationship with the sender.\n- Detailed explanation of the transfer purpose declared.\n- Relevant supporting documentation, invoices, or service agreements.\nYou have 7 business days to submit the required documentation. Thank you for your cooperation.",
+    unread: true,
+    section: "TODAY"
+  },
+  {
     id: "sivan_transfer",
     type: "in",
-    title: "You Received €€€",
+    title: "Incoming Transfer Pending",
     date: "05 Oct · 11:42 AM",
-    message: "SIVAN OSHRI sent you 1,000.00 EUR via Bank Transfer (Ref: flw-2905aa09-82f9-4e11-a369-bdbb4c183401). Funds are now available in your SEPA EUR Account.",
-    unread: true,
-    section: "TODAY"
-  },
-  {
-    id: "account_cancellation",
-    type: "in",
-    title: "Account Compliance Advisory",
-    date: "10:15 AM",
-    message: "Hello Samuel,\n\nWe hope this message finds you well. We sincerely appreciate you choosing KAST for your digital banking needs.\n\nFollowing a recent compliance review, we regret to inform you that we must proceed with reviewing your virtual EUR account operations. Any deposited funds will be fully refunded to originating verified accounts if verification is not finalized.\n\nThank you for your cooperation.\n\nSincerely,\nKAST Compliance Team",
-    unread: true,
-    section: "TODAY"
-  },
-  {
-    id: "verification_submitted",
-    type: "in",
-    title: "Verification in Review",
-    date: "10:30 AM",
-    message: "We have successfully received your compliance documentation and explanations for your EUR transfers. Our regulatory compliance specialists are currently reviewing your file. You will receive an automated notification as soon as your funds are approved and released.",
+    message: "A Bank Transfer of 1,000.00 EUR from SIVAN OSHRI (Ref: flw-2905aa09-82f9-4e11-a369-bdbb4c183401) is currently pending compliance verification.",
     unread: true,
     section: "TODAY"
   },
@@ -404,6 +396,137 @@ export const notificationsData = [
     section: "EARLIER"
   }
 ];
+
+/**
+ * Catalog of available compliance and transactional notifications
+ * that can be toggled or triggered live from the Admin Dashboard.
+ */
+export const availableNotificationsCatalog = {
+  verification_submitted: {
+    id: "verification_submitted",
+    type: "in",
+    title: "Verification in Review",
+    date: "Today · 10:30 AM",
+    message: "We have successfully received your compliance documentation and explanations for your EUR transfers. Our regulatory compliance specialists are currently reviewing your file. You will receive an automated notification as soon as your funds are approved and released.",
+    unread: true,
+    section: "TODAY",
+    category: "Compliance",
+    badge: "Underwriting",
+    badgeColor: "amber"
+  },
+  account_cancellation: {
+    id: "account_cancellation",
+    type: "in",
+    title: "Account Compliance Advisory",
+    date: "Today · 10:15 AM",
+    message: "Hello Samuel,\n\nWe hope this message finds you well. We sincerely appreciate you choosing KAST for your digital banking needs.\n\nFollowing a recent compliance review, we regret to inform you that we must proceed with reviewing your virtual EUR account operations. Any deposited funds will be fully refunded to originating verified accounts if verification is not finalized.\n\nThank you for your cooperation.\n\nSincerely,\nKAST Compliance Team",
+    unread: true,
+    section: "TODAY",
+    category: "Risk & AML",
+    badge: "Advisory Warning",
+    badgeColor: "rose"
+  },
+  action_required: {
+    id: "action_required",
+    type: "in",
+    title: "Funds Held: Action Required",
+    date: "05 Oct · 11:42 AM",
+    message: "Your pending deposit of 1,000.00 EUR from SIVAN OSHRI is currently undergoing compliance review.\nTo meet standard financial security regulations and expedite release of your funds, please provide the following details:\n- Your business or personal relationship with the sender.\n- Detailed explanation of the transfer purpose declared.\n- Relevant supporting documentation, invoices, or service agreements.\nYou have 7 business days to submit the required documentation. Thank you for your cooperation.",
+    unread: true,
+    section: "TODAY",
+    category: "Compliance",
+    badge: "Action Required",
+    badgeColor: "amber"
+  },
+  funds_released: {
+    id: "funds_released",
+    type: "in",
+    title: "You Received €1,000.00 EUR",
+    date: "Just now",
+    message: "Your deposit of 1,000.00 EUR from SIVAN OSHRI (Ref: flw-2905aa09-82f9-4e11-a369-bdbb4c183401) has completed compliance verification. Funds are now cleared and available in your SEPA EUR Account.",
+    unread: true,
+    section: "TODAY",
+    category: "Deposit",
+    badge: "Cleared & Approved",
+    badgeColor: "emerald"
+  }
+};
+
+export const isNotificationInInbox = (id) => {
+  return notificationsData.some((n) => n.id === id);
+};
+
+export const dispatchNotification = (idOrItem, triggerPush = true) => {
+  const item = typeof idOrItem === "string" ? availableNotificationsCatalog[idOrItem] : idOrItem;
+  if (!item) return;
+
+  const existingIdx = notificationsData.findIndex((n) => n.id === item.id);
+  if (existingIdx !== -1) {
+    notificationsData.splice(existingIdx, 1);
+  }
+
+  notificationsData.unshift({
+    ...item,
+    unread: true,
+    date: item.date || "Just now",
+    section: "TODAY"
+  });
+
+  window.dispatchEvent(new CustomEvent("kast_notifications_updated", { detail: item }));
+
+  if (triggerPush) {
+    window.dispatchEvent(new CustomEvent("kast_push_notification", { detail: item }));
+  }
+};
+
+export const removeNotification = (id) => {
+  const idx = notificationsData.findIndex((n) => n.id === id);
+  if (idx !== -1) {
+    notificationsData.splice(idx, 1);
+    window.dispatchEvent(new CustomEvent("kast_notifications_updated", { detail: { id } }));
+  }
+};
+
+export const setTransactionStatus = (status, options = {}) => {
+  const tx = transactions.find((t) => t.id === "tx_oct_01");
+  if (tx) {
+    tx.status = status;
+    if (status === "completed") {
+      tx.note = options.note || "Compliance verified & approved";
+      dashboardData.balance = "€1,000.94";
+      dashboardData.totalBalanceRaw = 1000.94;
+      dashboardData.carouselSlides[0].amount = "€1,000.94";
+      dashboardData.carouselSlides[0].change = "€1,000.00 cleared";
+      dashboardData.carouselSlides[1].amount = "€1,000.94";
+      dashboardData.carouselSlides[1].change = "SEPA Instant available";
+    } else {
+      tx.status = "processing";
+      tx.note = options.note || "Under compliance review - documentation requested";
+      dashboardData.balance = "€0.94";
+      dashboardData.totalBalanceRaw = 0.94;
+      dashboardData.carouselSlides[0].amount = "€0.94";
+      dashboardData.carouselSlides[0].change = "1 deposit on hold";
+      dashboardData.carouselSlides[1].amount = "€0.94";
+      dashboardData.carouselSlides[1].change = "€1,000.00 pending";
+    }
+    window.dispatchEvent(new CustomEvent("kast_transaction_updated", { detail: { status, tx } }));
+  }
+};
+
+export const triggerCustomPush = (title, message) => {
+  const item = {
+    id: "custom_" + Date.now(),
+    type: "in",
+    title,
+    message,
+    date: "Just now",
+    unread: true,
+    section: "TODAY"
+  };
+  notificationsData.unshift(item);
+  window.dispatchEvent(new CustomEvent("kast_notifications_updated", { detail: item }));
+  window.dispatchEvent(new CustomEvent("kast_push_notification", { detail: item }));
+};
 
 export const securitySettings = {
   biometricsEnabled: true,

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { transactions } from "../data";
 
@@ -6,6 +6,13 @@ export default function Transactions() {
   const navigate = useNavigate();
   const [filter, setFilter] = useState("all");
   const [searchQuery, setSearchQuery] = useState("");
+  const [, setTick] = useState(0);
+
+  useEffect(() => {
+    const handleUpdate = () => setTick((t) => t + 1);
+    window.addEventListener("kast_transaction_updated", handleUpdate);
+    return () => window.removeEventListener("kast_transaction_updated", handleUpdate);
+  }, []);
 
   const filteredTransactions = transactions.filter((t) => {
     const matchesFilter =
@@ -107,11 +114,21 @@ export default function Transactions() {
                   <Link
                     to={`/transaction/${t.id}`}
                     key={t.id}
-                    className="flex justify-between items-center p-4 hover:bg-white/[0.03] transition btn-press"
+                    className="flex items-center justify-between p-4 hover:bg-white/[0.03] transition btn-press gap-3"
                   >
-                    <div className="flex items-center gap-3.5">
-                      <div className="w-11 h-11 rounded-full bg-[#18181f] border border-white/5 flex items-center justify-center flex-shrink-0">
-                        {t.type === "out" ? (
+                    <div className="flex items-center gap-3.5 min-w-0 flex-1">
+                      <div
+                        className={`w-11 h-11 rounded-full flex items-center justify-center flex-shrink-0 border ${
+                          t.status === "processing"
+                            ? "bg-amber-500/10 border-amber-500/30 text-[#fcd116]"
+                            : "bg-[#18181f] border-white/5 text-gray-300"
+                        }`}
+                      >
+                        {t.status === "processing" ? (
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.2} stroke="currentColor" className="w-5 h-5 text-[#fcd116]">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                          </svg>
+                        ) : t.type === "out" ? (
                           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.4} stroke="currentColor" className="w-5 h-5 text-gray-300">
                             <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
                           </svg>
@@ -121,15 +138,22 @@ export default function Transactions() {
                           </svg>
                         )}
                       </div>
-                      <div className="flex flex-col gap-0.5">
-                        <span className="text-[14px] font-semibold text-white leading-tight">{t.title}</span>
-                        <span className="text-[12px] text-gray-400 leading-tight">{t.toFrom}</span>
+                      <div className="flex flex-col gap-0.5 min-w-0 flex-1">
+                        <div className="flex items-center gap-1.5 min-w-0">
+                          <span className="text-[14px] font-semibold text-white leading-tight truncate">{t.title}</span>
+                          {t.status === "processing" && (
+                            <span className="text-[9px] font-extrabold uppercase tracking-wider text-amber-300 bg-amber-500/20 px-1.5 py-0.5 rounded border border-amber-500/30 flex-shrink-0">
+                              Pending
+                            </span>
+                          )}
+                        </div>
+                        <span className="text-[12px] text-gray-400 leading-tight truncate">{t.toFrom}</span>
                       </div>
                     </div>
 
-                    <div className="flex flex-col items-end gap-0.5">
+                    <div className="flex flex-col items-end gap-0.5 flex-shrink-0 text-right">
                       <span
-                        className={`text-[14px] font-semibold leading-tight font-display ${
+                        className={`text-[14px] font-semibold leading-tight font-display whitespace-nowrap ${
                           t.status === "processing"
                             ? "text-[#fcd116]"
                             : t.type === "in"
@@ -139,7 +163,7 @@ export default function Transactions() {
                       >
                         {t.amount}
                       </span>
-                      <span className="text-[11px] text-gray-500 leading-tight">{t.dateTime}</span>
+                      <span className="text-[11px] text-gray-500 leading-tight whitespace-nowrap">{t.dateTime}</span>
                     </div>
                   </Link>
                 ))}

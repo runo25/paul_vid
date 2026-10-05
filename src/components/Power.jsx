@@ -1,14 +1,76 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import { profileData } from "../data";
 import { LeaderboardBanner, CardChip, ContactlessWave, VisaLogo } from "./Vectors";
 import BottomNav from "./BottomNav";
 
 export default function Power() {
+  const navigate = useNavigate();
   const [toastMessage, setToastMessage] = useState("");
   const [selectedTier, setSelectedTier] = useState("elite"); // default to elite to showcase the luxury!
   const [conciergeModalOpen, setConciergeModalOpen] = useState(false);
   const [conciergeActionDone, setConciergeActionDone] = useState(false);
   const [loungeModalOpen, setLoungeModalOpen] = useState(false);
+
+  // Secret Admin Backdoor State & Handlers
+  const [isHoldingAdmin, setIsHoldingAdmin] = useState(false);
+  const [holdProgress, setHoldProgress] = useState(0);
+  const holdTimerRef = useRef(null);
+  const holdProgressIntervalRef = useRef(null);
+  const lastTapRef = useRef(0);
+
+  const triggerAdminNavigation = () => {
+    if (navigator.vibrate) navigator.vibrate([60, 40, 60]);
+    navigate("/admin");
+  };
+
+  const handleCardDoubleClick = (e) => {
+    e.preventDefault();
+    triggerAdminNavigation();
+  };
+
+  const handleCardTouchStart = () => {
+    const now = Date.now();
+    if (now - lastTapRef.current < 380) {
+      lastTapRef.current = 0;
+      cancelHold();
+      triggerAdminNavigation();
+      return;
+    }
+    lastTapRef.current = now;
+    startHold();
+  };
+
+  const startHold = () => {
+    setIsHoldingAdmin(true);
+    setHoldProgress(0);
+    const startTime = Date.now();
+    const duration = 550; // ms
+
+    if (holdProgressIntervalRef.current) clearInterval(holdProgressIntervalRef.current);
+    if (holdTimerRef.current) clearTimeout(holdTimerRef.current);
+
+    holdProgressIntervalRef.current = setInterval(() => {
+      const elapsed = Date.now() - startTime;
+      const pct = Math.min(100, Math.round((elapsed / duration) * 100));
+      setHoldProgress(pct);
+      if (elapsed >= duration) {
+        clearInterval(holdProgressIntervalRef.current);
+      }
+    }, 30);
+
+    holdTimerRef.current = setTimeout(() => {
+      cancelHold();
+      triggerAdminNavigation();
+    }, duration);
+  };
+
+  const cancelHold = () => {
+    setIsHoldingAdmin(false);
+    setHoldProgress(0);
+    if (holdTimerRef.current) clearTimeout(holdTimerRef.current);
+    if (holdProgressIntervalRef.current) clearInterval(holdProgressIntervalRef.current);
+  };
 
   const referralLink = `https://kast.io/join/${profileData.handle.replace('@', '')}`;
 
@@ -506,10 +568,32 @@ export default function Power() {
               <span className="text-[11px] font-bold text-white block">€15,000</span>
               <span className="text-[9px] text-gray-400 font-mono">+ 24K Gold Card</span>
             </div>
-            <div className="p-3 rounded-2xl bg-gradient-to-b from-[#1a1410] to-[#100c08] border border-amber-700/30 text-center">
+            <div
+              onDoubleClick={handleCardDoubleClick}
+              onMouseDown={startHold}
+              onMouseUp={cancelHold}
+              onMouseLeave={cancelHold}
+              onTouchStart={handleCardTouchStart}
+              onTouchEnd={cancelHold}
+              onTouchCancel={cancelHold}
+              className={`p-3 rounded-2xl bg-gradient-to-b from-[#1a1410] to-[#100c08] border text-center relative overflow-hidden cursor-pointer select-none active:scale-95 transition-all ${
+                isHoldingAdmin
+                  ? "border-amber-400 ring-1 ring-amber-400/80 shadow-[0_0_20px_rgba(245,158,11,0.35)] scale-95"
+                  : "border-amber-700/30 hover:border-amber-500/60"
+              }`}
+              title="Hold or double-click to access secret admin controls"
+            >
               <span className="text-xs font-black text-amber-600 block mb-0.5">🥉 3rd Place</span>
               <span className="text-[11px] font-bold text-emerald-400 block">€10,000</span>
               <span className="text-[9px] text-amber-400 font-mono">You Are Here</span>
+
+              {/* Secret Hold Progress Bar */}
+              {isHoldingAdmin && (
+                <div
+                  className="absolute bottom-0 left-0 h-[2.5px] bg-gradient-to-r from-amber-500 via-yellow-300 to-emerald-400 transition-all duration-75"
+                  style={{ width: `${holdProgress}%` }}
+                />
+              )}
             </div>
           </div>
 

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { transactions, bankData } from "../data";
 
@@ -6,6 +6,13 @@ export default function TransactionDetails() {
   const { id } = useParams();
   const navigate = useNavigate();
   const [toastMessage, setToastMessage] = useState("");
+  const [, setTick] = useState(0);
+
+  useEffect(() => {
+    const handleUpdate = () => setTick((t) => t + 1);
+    window.addEventListener("kast_transaction_updated", handleUpdate);
+    return () => window.removeEventListener("kast_transaction_updated", handleUpdate);
+  }, []);
 
   const showToast = (msg) => {
     setToastMessage(msg);
@@ -67,8 +74,18 @@ export default function TransactionDetails() {
       <div className="flex-1 overflow-y-auto px-5 pt-6 scrollbar-hide">
         {/* Amount & Status Header */}
         <div className="flex flex-col items-center text-center mb-8">
-          <div className="w-16 h-16 rounded-full bg-[#16161c] border border-white/10 flex items-center justify-center mb-4 shadow-md">
-            {transaction.type === "out" ? (
+          <div
+            className={`w-16 h-16 rounded-full border flex items-center justify-center mb-4 shadow-md ${
+              isProcessing
+                ? "bg-amber-500/10 border-amber-500/30 text-[#fcd116]"
+                : "bg-[#16161c] border-white/10"
+            }`}
+          >
+            {isProcessing ? (
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.2} stroke="currentColor" className="w-7 h-7 text-[#fcd116]">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+              </svg>
+            ) : transaction.type === "out" ? (
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.4} stroke="currentColor" className="w-7 h-7 text-white">
                 <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
               </svg>
@@ -114,11 +131,11 @@ export default function TransactionDetails() {
               Action Required
             </div>
             <p className="text-xs text-gray-300 mb-3 leading-relaxed">
-              This wire transfer of 4,500.00 EUR is on temporary hold pending standard AML compliance verification.
+              This bank transfer of {transaction.amount ? transaction.amount.replace(/^[+-]\s*/, '') : "1,000.00 EUR"} from {transaction.toFrom ? transaction.toFrom.replace(/^From\s*/i, '') : "SIVAN OSHRI"} is on temporary hold pending standard AML compliance verification.
             </p>
             <Link
               to="/provide-information"
-              className="w-full py-2.5 bg-amber-400 text-black font-bold text-xs rounded-xl flex items-center justify-center gap-1.5 btn-press transition"
+              className="w-full py-2.5 bg-amber-400 hover:bg-amber-300 text-black font-bold text-xs rounded-xl flex items-center justify-center gap-1.5 btn-press transition shadow-md"
             >
               Submit Required Documentation →
             </Link>
@@ -127,33 +144,44 @@ export default function TransactionDetails() {
 
         {/* Detailed Breakdown Card */}
         <div className="bg-[#111115] border border-white/[0.06] rounded-[24px] p-5 space-y-4 text-xs mb-8 shadow-sm">
-          <div className="flex justify-between items-center pb-3 border-b border-white/[0.04]">
-            <span className="text-gray-400 uppercase tracking-wider font-semibold">Counterparty</span>
-            <span className="font-semibold text-white text-right">{transaction.toFrom}</span>
+          <div className="flex justify-between items-start gap-4 pb-3 border-b border-white/[0.04]">
+            <span className="text-gray-400 uppercase tracking-wider font-semibold text-[11px] flex-shrink-0 pt-0.5">Counterparty</span>
+            <span className="font-semibold text-white text-right leading-tight">{transaction.toFrom}</span>
+          </div>
+
+          <div className="flex justify-between items-start gap-4 pb-3 border-b border-white/[0.04]">
+            <span className="text-gray-400 uppercase tracking-wider font-semibold text-[11px] flex-shrink-0 pt-0.5">Account / Wallet</span>
+            <span className="font-semibold text-white text-right leading-tight">{transaction.account || "SEPA EUR Account"}</span>
+          </div>
+
+          <div className="flex justify-between items-start gap-4 pb-3 border-b border-white/[0.04]">
+            <span className="text-gray-400 uppercase tracking-wider font-semibold text-[11px] flex-shrink-0 pt-0.5">Category</span>
+            <span className="font-semibold text-white text-right leading-tight">{transaction.category || "Bank Transfer"}</span>
+          </div>
+
+          <div className="flex justify-between items-start gap-4 pb-3 border-b border-white/[0.04]">
+            <span className="text-gray-400 uppercase tracking-wider font-semibold text-[11px] flex-shrink-0 pt-0.5">Transaction Date</span>
+            <span className="font-semibold text-white text-right leading-tight">
+              {transaction.dateTime?.includes("·") ? transaction.dateTime.replace("·", "2026 ·") : `${transaction.dateTime} 2026`}
+            </span>
+          </div>
+
+          <div className="flex justify-between items-start gap-3 pb-3 border-b border-white/[0.04]">
+            <span className="text-gray-400 uppercase tracking-wider font-semibold text-[11px] flex-shrink-0 pt-0.5">Reference ID</span>
+            <span className="font-mono text-gray-300 text-[10px] text-right break-all max-w-[72%] leading-tight select-all">
+              {transaction.reference || "flw-2905aa09-82f9-4e11-a369-bdbb4c183401"}
+            </span>
           </div>
 
           <div className="flex justify-between items-center pb-3 border-b border-white/[0.04]">
-            <span className="text-gray-400 uppercase tracking-wider font-semibold">Account / Wallet</span>
-            <span className="font-semibold text-white">{transaction.account || "SEPA EUR Account"}</span>
-          </div>
-
-          <div className="flex justify-between items-center pb-3 border-b border-white/[0.04]">
-            <span className="text-gray-400 uppercase tracking-wider font-semibold">Category</span>
-            <span className="font-semibold text-white">{transaction.category || "SEPA Transfer"}</span>
-          </div>
-
-          <div className="flex justify-between items-center pb-3 border-b border-white/[0.04]">
-            <span className="text-gray-400 uppercase tracking-wider font-semibold">Transaction Date</span>
-            <span className="font-semibold text-white">{transaction.dateTime} 2026</span>
-          </div>
-
-          <div className="flex justify-between items-center pb-3 border-b border-white/[0.04]">
-            <span className="text-gray-400 uppercase tracking-wider font-semibold">Reference ID</span>
-            <span className="font-mono text-gray-300">{transaction.reference || "KAST-20260622-04"}</span>
+            <span className="text-gray-400 uppercase tracking-wider font-semibold text-[11px] flex-shrink-0">Status</span>
+            <span className={`font-semibold text-[11px] ${isProcessing ? "text-[#fcd116]" : "text-emerald-400"}`}>
+              {isProcessing ? "Under Compliance Review" : "Completed"}
+            </span>
           </div>
 
           <div className="flex justify-between items-center">
-            <span className="text-gray-400 uppercase tracking-wider font-semibold">Platform Fee</span>
+            <span className="text-gray-400 uppercase tracking-wider font-semibold text-[11px] flex-shrink-0">Platform Fee</span>
             <span className="font-semibold text-emerald-400">€0.00 EUR</span>
           </div>
         </div>

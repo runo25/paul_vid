@@ -1,10 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { notificationsData } from "../data";
 
 export default function Notifications() {
   const navigate = useNavigate();
-  const [notifications, setNotifications] = useState(notificationsData);
+  const [notifications, setNotifications] = useState([...notificationsData]);
+
+  useEffect(() => {
+    const handleUpdate = () => {
+      setNotifications([...notificationsData]);
+    };
+    window.addEventListener("kast_notifications_updated", handleUpdate);
+    return () => window.removeEventListener("kast_notifications_updated", handleUpdate);
+  }, []);
 
   const handleMarkAllRead = () => {
     const updated = notifications.map((n) => ({ ...n, unread: false }));
