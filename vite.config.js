@@ -14,9 +14,9 @@ export default defineConfig({
         enabled: true
       },
       manifest: {
-        name: 'paul_vid PWA',
-        short_name: 'paul_vid',
-        description: 'A simple PWA for paul_vid',
+        name: 'kastt PWA',
+        short_name: 'kastt',
+        description: 'A simple PWA for kastt',
         theme_color: '#000000',
         background_color: '#000000',
         icons: [
