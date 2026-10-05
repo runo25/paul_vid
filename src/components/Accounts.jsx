@@ -15,7 +15,7 @@ export default function Accounts() {
   };
 
   const handleDownloadStatement = () => {
-    showToast("Statement for June 2026 generated (PDF)");
+    showToast("Statement for September 2026 generated (PDF)");
   };
 
   return (

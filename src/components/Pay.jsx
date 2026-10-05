@@ -28,7 +28,7 @@ export default function Pay() {
 
   const handlePreset = (val) => {
     if (val === "MAX") {
-      setAmount("0.94");
+      setAmount(dashboardData.totalBalanceRaw ? dashboardData.totalBalanceRaw.toFixed(2) : "1000.00");
     } else {
       setAmount(val);
     }
