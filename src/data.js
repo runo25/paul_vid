@@ -24,11 +24,11 @@ export const profileData = {
 export const bankData = {
   // EUR SEPA Account (Primary Main Account)
   eurAccountName: "Samuel Fasawe",
-  eurIban: "FR7630006000011234567890189",
-  eurBic: "BNPAFRPPXXX",
-  eurBankName: "Kast Europe / BNP Paribas Partner",
-  eurBankAddress: "16 Boulevard des Italiens, 75009 Paris",
-  eurCountry: "France",
+  eurIban: "GB84CLRB04288613032354",
+  eurBic: "CLRBGB22XXX",
+  eurBankName: "Kast Europe / ClearBank Partner",
+  eurBankAddress: "Level 27, The Broadgate Tower, 20 Primrose Street, London, EC2A 2EW",
+  eurCountry: "United Kingdom",
   eurAccountType: "SEPA Instant Checking",
 
   // USD Checking Account (Lead Bank)
@@ -45,13 +45,13 @@ export const bankData = {
 
   // UK ClearBank Account
   ukAccountName: "Samuel Fasawe",
-  ukAccountNumber: "04288613",
-  ukSortCode: "04-28-86",
+  ukAccountNumber: "00025261",
+  ukSortCode: "04-10-37",
   ukIban: "GB84CLRB04288613032354",
   ukBankName: "ClearBank Limited",
-  ukBankAddress: "Level 27, The Broadgate Tower, 20 Primrose Street, London, EC2A 2EW",
+  ukBankAddress: "Suite 6034, Unit 3A 34-35 Hatton Garden, Holborn, London, England ECIN 8DX",
   ukCountry: "United Kingdom",
-  ukSwift: "CLRBGB22XXX"
+  ukSwift: "GRFRGB22XXX"
 };
 
 export const dashboardData = {
