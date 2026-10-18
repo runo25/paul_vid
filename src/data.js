@@ -26,7 +26,7 @@ export const bankData = {
   eurAccountName: "Samuel Fasawe",
   eurIban: "GB84CLRB04288613032354",
   eurBic: "CLRBGB22XXX",
-  eurBankName: "Kast Europe / ClearBank Partner",
+  eurBankName: "ClearBank Limited",
   eurBankAddress: "Level 27, The Broadgate Tower, 20 Primrose Street, London, EC2A 2EW",
   eurCountry: "United Kingdom",
   eurAccountType: "SEPA Instant Checking",
