@@ -700,6 +700,45 @@ export const isNotificationInInbox = (id) => {
   return notificationsData.some((n) => n.id === id);
 };
 
+const getReadNotifSet = () => {
+  try {
+    if (typeof sessionStorage !== "undefined") {
+      const raw = sessionStorage.getItem("kast_read_notifs");
+      return raw ? new Set(JSON.parse(raw)) : new Set();
+    }
+  } catch (e) {}
+  return new Set();
+};
+
+export const markNotificationAsRead = (id) => {
+  const notif = notificationsData.find((n) => n.id === id);
+  if (notif) {
+    notif.unread = false;
+    try {
+      if (typeof sessionStorage !== "undefined") {
+        const readSet = getReadNotifSet();
+        readSet.add(id);
+        sessionStorage.setItem("kast_read_notifs", JSON.stringify([...readSet]));
+      }
+    } catch (e) {}
+    window.dispatchEvent(new CustomEvent("kast_notifications_updated", { detail: { id, unread: false } }));
+    return true;
+  }
+  return false;
+};
+
+// Apply session read states
+try {
+  const initialReadSet = getReadNotifSet();
+  if (initialReadSet.size > 0) {
+    notificationsData.forEach((n) => {
+      if (initialReadSet.has(n.id)) {
+        n.unread = false;
+      }
+    });
+  }
+} catch (e) {}
+
 export const dispatchNotification = (idOrItem, triggerPush = true) => {
   const item = typeof idOrItem === "string" ? availableNotificationsCatalog[idOrItem] : idOrItem;
   if (!item) return;

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import { notificationsData } from "../data";
+import { notificationsData, markNotificationAsRead } from "../data";
 
 export default function Notifications() {
   const navigate = useNavigate();
@@ -15,9 +15,13 @@ export default function Notifications() {
   }, []);
 
   const handleMarkAllRead = () => {
-    const updated = notifications.map((n) => ({ ...n, unread: false }));
-    setNotifications(updated);
     notificationsData.forEach((n) => { n.unread = false; });
+    try {
+      const allIds = notificationsData.map((n) => n.id);
+      sessionStorage.setItem("kast_read_notifs", JSON.stringify(allIds));
+    } catch (e) {}
+    setNotifications([...notificationsData]);
+    window.dispatchEvent(new CustomEvent("kast_notifications_updated", { detail: { allRead: true } }));
   };
 
   const groupedNotifications = notifications.reduce((acc, curr) => {
@@ -61,6 +65,7 @@ export default function Notifications() {
                 <Link
                   to={`/notification/${n.id}`}
                   key={n.id}
+                  onClick={() => markNotificationAsRead(n.id)}
                   className="flex gap-3.5 p-4 hover:bg-white/[0.03] transition btn-press group"
                 >
                   <div className="relative flex-shrink-0">

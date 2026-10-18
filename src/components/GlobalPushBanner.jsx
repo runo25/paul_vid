@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { KastLogo } from "./Vectors";
+import { markNotificationAsRead } from "../data";
 
 /**
  * Global push notification banner that slides down from the top of the screen
@@ -103,8 +104,14 @@ export default function GlobalPushBanner() {
       {activeBanner && (
         <div
           onClick={() => {
+            const bannerId = activeBanner.id;
             dismiss();
-            navigate("/notifications");
+            if (bannerId) {
+              markNotificationAsRead(bannerId);
+              navigate(`/notification/${bannerId}`);
+            } else {
+              navigate("/notifications");
+            }
           }}
           className="bg-[#121218]/95 backdrop-blur-2xl border border-white/15 rounded-2xl p-3.5 shadow-[0_12px_40px_rgba(0,0,0,0.8),0_0_25px_rgba(245,158,11,0.25)] flex items-start gap-3 cursor-pointer hover:border-amber-400/40 transition group"
         >

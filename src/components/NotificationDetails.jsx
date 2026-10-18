@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { notificationsData, availableNotificationsCatalog } from "../data";
+import { notificationsData, availableNotificationsCatalog, markNotificationAsRead } from "../data";
 
 export default function NotificationDetails() {
   const { id } = useParams();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (id) {
+      markNotificationAsRead(id);
+    }
+  }, [id]);
 
   const notification = notificationsData.find((n) => n.id === id) || availableNotificationsCatalog[id] || notificationsData[0];
 
