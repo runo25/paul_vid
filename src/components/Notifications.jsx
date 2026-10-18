@@ -73,9 +73,17 @@ export default function Notifications() {
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.2} stroke="currentColor" className="w-5 h-5 text-rose-400">
                           <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z" />
                         </svg>
-                      ) : n.id === "3" ? (
+                      ) : (n.id === "action_required" || n.id === "3") ? (
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.2} stroke="currentColor" className="w-5 h-5 text-amber-400">
                           <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z" />
+                        </svg>
+                      ) : n.id === "compliance_review_in_progress" ? (
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.2} stroke="currentColor" className="w-5 h-5 text-amber-400">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                        </svg>
+                      ) : n.id === "compliance_docs_received" ? (
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.2} stroke="currentColor" className="w-5 h-5 text-[#00e57a]">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                         </svg>
                       ) : (
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.2} stroke="currentColor" className="w-5 h-5 text-gray-300">
@@ -90,7 +98,22 @@ export default function Notifications() {
 
                   <div className="flex flex-col gap-0.5 w-full">
                     <div className="flex justify-between items-start w-full">
-                      <span className="text-[14px] font-semibold text-white group-hover:text-emerald-400 transition">{n.title}</span>
+                      <div className="flex items-center gap-2 flex-wrap">
+                        <span className="text-[14px] font-semibold text-white group-hover:text-emerald-400 transition">{n.title}</span>
+                        {n.badge && (
+                          <span
+                            className={`text-[9px] font-bold px-1.5 py-0.2 rounded uppercase ${
+                              n.badgeColor === "emerald"
+                                ? "bg-emerald-500/15 text-emerald-400 border border-emerald-500/30"
+                                : n.badgeColor === "rose"
+                                ? "bg-rose-500/15 text-rose-400 border border-rose-500/30"
+                                : "bg-amber-500/15 text-amber-400 border border-amber-500/30"
+                            }`}
+                          >
+                            {n.badge}
+                          </span>
+                        )}
+                      </div>
                       <span className="text-[11px] text-gray-500 whitespace-nowrap ml-2">{n.date}</span>
                     </div>
                     <p className="text-xs text-gray-400 line-clamp-2 leading-relaxed">

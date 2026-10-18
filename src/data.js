@@ -367,14 +367,49 @@ export const transactions = [
 ];
 
 export const notificationsData = [
+  // --- OCTOBER 18, 2026 (TODAY) ---
+  {
+    id: "compliance_review_in_progress",
+    type: "in",
+    title: "Compliance Review in Progress",
+    date: "18 Oct · 10:18 AM",
+    message: "Your submitted compliance documentation for the 1,000.00 EUR incoming transfer from SIVAN OSHRI is currently under standard administrative review. Please note that regulatory compliance reviews take place within 60 to 90 business days. You will be notified automatically once the review is completed and your funds are cleared.",
+    unread: false,
+    section: "TODAY",
+    txId: "tx_oct_01",
+    category: "Compliance",
+    badge: "Under Review (60-90 Days)",
+    badgeColor: "amber"
+  },
+
+  // --- OCTOBER 16, 2026 ---
+  {
+    id: "compliance_docs_received",
+    type: "in",
+    title: "Compliance Documents Received",
+    date: "16 Oct · 10:56 AM",
+    message: "We have successfully received your compliance documentation and explanation of transfer purpose for the pending deposit of 1,000.00 EUR from SIVAN OSHRI (Ref: flw-2905aa09-82f9-4e11-a369-bdbb4c183401). Thank you for submitting the required verification.",
+    unread: false,
+    section: "OCTOBER 2026",
+    txId: "tx_oct_01",
+    category: "Compliance",
+    badge: "Documents Received",
+    badgeColor: "emerald"
+  },
+
+  // --- OCTOBER 05, 2026 ---
   {
     id: "action_required",
     type: "in",
     title: "Funds Held: Action Required",
     date: "05 Oct · 11:42 AM",
     message: "Your pending deposit of 1,000.00 EUR from SIVAN OSHRI is currently undergoing compliance review.\nTo meet standard financial security regulations and expedite release of your funds, please provide the following details:\n- Your business or personal relationship with the sender.\n- Detailed explanation of the transfer purpose declared.\n- Relevant supporting documentation, invoices, or service agreements.\nYou have 7 business days to submit the required documentation. Thank you for your cooperation.",
-    unread: true,
-    section: "TODAY"
+    unread: false,
+    section: "OCTOBER 2026",
+    txId: "tx_oct_01",
+    category: "Compliance",
+    badge: "Action Required",
+    badgeColor: "amber"
   },
   {
     id: "sivan_transfer",
@@ -382,8 +417,194 @@ export const notificationsData = [
     title: "Incoming Transfer Pending",
     date: "05 Oct · 11:42 AM",
     message: "A Bank Transfer of 1,000.00 EUR from SIVAN OSHRI (Ref: flw-2905aa09-82f9-4e11-a369-bdbb4c183401) is currently pending compliance verification.",
+    unread: false,
+    section: "OCTOBER 2026",
+    txId: "tx_oct_01",
+    category: "Deposit",
+    badge: "Pending",
+    badgeColor: "amber"
+  },
+
+  // --- SEPTEMBER 2026 ---
+  {
+    id: "notif_tx_sep_01",
+    type: "out",
+    title: "Bank Transfer Sent",
+    date: "30 Sep · 03:10 PM",
+    message: "You sent 4,280.00 EUR via SEPA Transfer to BNP Paribas Wealth (Ref: SEPA-20260930-08). Status: Completed.",
+    unread: false,
+    section: "SEPTEMBER 2026",
+    txId: "tx_sep_01"
+  },
+  {
+    id: "notif_tx_sep_02",
+    type: "out",
+    title: "Card Purchase Approved",
+    date: "29 Sep · 02:45 PM",
+    message: "You spent 640.00 EUR at LVMH Moët Hennessy Paris with your KAST Black Metal Card ···8824.",
+    unread: false,
+    section: "SEPTEMBER 2026",
+    txId: "tx_sep_02"
+  },
+  {
+    id: "notif_tx_sep_03",
+    type: "in",
+    title: "Cashback Reward Received",
+    date: "29 Sep · 02:46 PM",
+    message: "+32.00 EUR cashback was credited to your Rewards Wallet for your purchase at LVMH Moët Hennessy Paris.",
     unread: true,
-    section: "TODAY"
+    section: "SEPTEMBER 2026",
+    txId: "tx_sep_03"
+  },
+  {
+    id: "notif_tx_sep_04",
+    type: "out",
+    title: "Crypto Transfer Sent",
+    date: "28 Sep · 11:30 AM",
+    message: "850.00 EUR in USDC was dispatched to wallet As4Q...J78f on Solana (Tx: 0x8821b...4490).",
+    unread: false,
+    section: "SEPTEMBER 2026",
+    txId: "tx_sep_04"
+  },
+  {
+    id: "notif_tx_sep_05",
+    type: "in",
+    title: "Wire Deposit Received",
+    date: "25 Sep · 09:20 AM",
+    message: "You received a wire deposit of 800.00 EUR from TORB...HLIN into your SEPA EUR Account.",
+    unread: false,
+    section: "SEPTEMBER 2026",
+    txId: "tx_sep_05"
+  },
+  {
+    id: "notif_tx_sep_06",
+    type: "out",
+    title: "Card Purchase Approved",
+    date: "24 Sep · 07:15 AM",
+    message: "You paid 185.00 EUR to Air France VIP Lounge (Paris CDG) with your KAST Black Metal Card.",
+    unread: false,
+    section: "SEPTEMBER 2026",
+    txId: "tx_sep_06"
+  },
+  {
+    id: "notif_tx_sep_07",
+    type: "out",
+    title: "Internal Transfer Sent",
+    date: "22 Sep · 06:40 PM",
+    message: "You sent 250.00 EUR instantly to @Elena_VIP via KAST tag.",
+    unread: false,
+    section: "SEPTEMBER 2026",
+    txId: "tx_sep_07"
+  },
+  {
+    id: "notif_tx_sep_08",
+    type: "in",
+    title: "FX Exchange Credited",
+    date: "21 Sep · 01:25 PM",
+    message: "1,200.00 EUR converted from ClearBank GBP Exchange was credited to your SEPA EUR Account.",
+    unread: false,
+    section: "SEPTEMBER 2026",
+    txId: "tx_sep_08"
+  },
+  {
+    id: "notif_tx_sep_09",
+    type: "out",
+    title: "Card Purchase Approved",
+    date: "18 Sep · 05:10 PM",
+    message: "You spent 136.27 EUR at Amazon EU SARL with card ending in 8824.",
+    unread: false,
+    section: "SEPTEMBER 2026",
+    txId: "tx_sep_09"
+  },
+  {
+    id: "notif_tx_sep_10",
+    type: "out",
+    title: "Crypto Transfer Sent",
+    date: "17 Sep · 10:15 AM",
+    message: "400.00 EUR in USDC was transferred to external wallet As4Q...J78f (Tx: 0x7712a...1984).",
+    unread: false,
+    section: "SEPTEMBER 2026",
+    txId: "tx_sep_10"
+  },
+  {
+    id: "notif_tx_sep_11",
+    type: "in",
+    title: "Merchant Payout Received",
+    date: "15 Sep · 02:40 PM",
+    message: "You received a merchant payout of 1,500.00 EUR from Stripe Payments Europe (Ref: SEPA-20260915-05).",
+    unread: true,
+    section: "SEPTEMBER 2026",
+    txId: "tx_sep_11"
+  },
+  {
+    id: "notif_tx_sep_12",
+    type: "out",
+    title: "Card Purchase Approved",
+    date: "14 Sep · 12:30 PM",
+    message: "You spent 56.80 EUR at Monoprix Haussmann Paris with card ending in 8824.",
+    unread: false,
+    section: "SEPTEMBER 2026",
+    txId: "tx_sep_12"
+  },
+  {
+    id: "notif_tx_sep_13",
+    type: "out",
+    title: "ATM Cash Withdrawal",
+    date: "11 Sep · 03:00 PM",
+    message: "200.00 EUR was dispensed from BNP Paribas ATM (Paris Opera).",
+    unread: false,
+    section: "SEPTEMBER 2026",
+    txId: "tx_sep_13"
+  },
+  {
+    id: "notif_tx_sep_14",
+    type: "in",
+    title: "Wire Deposit Received",
+    date: "09 Sep · 11:05 AM",
+    message: "You received a wire deposit of 1,200.00 EUR from TORB...HLIN into your SEPA EUR Account.",
+    unread: false,
+    section: "SEPTEMBER 2026",
+    txId: "tx_sep_14"
+  },
+  {
+    id: "notif_tx_sep_15",
+    type: "out",
+    title: "Card Purchase Approved",
+    date: "07 Sep · 08:45 AM",
+    message: "You spent 168.00 EUR on SNCF TGV First Class tickets with card ending in 8824.",
+    unread: false,
+    section: "SEPTEMBER 2026",
+    txId: "tx_sep_15"
+  },
+  {
+    id: "notif_tx_sep_16",
+    type: "out",
+    title: "Subscription Paid",
+    date: "04 Sep · 07:00 AM",
+    message: "Your monthly subscription of 14.99 EUR to Spotify Technology SA was successfully debited.",
+    unread: false,
+    section: "SEPTEMBER 2026",
+    txId: "tx_sep_16"
+  },
+  {
+    id: "notif_tx_sep_17",
+    type: "in",
+    title: "SEPA Transfer Received",
+    date: "03 Sep · 04:15 PM",
+    message: "You received 950.00 EUR from Revolut Ltd Europe into your SEPA EUR account.",
+    unread: false,
+    section: "SEPTEMBER 2026",
+    txId: "tx_sep_17"
+  },
+  {
+    id: "notif_tx_sep_18",
+    type: "in",
+    title: "Initial Account Deposit Received",
+    date: "01 Sep · 09:30 AM",
+    message: "You received an initial account funding of 1,500.00 EUR from BNP Paribas Wealth.",
+    unread: false,
+    section: "SEPTEMBER 2026",
+    txId: "tx_sep_18"
   },
   {
     id: "sep_welcome",
@@ -392,7 +613,7 @@ export const notificationsData = [
     date: "01 Sep · 09:30 AM",
     message: "Welcome to KAST! Your SEPA Instant EUR Account has been provisioned and is ready for transfers.",
     unread: false,
-    section: "EARLIER"
+    section: "SEPTEMBER 2026"
   }
 ];
 
@@ -401,6 +622,30 @@ export const notificationsData = [
  * that can be toggled or triggered live from the Admin Dashboard.
  */
 export const availableNotificationsCatalog = {
+  compliance_review_in_progress: {
+    id: "compliance_review_in_progress",
+    type: "in",
+    title: "Compliance Review in Progress",
+    date: "18 Oct · 10:18 AM",
+    message: "Your submitted compliance documentation for the 1,000.00 EUR incoming transfer from SIVAN OSHRI is currently under standard administrative review. Please note that regulatory compliance reviews take place within 60 to 90 business days. You will be notified automatically once the review is completed and your funds are cleared.",
+    unread: false,
+    section: "TODAY",
+    category: "Compliance",
+    badge: "Under Review (60-90 Days)",
+    badgeColor: "amber"
+  },
+  compliance_docs_received: {
+    id: "compliance_docs_received",
+    type: "in",
+    title: "Compliance Documents Received",
+    date: "16 Oct · 10:56 AM",
+    message: "We have successfully received your compliance documentation and explanation of transfer purpose for the pending deposit of 1,000.00 EUR from SIVAN OSHRI (Ref: flw-2905aa09-82f9-4e11-a369-bdbb4c183401). Thank you for submitting the required verification.",
+    unread: false,
+    section: "OCTOBER 2026",
+    category: "Compliance",
+    badge: "Documents Received",
+    badgeColor: "emerald"
+  },
   verification_submitted: {
     id: "verification_submitted",
     type: "in",
