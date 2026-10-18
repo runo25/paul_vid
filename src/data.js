@@ -47,8 +47,7 @@ export const bankData = {
   ukAccountName: "Samuel Fasawe",
   ukAccountNumber: "00025261",
   ukSortCode: "04-10-37",
-  ukIban: "GB84CLRB04288613032354",
-  ukBankName: "ClearBank Limited",
+  ukBankName: "Global Remit Financial Services Ltd",
   ukBankAddress: "Suite 6034, Unit 3A 34-35 Hatton Garden, Holborn, London, England ECIN 8DX",
   ukCountry: "United Kingdom",
   ukSwift: "GRFRGB22XXX"
