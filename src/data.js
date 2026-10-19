@@ -54,14 +54,16 @@ export const bankData = {
 };
 
 export const dashboardData = {
-  balance: "€0.94",
-  totalBalanceRaw: 0.94,
+  balance: "€60.70",
+  totalBalanceRaw: 60.70,
   currency: "EUR",
+  gbpBalance: "£0.00",
   cardsCount: 1,
   activePerks: 3,
   carouselSlides: [
-    { id: "total", title: "TOTAL BALANCE", amount: "€0.94", subtitle: "All accounts & wallets", change: "1 deposit on hold" },
-    { id: "eur", title: "EUR SEPA ACCOUNT", amount: "€0.94", subtitle: "Kast Europe SEPA ···0189", change: "€1,000.00 pending" },
+    { id: "total", title: "TOTAL BALANCE", amount: "€60.70", subtitle: "All accounts & wallets", change: "€59.76 received today" },
+    { id: "eur", title: "EUR SEPA ACCOUNT", amount: "€60.70", subtitle: "Kast Europe SEPA ···0189", change: "€1,000.00 pending" },
+    { id: "gbp", title: "CLEARBANK GBP", amount: "£0.00", subtitle: "ClearBank UK ···5261", change: "-£50.00 sent today" },
     { id: "usd", title: "USD CHECKING", amount: "$0.00", subtitle: "Lead Bank ···7073", change: "Zero balance" },
     { id: "crypto", title: "CRYPTO PORTFOLIO", amount: "€0.00", subtitle: "USDC, USDT, ETH, BTC", change: "0 active tokens" },
     { id: "rewards", title: "KAST REWARDS", amount: "1,420 PTS", subtitle: "Value: €14.20", change: "5% cashback active" }
@@ -95,6 +97,51 @@ export const cardData = {
  */
 export const transactions = [
   // --- OCTOBER 2026 ---
+  {
+    id: "tx_oct_04",
+    title: "Payment Sent",
+    toFrom: "To SAMUEL FASAWE",
+    amount: "- £30.00 GBP",
+    type: "out",
+    status: "completed",
+    dateTime: "16 Oct · 11:48 PM",
+    month: "OCTOBER 2026",
+    category: "Payments and transfers",
+    reference: "400000001858217509 • BOOKING",
+    fee: "£0.00",
+    account: "ClearBank GBP Account",
+    note: "Booking payment to Samuel Fasawe"
+  },
+  {
+    id: "tx_oct_03",
+    title: "Payment Sent",
+    toFrom: "To SAMUEL FASAWE",
+    amount: "- £20.00 GBP",
+    type: "out",
+    status: "completed",
+    dateTime: "16 Oct · 11:36 PM",
+    month: "OCTOBER 2026",
+    category: "Payments and transfers",
+    reference: "500000001853339931 • BOOKING",
+    fee: "£0.00",
+    account: "ClearBank GBP Account",
+    note: "Booking payment to Samuel Fasawe"
+  },
+  {
+    id: "tx_oct_02",
+    title: "Vita Wallet Transfer",
+    toFrom: "From Juan Carlos",
+    amount: "+ 59.76 EUR",
+    type: "in",
+    status: "completed",
+    dateTime: "16 Oct · 08:18 PM",
+    month: "OCTOBER 2026",
+    category: "Vita Wallet",
+    reference: "VW-20261016-5976",
+    fee: "€0.00",
+    account: "SEPA EUR Account",
+    note: "Received via Vita Wallet from Juan Carlos"
+  },
   {
     id: "tx_oct_01",
     title: "Bank Transfer",
@@ -384,6 +431,45 @@ export const notificationsData = [
 
   // --- OCTOBER 16, 2026 ---
   {
+    id: "notif_tx_oct_04",
+    type: "out",
+    title: "Payment Sent to SAMUEL FASAWE",
+    date: "16 Oct · 11:48 PM",
+    message: "Your payment of £30.00 GBP to SAMUEL FASAWE (Ref: 400000001858217509 • BOOKING) has been successfully processed from your ClearBank GBP Account.",
+    unread: false,
+    section: "OCTOBER 2026",
+    txId: "tx_oct_04",
+    category: "Payments and transfers",
+    badge: "Completed",
+    badgeColor: "emerald"
+  },
+  {
+    id: "notif_tx_oct_03",
+    type: "out",
+    title: "Payment Sent to SAMUEL FASAWE",
+    date: "16 Oct · 11:36 PM",
+    message: "Your payment of £20.00 GBP to SAMUEL FASAWE (Ref: 500000001853339931 • BOOKING) has been successfully processed from your ClearBank GBP Account.",
+    unread: false,
+    section: "OCTOBER 2026",
+    txId: "tx_oct_03",
+    category: "Payments and transfers",
+    badge: "Completed",
+    badgeColor: "emerald"
+  },
+  {
+    id: "notif_tx_oct_02",
+    type: "in",
+    title: "Funds Received via Vita Wallet",
+    date: "16 Oct · 08:18 PM",
+    message: "You received 59.76 EUR from Juan Carlos via Vita Wallet. The funds have been credited to your SEPA EUR Account.",
+    unread: false,
+    section: "OCTOBER 2026",
+    txId: "tx_oct_02",
+    category: "Vita Wallet",
+    badge: "Received",
+    badgeColor: "emerald"
+  },
+  {
     id: "compliance_docs_received",
     type: "in",
     title: "Compliance Documents Received",
@@ -622,6 +708,45 @@ export const notificationsData = [
  * that can be toggled or triggered live from the Admin Dashboard.
  */
 export const availableNotificationsCatalog = {
+  notif_tx_oct_04: {
+    id: "notif_tx_oct_04",
+    type: "out",
+    title: "Payment Sent to SAMUEL FASAWE",
+    date: "16 Oct · 11:48 PM",
+    message: "Your payment of £30.00 GBP to SAMUEL FASAWE (Ref: 400000001858217509 • BOOKING) has been successfully processed from your ClearBank GBP Account.",
+    unread: false,
+    section: "OCTOBER 2026",
+    txId: "tx_oct_04",
+    category: "Payments and transfers",
+    badge: "Completed",
+    badgeColor: "emerald"
+  },
+  notif_tx_oct_03: {
+    id: "notif_tx_oct_03",
+    type: "out",
+    title: "Payment Sent to SAMUEL FASAWE",
+    date: "16 Oct · 11:36 PM",
+    message: "Your payment of £20.00 GBP to SAMUEL FASAWE (Ref: 500000001853339931 • BOOKING) has been successfully processed from your ClearBank GBP Account.",
+    unread: false,
+    section: "OCTOBER 2026",
+    txId: "tx_oct_03",
+    category: "Payments and transfers",
+    badge: "Completed",
+    badgeColor: "emerald"
+  },
+  notif_tx_oct_02: {
+    id: "notif_tx_oct_02",
+    type: "in",
+    title: "Funds Received via Vita Wallet",
+    date: "16 Oct · 08:18 PM",
+    message: "You received 59.76 EUR from Juan Carlos via Vita Wallet. The funds have been credited to your SEPA EUR Account.",
+    unread: false,
+    section: "OCTOBER 2026",
+    txId: "tx_oct_02",
+    category: "Vita Wallet",
+    badge: "Received",
+    badgeColor: "emerald"
+  },
   compliance_review_in_progress: {
     id: "compliance_review_in_progress",
     type: "in",
@@ -776,20 +901,20 @@ export const setTransactionStatus = (status, options = {}) => {
     tx.status = status;
     if (status === "completed") {
       tx.note = options.note || "Compliance verified & approved";
-      dashboardData.balance = "€1,000.94";
-      dashboardData.totalBalanceRaw = 1000.94;
-      dashboardData.carouselSlides[0].amount = "€1,000.94";
+      dashboardData.balance = "€1,060.70";
+      dashboardData.totalBalanceRaw = 1060.70;
+      dashboardData.carouselSlides[0].amount = "€1,060.70";
       dashboardData.carouselSlides[0].change = "€1,000.00 cleared";
-      dashboardData.carouselSlides[1].amount = "€1,000.94";
+      dashboardData.carouselSlides[1].amount = "€1,060.70";
       dashboardData.carouselSlides[1].change = "SEPA Instant available";
     } else {
       tx.status = "processing";
       tx.note = options.note || "Under compliance review - documentation requested";
-      dashboardData.balance = "€0.94";
-      dashboardData.totalBalanceRaw = 0.94;
-      dashboardData.carouselSlides[0].amount = "€0.94";
-      dashboardData.carouselSlides[0].change = "1 deposit on hold";
-      dashboardData.carouselSlides[1].amount = "€0.94";
+      dashboardData.balance = "€60.70";
+      dashboardData.totalBalanceRaw = 60.70;
+      dashboardData.carouselSlides[0].amount = "€60.70";
+      dashboardData.carouselSlides[0].change = "€59.76 received today";
+      dashboardData.carouselSlides[1].amount = "€60.70";
       dashboardData.carouselSlides[1].change = "€1,000.00 pending";
     }
     window.dispatchEvent(new CustomEvent("kast_transaction_updated", { detail: { status, tx } }));

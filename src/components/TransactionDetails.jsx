@@ -182,7 +182,7 @@ export default function TransactionDetails() {
 
           <div className="flex justify-between items-center">
             <span className="text-gray-400 uppercase tracking-wider font-semibold text-[11px] flex-shrink-0">Platform Fee</span>
-            <span className="font-semibold text-emerald-400">€0.00 EUR</span>
+            <span className="font-semibold text-emerald-400">{transaction.fee || "€0.00 EUR"}</span>
           </div>
         </div>
 

@@ -124,7 +124,7 @@ export default function Accounts() {
               </div>
             </div>
             <div className="flex flex-col items-end gap-1">
-              <span className="text-[15px] font-semibold text-white font-display">£0.00</span>
+              <span className="text-[15px] font-semibold text-white font-display">{dashboardData.gbpBalance || "£0.00"}</span>
               <button
                 onClick={() => setSelectedAccount({
                   title: "UK ClearBank Account",

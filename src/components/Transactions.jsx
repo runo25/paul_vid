@@ -18,6 +18,7 @@ export default function Transactions() {
     const matchesFilter =
       filter === "all" ||
       (filter === "eur" && t.account.includes("EUR")) ||
+      (filter === "gbp" && t.account.includes("GBP")) ||
       (filter === "card" && t.account.includes("Card")) ||
       (filter === "crypto" && (t.account.includes("Solana") || t.category.includes("Crypto")));
 
@@ -80,7 +81,8 @@ export default function Transactions() {
         <div className="flex gap-2 overflow-x-auto scrollbar-hide pb-3 mb-2">
           {[
             { id: "all", label: "All Activity" },
-            { id: "eur", label: "SEPA EUR Account" },
+            { id: "eur", label: "SEPA EUR" },
+            { id: "gbp", label: "ClearBank GBP" },
             { id: "card", label: "KAST Card" },
             { id: "crypto", label: "Crypto Transfers" }
           ].map((item) => (
