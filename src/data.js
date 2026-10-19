@@ -54,16 +54,16 @@ export const bankData = {
 };
 
 export const dashboardData = {
-  balance: "€60.70",
-  totalBalanceRaw: 60.70,
+  balance: "€1.70",
+  totalBalanceRaw: 1.70,
   currency: "EUR",
   gbpBalance: "£0.00",
   cardsCount: 1,
   activePerks: 3,
   carouselSlides: [
-    { id: "total", title: "TOTAL BALANCE", amount: "€60.70", subtitle: "All accounts & wallets", change: "€59.76 received today" },
-    { id: "eur", title: "EUR SEPA ACCOUNT", amount: "€60.70", subtitle: "Kast Europe SEPA ···0189", change: "€1,000.00 pending" },
-    { id: "gbp", title: "CLEARBANK GBP", amount: "£0.00", subtitle: "ClearBank UK ···5261", change: "-£50.00 sent today" },
+    { id: "total", title: "TOTAL BALANCE", amount: "€1.70", subtitle: "All accounts & wallets", change: "1 deposit on hold" },
+    { id: "eur", title: "EUR SEPA ACCOUNT", amount: "€1.70", subtitle: "Kast Europe SEPA ···0189", change: "€1,000.00 pending" },
+    { id: "gbp", title: "CLEARBANK GBP", amount: "£0.00", subtitle: "ClearBank UK ···5261", change: "£0.00 net balance" },
     { id: "usd", title: "USD CHECKING", amount: "$0.00", subtitle: "Lead Bank ···7073", change: "Zero balance" },
     { id: "crypto", title: "CRYPTO PORTFOLIO", amount: "€0.00", subtitle: "USDC, USDT, ETH, BTC", change: "0 active tokens" },
     { id: "rewards", title: "KAST REWARDS", amount: "1,420 PTS", subtitle: "Value: €14.20", change: "5% cashback active" }
@@ -98,11 +98,26 @@ export const cardData = {
 export const transactions = [
   // --- OCTOBER 2026 ---
   {
-    id: "tx_oct_04",
-    title: "Payment Sent",
-    toFrom: "To SAMUEL FASAWE",
-    amount: "- £30.00 GBP",
+    id: "tx_oct_06",
+    title: "Sent",
+    toFrom: "To CybS...ZUtS",
+    amount: "- £50.00 GBP",
     type: "out",
+    status: "completed",
+    dateTime: "16 Oct · 11:55 PM",
+    month: "OCTOBER 2026",
+    category: "Crypto Transfer (USDT)",
+    reference: "5yR9xK...8mQ2",
+    fee: "£0.00",
+    account: "Solana Wallet",
+    note: "USDT withdrawal to CybSnrCujM1RLzvGvFzNYgmm8WLCRP3gpZLDo6UoZUtS on Solana"
+  },
+  {
+    id: "tx_oct_05",
+    title: "Bank Transfer",
+    toFrom: "From Neil Wixon",
+    amount: "+ £30.00 GBP",
+    type: "in",
     status: "completed",
     dateTime: "16 Oct · 11:48 PM",
     month: "OCTOBER 2026",
@@ -110,14 +125,14 @@ export const transactions = [
     reference: "400000001858217509 • BOOKING",
     fee: "£0.00",
     account: "ClearBank GBP Account",
-    note: "Booking payment to Samuel Fasawe"
+    note: "Booking payment received from Neil Wixon"
   },
   {
-    id: "tx_oct_03",
-    title: "Payment Sent",
-    toFrom: "To SAMUEL FASAWE",
-    amount: "- £20.00 GBP",
-    type: "out",
+    id: "tx_oct_04",
+    title: "Bank Transfer",
+    toFrom: "From Neil Wixon",
+    amount: "+ £20.00 GBP",
+    type: "in",
     status: "completed",
     dateTime: "16 Oct · 11:36 PM",
     month: "OCTOBER 2026",
@@ -125,7 +140,22 @@ export const transactions = [
     reference: "500000001853339931 • BOOKING",
     fee: "£0.00",
     account: "ClearBank GBP Account",
-    note: "Booking payment to Samuel Fasawe"
+    note: "Booking payment received from Neil Wixon"
+  },
+  {
+    id: "tx_oct_03",
+    title: "Sent",
+    toFrom: "To CybS...ZUtS",
+    amount: "- 59.00 EUR",
+    type: "out",
+    status: "completed",
+    dateTime: "16 Oct · 08:35 PM",
+    month: "OCTOBER 2026",
+    category: "Crypto Transfer (USDC)",
+    reference: "4uW8z...9K2p",
+    fee: "€0.00",
+    account: "Solana Wallet",
+    note: "Crypto withdrawal to CybSnrCujM1RLzvGvFzNYgmm8WLCRP3gpZLDo6UoZUtS on Solana"
   },
   {
     id: "tx_oct_02",
@@ -431,28 +461,54 @@ export const notificationsData = [
 
   // --- OCTOBER 16, 2026 ---
   {
-    id: "notif_tx_oct_04",
+    id: "notif_tx_oct_06",
     type: "out",
-    title: "Payment Sent to SAMUEL FASAWE",
+    title: "USDT Crypto Withdrawal Sent",
+    date: "16 Oct · 11:55 PM",
+    message: "£50.00 GBP in USDT was successfully transferred to Solana address CybS...ZUtS (Tx: 5yR9xK...8mQ2).",
+    unread: false,
+    section: "OCTOBER 2026",
+    txId: "tx_oct_06",
+    category: "Crypto",
+    badge: "Completed",
+    badgeColor: "emerald"
+  },
+  {
+    id: "notif_tx_oct_05",
+    type: "in",
+    title: "Payment Received from Neil Wixon",
     date: "16 Oct · 11:48 PM",
-    message: "Your payment of £30.00 GBP to SAMUEL FASAWE (Ref: 400000001858217509 • BOOKING) has been successfully processed from your ClearBank GBP Account.",
+    message: "You received £30.00 GBP from Neil Wixon (Ref: 400000001858217509 • BOOKING) into your ClearBank GBP Account.",
+    unread: false,
+    section: "OCTOBER 2026",
+    txId: "tx_oct_05",
+    category: "Deposit",
+    badge: "Received",
+    badgeColor: "emerald"
+  },
+  {
+    id: "notif_tx_oct_04",
+    type: "in",
+    title: "Payment Received from Neil Wixon",
+    date: "16 Oct · 11:36 PM",
+    message: "You received £20.00 GBP from Neil Wixon (Ref: 500000001853339931 • BOOKING) into your ClearBank GBP Account.",
     unread: false,
     section: "OCTOBER 2026",
     txId: "tx_oct_04",
-    category: "Payments and transfers",
-    badge: "Completed",
+    category: "Deposit",
+    badge: "Received",
     badgeColor: "emerald"
   },
   {
     id: "notif_tx_oct_03",
     type: "out",
-    title: "Payment Sent to SAMUEL FASAWE",
-    date: "16 Oct · 11:36 PM",
-    message: "Your payment of £20.00 GBP to SAMUEL FASAWE (Ref: 500000001853339931 • BOOKING) has been successfully processed from your ClearBank GBP Account.",
+    title: "Crypto Withdrawal Sent",
+    date: "16 Oct · 08:35 PM",
+    message: "59.00 EUR was successfully transferred to Solana address CybS...ZUtS (Tx: 4uW8z...9K2p).",
     unread: false,
     section: "OCTOBER 2026",
     txId: "tx_oct_03",
-    category: "Payments and transfers",
+    category: "Crypto",
     badge: "Completed",
     badgeColor: "emerald"
   },
@@ -708,29 +764,55 @@ export const notificationsData = [
  * that can be toggled or triggered live from the Admin Dashboard.
  */
 export const availableNotificationsCatalog = {
+  notif_tx_oct_06: {
+    id: "notif_tx_oct_06",
+    type: "out",
+    title: "USDT Crypto Withdrawal Sent",
+    date: "16 Oct · 11:55 PM",
+    message: "£50.00 GBP in USDT was successfully transferred to Solana address CybS...ZUtS (Tx: 5yR9xK...8mQ2).",
+    unread: false,
+    section: "OCTOBER 2026",
+    txId: "tx_oct_06",
+    category: "Crypto",
+    badge: "Completed",
+    badgeColor: "emerald"
+  },
+  notif_tx_oct_05: {
+    id: "notif_tx_oct_05",
+    type: "in",
+    title: "Payment Received from Neil Wixon",
+    date: "16 Oct · 11:48 PM",
+    message: "You received £30.00 GBP from Neil Wixon (Ref: 400000001858217509 • BOOKING) into your ClearBank GBP Account.",
+    unread: false,
+    section: "OCTOBER 2026",
+    txId: "tx_oct_05",
+    category: "Deposit",
+    badge: "Received",
+    badgeColor: "emerald"
+  },
   notif_tx_oct_04: {
     id: "notif_tx_oct_04",
-    type: "out",
-    title: "Payment Sent to SAMUEL FASAWE",
-    date: "16 Oct · 11:48 PM",
-    message: "Your payment of £30.00 GBP to SAMUEL FASAWE (Ref: 400000001858217509 • BOOKING) has been successfully processed from your ClearBank GBP Account.",
+    type: "in",
+    title: "Payment Received from Neil Wixon",
+    date: "16 Oct · 11:36 PM",
+    message: "You received £20.00 GBP from Neil Wixon (Ref: 500000001853339931 • BOOKING) into your ClearBank GBP Account.",
     unread: false,
     section: "OCTOBER 2026",
     txId: "tx_oct_04",
-    category: "Payments and transfers",
-    badge: "Completed",
+    category: "Deposit",
+    badge: "Received",
     badgeColor: "emerald"
   },
   notif_tx_oct_03: {
     id: "notif_tx_oct_03",
     type: "out",
-    title: "Payment Sent to SAMUEL FASAWE",
-    date: "16 Oct · 11:36 PM",
-    message: "Your payment of £20.00 GBP to SAMUEL FASAWE (Ref: 500000001853339931 • BOOKING) has been successfully processed from your ClearBank GBP Account.",
+    title: "Crypto Withdrawal Sent",
+    date: "16 Oct · 08:35 PM",
+    message: "59.00 EUR was successfully transferred to Solana address CybS...ZUtS (Tx: 4uW8z...9K2p).",
     unread: false,
     section: "OCTOBER 2026",
     txId: "tx_oct_03",
-    category: "Payments and transfers",
+    category: "Crypto",
     badge: "Completed",
     badgeColor: "emerald"
   },
@@ -901,20 +983,20 @@ export const setTransactionStatus = (status, options = {}) => {
     tx.status = status;
     if (status === "completed") {
       tx.note = options.note || "Compliance verified & approved";
-      dashboardData.balance = "€1,060.70";
-      dashboardData.totalBalanceRaw = 1060.70;
-      dashboardData.carouselSlides[0].amount = "€1,060.70";
+      dashboardData.balance = "€1,001.70";
+      dashboardData.totalBalanceRaw = 1001.70;
+      dashboardData.carouselSlides[0].amount = "€1,001.70";
       dashboardData.carouselSlides[0].change = "€1,000.00 cleared";
-      dashboardData.carouselSlides[1].amount = "€1,060.70";
+      dashboardData.carouselSlides[1].amount = "€1,001.70";
       dashboardData.carouselSlides[1].change = "SEPA Instant available";
     } else {
       tx.status = "processing";
       tx.note = options.note || "Under compliance review - documentation requested";
-      dashboardData.balance = "€60.70";
-      dashboardData.totalBalanceRaw = 60.70;
-      dashboardData.carouselSlides[0].amount = "€60.70";
-      dashboardData.carouselSlides[0].change = "€59.76 received today";
-      dashboardData.carouselSlides[1].amount = "€60.70";
+      dashboardData.balance = "€1.70";
+      dashboardData.totalBalanceRaw = 1.70;
+      dashboardData.carouselSlides[0].amount = "€1.70";
+      dashboardData.carouselSlides[0].change = "1 deposit on hold";
+      dashboardData.carouselSlides[1].amount = "€1.70";
       dashboardData.carouselSlides[1].change = "€1,000.00 pending";
     }
     window.dispatchEvent(new CustomEvent("kast_transaction_updated", { detail: { status, tx } }));

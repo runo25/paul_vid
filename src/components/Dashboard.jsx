@@ -208,7 +208,7 @@ export default function Dashboard() {
           </div>
 
           <div className="flex flex-col divide-y divide-white/[0.04]">
-            {transactions.slice(0, 4).map((t) => (
+            {transactions.slice(0, 6).map((t) => (
               <Link
                 to={`/transaction/${t.id}`}
                 key={t.id}
